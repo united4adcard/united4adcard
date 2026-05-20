@@ -7,6 +7,7 @@ TEAM CONNECT
 LEVEL CONNECT
 DIRECT INCOME
 LEVEL INCOME
+SCRATCH WALLET CONNECT
 NOTHING DELETE
 ALL TO ALL FINAL CODE
 ========================================= -->
@@ -173,7 +174,7 @@ color:#94a3b8;
 
 .referral-bar{
 
-margin:0 16px 14px;
+margin-top:12px;
 
 padding:10px 12px;
 
@@ -250,7 +251,6 @@ cursor:pointer;
 .ref-send i{
 font-size:14px;
 }
-
 
 /* QUICK */
 
@@ -953,18 +953,28 @@ currentUser.name + " Dashboard";
 
 }
 
-/* WALLET */
+/* USER ID */
 
-let wallet =
-localStorage.getItem(
-"userWallet"
-);
+let userId = "";
 
-if(!wallet){
+if(currentUser){
 
-wallet = "0";
+userId =
+currentUser.userId || "";
 
 }
+
+/* SCRATCH WALLET CONNECT */
+
+let wallet =
+
+parseFloat(
+
+localStorage.getItem(
+"wallet_" + userId
+)
+
+) || 0;
 
 /* SHOW BALANCE */
 
@@ -974,6 +984,39 @@ document
 )
 .innerHTML =
 "₹" + wallet;
+
+/* AUTO UPDATE */
+
+setInterval(()=>{
+
+let latestWallet =
+
+parseFloat(
+
+localStorage.getItem(
+"wallet_" + userId
+)
+
+) || 0;
+
+document
+.getElementById(
+"mainBalance"
+)
+.innerHTML =
+"₹" + latestWallet;
+
+localStorage.setItem(
+"userWallet",
+latestWallet
+);
+
+localStorage.setItem(
+"mainWallet",
+latestWallet
+);
+
+},1000);
 
 /* AUTO REFRESH */
 
@@ -995,83 +1038,6 @@ latestUser;
 
 };
 
-/* PAGE CONNECT */
-
-function checkPage(page){
-
-window.location.href =
-page;
-
-}
-
-/* DIRECT TEAM */
-
-document
-.querySelector(
-'a[href="directteam.html"]'
-)
-.addEventListener(
-"click",
-function(){
-
-checkPage(
-"directteam.html"
-);
-
-}
-);
-
-/* LEVEL TEAM */
-
-document
-.querySelector(
-'a[href="levelteam.html"]'
-)
-.addEventListener(
-"click",
-function(){
-
-checkPage(
-"levelteam.html"
-);
-
-}
-);
-
-/* DIRECT INCOME */
-
-document
-.querySelector(
-'a[href="directincome.html"]'
-)
-.addEventListener(
-"click",
-function(){
-
-checkPage(
-"directincome.html"
-);
-
-}
-);
-
-/* LEVEL INCOME */
-
-document
-.querySelector(
-'a[href="levelincome.html"]'
-)
-.addEventListener(
-"click",
-function(){
-
-checkPage(
-"levelincome.html"
-);
-
-}
-);
-
 /* SAVE USER */
 
 if(currentUser){
@@ -1091,9 +1057,39 @@ localStorage.setItem(
 currentUser.email
 );
 
+localStorage.setItem(
+"userId",
+currentUser.userId
+);
+
 }
 
 /* FINAL CONNECT */
+
+localStorage.setItem(
+"profileConnected",
+"true"
+);
+
+localStorage.setItem(
+"teamConnected",
+"true"
+);
+
+localStorage.setItem(
+"levelConnected",
+"true"
+);
+
+localStorage.setItem(
+"walletConnected",
+"true"
+);
+
+localStorage.setItem(
+"scratchConnected",
+"true"
+);
 
 localStorage.setItem(
 "homeConnected",
@@ -1135,9 +1131,9 @@ let shareText =
 
 "🪪 KYC Bonus ₹100\n" +
 
-"🔥 Transfer Bonus ₹300\n" +
+"🔥 Scratch Bonus ₹300\n" +
 
-"💸 16 Level Daily Recharge Commission\n\n" +
+"💸 Daily Income Available\n\n" +
 
 "✅ Use My Referral Code:\n" +
 
@@ -1158,8 +1154,12 @@ shareText
 
 }
 
+console.log(
+"UNITED4ADCARD HOME CONNECTED"
+);
+
 </script>
 
 </body>
 
-</html>
+  </html>
