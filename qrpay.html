@@ -1,3 +1,13 @@
+<!-- =========================================
+FINAL QR WALLET SYSTEM
+NO EXTRA HISTORY
+ONLY WALLET CONNECT
+RECEIVE QR
+SEND QR SCANNER
+COMPACT DESIGN
+ALL SAFE
+========================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +19,7 @@
 content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>
-United4adcard QR Pay
+United4adcard Wallet Transfer
 </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
@@ -17,6 +27,8 @@ rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
 
 <style>
 
@@ -28,14 +40,7 @@ font-family:'Poppins',sans-serif;
 -webkit-tap-highlight-color:transparent;
 }
 
-a{
-text-decoration:none;
-}
-
-html,body{
-width:100%;
-height:100%;
-overflow:hidden;
+body{
 
 background:
 linear-gradient(
@@ -44,31 +49,29 @@ linear-gradient(
 #071827,
 #0b1120
 );
+
+color:white;
+padding-bottom:85px;
 }
 
-/* APP */
-
-.app{
-height:100vh;
-overflow-y:auto;
-padding-bottom:120px;
+a{
+text-decoration:none;
 }
 
 /* HEADER */
 
 .header{
-padding:16px;
+padding:10px 12px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
 .logo{
-width:52px;
-height:52px;
-border-radius:16px;
+width:42px;
+height:42px;
+border-radius:12px;
 overflow:hidden;
-border:2px solid rgba(255,255,255,.08);
 }
 
 .logo img{
@@ -78,150 +81,190 @@ object-fit:cover;
 }
 
 .bell{
-width:42px;
-height:42px;
-border-radius:14px;
+width:36px;
+height:36px;
+border-radius:12px;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:18px;
 background:rgba(255,255,255,.05);
-color:white;
+font-size:14px;
 }
 
-/* SCAN BOX */
+/* WALLET */
 
-.scan-box{
+.wallet{
 
-margin:0 16px;
+margin:0 12px;
 
-padding:20px;
+padding:12px;
 
-border-radius:24px;
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#082f49,
+#0f172a
+);
+}
+
+.wallet h3{
+font-size:9px;
+color:#94a3b8;
+}
+
+.wallet h1{
+font-size:24px;
+margin-top:3px;
+color:#22d3ee;
+}
+
+.wallet p{
+font-size:9px;
+margin-top:4px;
+color:#cbd5e1;
+}
+
+/* QR */
+
+.qr-box{
+
+margin:10px 12px;
+
+padding:12px;
+
+border-radius:18px;
 
 background:
 rgba(255,255,255,.05);
 
-border:
-1px solid rgba(255,255,255,.05);
-
 text-align:center;
 }
 
-/* QR AREA */
+.qr-box h2{
+font-size:13px;
+margin-bottom:8px;
+}
 
 .qr-area{
 
-width:220px;
-height:220px;
+width:150px;
+height:150px;
 
-margin:10px auto;
+margin:auto;
 
-border-radius:24px;
-
-border:3px solid #14b8a6;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-position:relative;
+border-radius:16px;
 
 overflow:hidden;
+
+background:white;
+
+border:3px solid #14b8a6;
 }
 
-.qr-area::before{
-content:'';
-position:absolute;
+.qr-area img{
 width:100%;
-height:4px;
-background:#14b8a6;
-top:0;
-animation:scan 2s linear infinite;
+height:100%;
 }
 
-@keyframes scan{
-
-0%{
-top:0;
-}
-
-100%{
-top:100%;
-}
-
-}
-
-.qr-icon{
-font-size:70px;
-color:#14b8a6;
-}
-
-/* TEXT */
-
-.scan-box h2{
-margin-top:10px;
-font-size:22px;
-color:white;
-}
-
-.scan-box p{
+.qr-note{
 margin-top:6px;
-font-size:11px;
+font-size:8px;
 color:#94a3b8;
 }
 
-/* INPUT */
+/* SWITCH */
 
-.section{
-padding:18px 16px 0;
+.switch{
+
+margin:10px 12px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:8px;
+}
+
+.switch button{
+
+height:40px;
+
+border:none;
+border-radius:12px;
+
+font-size:12px;
+font-weight:700;
+
+color:white;
+}
+
+.activeBtn{
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+}
+
+.inactiveBtn{
+background:
+rgba(255,255,255,.05);
+}
+
+/* BOX */
+
+.box{
+
+margin:0 12px;
+
+padding:12px;
+
+border-radius:18px;
+
+background:
+rgba(255,255,255,.05);
 }
 
 .label{
-font-size:13px;
-color:white;
-margin-bottom:10px;
+font-size:9px;
+margin-bottom:5px;
 display:block;
 }
 
 .input{
 
 width:100%;
-height:52px;
+height:40px;
+
+margin-bottom:10px;
 
 border:none;
 outline:none;
 
-border-radius:16px;
+border-radius:12px;
 
-padding:0 16px;
-
-font-size:14px;
+padding:0 12px;
 
 background:
 rgba(255,255,255,.05);
 
-border:
-1px solid rgba(255,255,255,.05);
-
 color:white;
-}
 
-/* BUTTONS */
+font-size:11px;
+}
 
 .btn{
 
-margin-top:16px;
-
 width:100%;
-height:52px;
+height:40px;
 
 border:none;
-outline:none;
+border-radius:12px;
 
-border-radius:16px;
-
-font-size:15px;
+font-size:12px;
 font-weight:700;
 
 background:
@@ -234,83 +277,38 @@ linear-gradient(
 color:white;
 }
 
-.upload-btn{
+/* SCAN */
 
-margin-top:12px;
+.scan-btn{
 
-height:48px;
+width:100%;
+height:55px;
 
-border-radius:14px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:13px;
-font-weight:700;
-
-background:
-rgba(255,255,255,.05);
-
-border:
-1px solid rgba(255,255,255,.05);
-
-color:white;
-}
-
-/* SUCCESS */
-
-.success{
-
-margin-top:18px;
-
-padding:16px;
-
-border-radius:18px;
-
-background:
-rgba(20,184,166,.12);
-
-border:
-1px solid rgba(20,184,166,.25);
-
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.success-icon{
-
-width:48px;
-height:48px;
+margin-bottom:10px;
 
 border-radius:14px;
 
+border:1px dashed #22d3ee;
+
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 
-font-size:22px;
-
 background:
-linear-gradient(
-135deg,
-#0ea5e9,
-#14b8a6
-);
+rgba(255,255,255,.04);
 
-color:white;
+color:#22d3ee;
 }
 
-.success-text h4{
-font-size:14px;
-color:white;
+.scan-btn i{
+font-size:20px;
+margin-bottom:3px;
 }
 
-.success-text p{
+.scan-btn p{
 font-size:10px;
-color:#94a3b8;
-margin-top:3px;
+font-weight:700;
 }
 
 /* BOTTOM */
@@ -319,77 +317,94 @@ margin-top:3px;
 
 position:fixed;
 
-left:12px;
-right:12px;
-bottom:12px;
+left:10px;
+right:10px;
+bottom:10px;
 
-height:76px;
+height:60px;
 
-border-radius:26px;
+border-radius:18px;
 
 background:
 rgba(15,23,42,.95);
 
-border:
-1px solid rgba(255,255,255,.05);
-
 display:flex;
 justify-content:space-around;
 align-items:center;
-
-z-index:999;
 }
 
 .nav{
-
 text-align:center;
-
-font-size:9px;
-font-weight:600;
-
+font-size:8px;
 color:#94a3b8;
 }
 
 .nav i{
-
 display:block;
-
-font-size:20px;
-
-margin-bottom:4px;
+font-size:16px;
+margin-bottom:2px;
 }
 
 .active{
 color:#22d3ee;
 }
 
-/* QR */
+/* POPUP */
 
-.qr{
+.popup{
 
-width:66px;
-height:66px;
+position:fixed;
+inset:0;
 
-border-radius:50%;
+background:
+rgba(0,0,0,.85);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+}
+
+.popup-box{
+
+width:90%;
+max-width:260px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:#0f172a;
+
+text-align:center;
+}
+
+#reader{
+width:100%;
+overflow:hidden;
+border-radius:12px;
+}
+
+.close-btn{
+
+width:100%;
+height:38px;
+
+margin-top:12px;
+
+border:none;
+border-radius:12px;
 
 background:
 linear-gradient(
 135deg,
-#0284c7,
-#0f766e
+#ef4444,
+#dc2626
 );
 
-display:flex;
-justify-content:center;
-align-items:center;
-
-margin-top:-34px;
-
-border:4px solid #0f172a;
-
-font-size:26px;
-
 color:white;
+font-weight:700;
 }
 
 </style>
@@ -397,8 +412,6 @@ color:white;
 </head>
 
 <body>
-
-<div class="app">
 
 <!-- HEADER -->
 
@@ -409,81 +422,143 @@ color:white;
 </div>
 
 <div class="bell">
-<i class="fa-solid fa-bell"></i>
+<i class="fa-solid fa-wallet"></i>
 </div>
+
+</div>
+
+<!-- WALLET -->
+
+<div class="wallet">
+
+<h3>
+Available Balance
+</h3>
+
+<h1 id="walletBalance">
+₹0
+</h1>
+
+<p id="userIdText">
+User ID
+</p>
+
+</div>
+
+<!-- RECEIVE QR -->
+
+<div class="qr-box">
+
+<h2>
+My Payment QR
+</h2>
+
+<div class="qr-area">
+
+<img id="mainQR">
+
+</div>
+
+<div class="qr-note">
+Customer Is QR Ko Scan Karega
+</div>
+
+</div>
+
+<!-- SWITCH -->
+
+<div class="switch">
+
+<button id="receiveBtn"
+class="activeBtn"
+onclick="showReceive()">
+Receive
+</button>
+
+<button id="sendBtn"
+class="inactiveBtn"
+onclick="showSend()">
+Send
+</button>
+
+</div>
+
+<!-- RECEIVE -->
+
+<div id="receiveSection"
+class="box">
+
+<label class="label">
+Receive Amount
+</label>
+
+<input type="number"
+id="receiveAmount"
+class="input"
+placeholder="Enter amount">
+
+<button class="btn"
+onclick="receiveMoney()">
+ADD MONEY
+</button>
+
+</div>
+
+<!-- SEND -->
+
+<div id="sendSection"
+class="box"
+style="display:none">
+
+<div class="scan-btn"
+onclick="openScanner()">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<p>
+SCAN RECEIVER QR
+</p>
+
+</div>
+
+<label class="label">
+Receiver User ID
+</label>
+
+<input type="text"
+id="sendUser"
+class="input"
+placeholder="Auto fill after scan">
+
+<label class="label">
+Send Amount
+</label>
+
+<input type="number"
+id="sendAmount"
+class="input"
+placeholder="Enter amount">
+
+<button class="btn"
+onclick="sendMoney()">
+SEND MONEY
+</button>
 
 </div>
 
 <!-- SCANNER -->
 
-<div class="scan-box">
+<div class="popup"
+id="scannerPopup">
 
-<div class="qr-area">
+<div class="popup-box">
 
-<div class="qr-icon">
-<i class="fa-solid fa-qrcode"></i>
-</div>
+<div id="reader"></div>
 
-</div>
-
-<h2>
-Scan & Pay
-</h2>
-
-<p>
-Fast and secure QR payment
-</p>
-
-</div>
-
-<!-- PAYMENT -->
-
-<div class="section">
-
-<label class="label">
-Enter Amount
-</label>
-
-<input type="number"
-class="input"
-placeholder="₹ Enter amount">
-
-<button class="btn">
-Pay Now
+<button class="close-btn"
+onclick="closeScanner()">
+CLOSE
 </button>
-
-<label for="uploadQR"
-class="upload-btn">
-
-Upload QR Image
-
-</label>
-
-<input type="file"
-id="uploadQR"
-hidden>
-
-<!-- SUCCESS -->
-
-<div class="success">
-
-<div class="success-icon">
-<i class="fa-solid fa-circle-check"></i>
-</div>
-
-<div class="success-text">
-
-<h4>
-Payment Successful
-</h4>
-
-<p>
-₹500 paid successfully
-</p>
-
-</div>
-
-</div>
 
 </div>
 
@@ -493,45 +568,334 @@ Payment Successful
 
 <div class="bottom">
 
-<a href="home.html" class="nav">
-
+<a href="home.html" class="nav active">
 <i class="fa-solid fa-house"></i>
-
 Home
-
 </a>
 
 <a href="reward.html" class="nav">
-
 <i class="fa-solid fa-gift"></i>
-
 Reward
-
-</a>
-
-<a href="qrpay.html" class="qr">
-
-<i class="fa-solid fa-qrcode"></i>
-
 </a>
 
 <a href="scratch.html" class="nav">
-
 <i class="fa-solid fa-ticket"></i>
-
 Scratch
-
 </a>
 
 <a href="profile.html" class="nav">
-
 <i class="fa-solid fa-user"></i>
-
 Profile
-
 </a>
 
 </div>
+
+<script>
+
+/* USER */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+) || {};
+
+let userKey =
+currentUser.userId || "guest";
+
+/* SHOW */
+
+userIdText.innerHTML =
+"User ID : " + userKey;
+
+/* QR */
+
+mainQR.src =
+
+"https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" +
+
+encodeURIComponent(
+"UPI-" + userKey
+);
+
+/* WALLET */
+
+function getWallet(){
+
+return parseFloat(
+
+localStorage.getItem(
+"wallet_" + userKey
+)
+
+) || 0;
+
+}
+
+function updateWallet(){
+
+walletBalance.innerHTML =
+"₹" + getWallet();
+
+}
+
+/* SWITCH */
+
+function showReceive(){
+
+receiveSection.style.display =
+"block";
+
+sendSection.style.display =
+"none";
+
+receiveBtn.className =
+"activeBtn";
+
+sendBtn.className =
+"inactiveBtn";
+
+}
+
+function showSend(){
+
+receiveSection.style.display =
+"none";
+
+sendSection.style.display =
+"block";
+
+receiveBtn.className =
+"inactiveBtn";
+
+sendBtn.className =
+"activeBtn";
+
+}
+
+/* RECEIVE */
+
+function receiveMoney(){
+
+let amount =
+
+parseFloat(
+receiveAmount.value
+);
+
+if(!amount || amount<=0){
+
+alert(
+"Enter Amount"
+);
+
+return;
+
+}
+
+let wallet =
+getWallet();
+
+wallet += amount;
+
+localStorage.setItem(
+"wallet_" + userKey,
+wallet
+);
+
+updateWallet();
+
+receiveAmount.value="";
+
+alert(
+"Money Added Successfully"
+);
+
+}
+
+/* SEND */
+
+function sendMoney(){
+
+let receiver =
+sendUser.value.trim();
+
+let amount =
+
+parseFloat(
+sendAmount.value
+);
+
+if(receiver==""){
+
+alert(
+"Scan Receiver QR"
+);
+
+return;
+
+}
+
+if(!amount || amount<=0){
+
+alert(
+"Enter Amount"
+);
+
+return;
+
+}
+
+let senderWallet =
+getWallet();
+
+if(senderWallet < amount){
+
+alert(
+"Insufficient Balance"
+);
+
+return;
+
+}
+
+/* SENDER */
+
+senderWallet -= amount;
+
+localStorage.setItem(
+"wallet_" + userKey,
+senderWallet
+);
+
+/* RECEIVER */
+
+let receiverWallet =
+
+parseFloat(
+
+localStorage.getItem(
+"wallet_" + receiver
+)
+
+) || 0;
+
+receiverWallet += amount;
+
+localStorage.setItem(
+"wallet_" + receiver,
+receiverWallet
+);
+
+/* RECEIVER HISTORY */
+
+let receiverHistory =
+JSON.parse(
+localStorage.getItem(
+"walletHistory_" + receiver
+)
+) || [];
+
+receiverHistory.unshift({
+
+date:new Date().toLocaleString(),
+msg:"Receive From " + userKey,
+amount,
+type:"Credit",
+balance:receiverWallet
+
+});
+
+localStorage.setItem(
+
+"walletHistory_" + receiver,
+
+JSON.stringify(receiverHistory)
+
+);
+
+updateWallet();
+
+sendUser.value="";
+sendAmount.value="";
+
+alert(
+"Money Sent Successfully"
+);
+
+}
+
+/* QR SCANNER */
+
+let html5QrCode;
+
+function openScanner(){
+
+scannerPopup.style.display =
+"flex";
+
+html5QrCode =
+new Html5Qrcode(
+"reader"
+);
+
+html5QrCode.start(
+
+{ facingMode:"environment" },
+
+{
+fps:10,
+qrbox:200
+},
+
+(qrCodeMessage)=>{
+
+let userId =
+
+qrCodeMessage
+.replace("UPI-","")
+.trim();
+
+sendUser.value =
+userId;
+
+closeScanner();
+
+alert(
+"QR Scanned Successfully"
+);
+
+}
+
+);
+
+}
+
+function closeScanner(){
+
+scannerPopup.style.display =
+"none";
+
+if(html5QrCode){
+
+html5QrCode.stop();
+
+}
+
+}
+
+/* START */
+
+updateWallet();
+
+setInterval(()=>{
+
+updateWallet();
+
+},1000);
+
+</script>
 
 </body>
 
