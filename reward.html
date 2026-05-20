@@ -1,10 +1,14 @@
 <!-- =========================================
-FILE NAME = scratch.html
-FINAL FULL SCRATCH SYSTEM
-ULTRA COMPACT DESIGN
-5 GIFT CARD FIT
-ALL OLD SETTINGS SAFE
-NOTHING DELETE
+FILE NAME = reward.html
+FINAL FULL AUTO REWARD SYSTEM
+ADMIN CONNECTED
+TEAM CONNECTED
+BUSINESS CONNECTED
+CLAIM SYSTEM FIXED
+ALL WALLET CONNECTED
+ALL HISTORY CONNECTED
+AMOUNT SHORT FORMAT FIXED
+ALL OLD DESIGN SAFE
 ========================================= -->
 
 <!DOCTYPE html>
@@ -18,14 +22,8 @@ NOTHING DELETE
 content="width=device-width, initial-scale=1.0">
 
 <title>
-Scratch Card
+United4Adcard Reward
 </title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -33,552 +31,210 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
--webkit-tap-highlight-color:transparent;
+font-family:Arial,sans-serif;
 }
 
 body{
-
-background:
-linear-gradient(
-180deg,
-#031525,
-#071827,
-#020617
-);
-
-color:white;
-
-padding-bottom:15px;
-
-overflow-x:hidden;
+background:#eef2ff;
+padding:12px;
+color:#111827;
 }
 
-a{
-text-decoration:none;
-}
+/* TITLE */
 
-/* HEADER */
-
-.header{
-padding:5px 7px;
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-.back{
-width:24px;
-height:24px;
-border-radius:8px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:rgba(255,255,255,.05);
-color:white;
-font-size:10px;
-}
-
-.head-title{
-font-size:12px;
-font-weight:800;
+.title{
+text-align:center;
+font-size:25px;
+font-weight:bold;
+margin-bottom:15px;
+color:#7c3aed;
+letter-spacing:1px;
 }
 
 /* WALLET */
 
-.wallet{
-
-margin:0 6px;
-
-padding:7px;
-
-border-radius:12px;
-
-background:
-linear-gradient(
-135deg,
-#0f172a,
-#111827
-);
-
-border:
-1px solid rgba(255,255,255,.06);
-}
-
-.wallet-top{
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-.wallet-icon{
-font-size:24px;
-color:#facc15;
-}
-
-.wallet-info h3{
-font-size:7px;
-color:#cbd5e1;
-}
-
-.wallet-info h1{
-font-size:17px;
-font-weight:800;
-color:#facc15;
-line-height:1;
-margin-top:2px;
-}
-
-.wallet-info p{
-font-size:5px;
-color:#94a3b8;
-margin-top:1px;
-}
-
-.wallet-mini{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:4px;
-
-margin-top:5px;
-}
-
-.mini{
-
-padding:5px;
-
-border-radius:8px;
-
-background:
-rgba(255,255,255,.04);
-
+.wallet-box{
+background:linear-gradient(135deg,#7c3aed,#9333ea);
+padding:15px;
+border-radius:16px;
 text-align:center;
-}
-
-.mini p{
-font-size:5px;
-color:#94a3b8;
-}
-
-.mini h2{
-margin-top:2px;
-font-size:10px;
-font-weight:800;
-}
-
-.transfer-btn{
-
-width:100%;
-height:26px;
-
-border:none;
-
-margin-top:5px;
-
-border-radius:8px;
-
-font-size:8px;
-font-weight:800;
-
-background:
-linear-gradient(
-135deg,
-#06b6d4,
-#4f46e5
-);
-
+margin-bottom:18px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
 color:white;
 }
 
-/* SECTION */
-
-.section{
-padding:5px 6px 0;
-}
-
-.section-title{
-
-font-size:8px;
-font-weight:800;
-
-display:flex;
-align-items:center;
-gap:4px;
-
-margin-bottom:4px;
-}
-
-.section-title i{
-color:#facc15;
-}
-
-/* TIMELINE */
-
-.timeline{
-position:relative;
-padding-left:24px;
-}
-
-.timeline::before{
-
-content:'';
-
-position:absolute;
-
-left:8px;
-top:0;
-bottom:0;
-
-width:2px;
-
-background:
-linear-gradient(
-180deg,
-#22d3ee,
-#9333ea
-);
-
-border-radius:20px;
-}
-
-.step{
-
-position:relative;
-
-padding:5px 6px;
-
+.wallet-box h2{
+font-size:15px;
 margin-bottom:5px;
-
-border-radius:9px;
-
-background:
-linear-gradient(
-135deg,
-#111827,
-#0f172a
-);
-
-border:
-1px solid rgba(255,255,255,.06);
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-min-height:48px;
 }
 
-.number{
+.wallet-box h1{
+font-size:28px;
+}
 
-position:absolute;
+/* TABLE */
 
-left:-18px;
-top:50%;
+.table-box{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
 
-transform:translateY(-50%);
+/* HEADER */
 
-width:16px;
-height:16px;
-
-border-radius:50%;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:7px;
-font-weight:800;
-
+.table-header{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+background:#7c3aed;
+padding:12px 6px;
+font-weight:bold;
+text-align:center;
+font-size:12px;
 color:white;
 }
 
-.num1{
+/* ROW */
+
+.table-row{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+align-items:center;
+text-align:center;
+padding:10px 6px;
+border-bottom:1px solid #e5e7eb;
+transition:0.3s;
+font-size:12px;
+}
+
+.table-row:hover{
+background:#f5f3ff;
+}
+
+/* BADGE */
+
+.badge{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+font-size:10px;
+font-weight:bold;
+min-width:80px;
+color:white;
+}
+
+/* COLORS */
+
+.bronze{
+background:#cd7f32;
+}
+
+.silver{
+background:#9ca3af;
+}
+
+.gold{
+background:#facc15;
+color:black;
+}
+
+.diamond{
+background:#38bdf8;
+}
+
+.crown{
+background:#a855f7;
+}
+
+.legend{
+background:#f43f5e;
+}
+
+.platinum{
 background:#14b8a6;
 }
 
-.num2{
-background:#2563eb;
+.master{
+background:#f97316;
 }
 
-.num3{
-background:#f59e0b;
+.royal{
+background:#8b5cf6;
 }
 
-.step-left{
-display:flex;
-gap:5px;
-align-items:center;
+.infinity{
+background:#22c55e;
 }
 
-.step-icon{
-width:20px;
-height:20px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:8px;
+/* BUTTON */
+
+.claim-btn{
+border:none;
+padding:6px 10px;
+border-radius:8px;
 color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:11px;
 }
 
-.icon1{
-background:linear-gradient(135deg,#14b8a6,#06b6d4);
+.claim{
+background:#22c55e;
 }
 
-.icon2{
-background:linear-gradient(135deg,#2563eb,#3b82f6);
-}
-
-.icon3{
-background:linear-gradient(135deg,#f59e0b,#fb923c);
-}
-
-.step-info h2{
-font-size:6px;
-font-weight:800;
-}
-
-.step-info p{
-margin-top:1px;
-font-size:4px;
-color:#cbd5e1;
-}
-
-.step-info h3{
-margin-top:1px;
-font-size:5px;
-font-weight:800;
-color:#22c55e;
-}
-
-.status{
-padding:2px 4px;
-border-radius:7px;
-font-size:4px;
-font-weight:800;
-}
-
-.done{
+.claim:hover{
 background:#16a34a;
 }
 
 .pending{
-background:#9333ea;
-}
-
-/* PENDING SCRATCH */
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:4px;
-}
-
-.card{
-
-height:58px;
-
-padding:4px;
-
-border-radius:8px;
-
-background:
-linear-gradient(
-135deg,
-#fb923c,
-#fb7185
-);
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-overflow:hidden;
-}
-
-.card i{
-font-size:10px;
-margin-bottom:2px;
-}
-
-.card h3{
-font-size:4.5px;
-font-weight:800;
-line-height:1.1;
-}
-
-.card p{
-margin-top:1px;
-font-size:4px;
-}
-
-/* HISTORY */
-
-.history{
-
-padding:5px;
-
-border-radius:8px;
-
-margin-bottom:4px;
-
-background:
-rgba(255,255,255,.05);
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.history-left{
-display:flex;
-align-items:center;
-gap:5px;
-}
-
-.h-icon{
-width:20px;
-height:20px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:8px;
-color:white;
-}
-
-.h1{
-background:#14b8a6;
-}
-
-.h2{
-background:#2563eb;
-}
-
-.h3{
-background:#f59e0b;
-}
-
-.history-left h3{
-font-size:5px;
-font-weight:800;
-}
-
-.history-left p{
-font-size:4px;
-color:#94a3b8;
-margin-top:1px;
-}
-
-.history-right{
-text-align:right;
-}
-
-.history-right h2{
-font-size:7px;
-font-weight:800;
-color:#22c55e;
+background:#9ca3af;
+cursor:not-allowed;
 }
 
 .claimed{
-margin-top:2px;
-padding:2px 4px;
-border-radius:6px;
-display:inline-block;
-font-size:4px;
-font-weight:800;
-background:#16a34a;
+background:#2563eb;
 }
 
-/* POPUP */
+/* TEXT */
 
-.popup{
-
-position:fixed;
-inset:0;
-
-background:
-rgba(0,0,0,.75);
-
-display:none;
-justify-content:center;
-align-items:center;
-
-z-index:99999;
+.small{
+font-size:11px;
+font-weight:bold;
 }
 
-.popup-box{
+/* MOBILE */
 
-width:90%;
-max-width:220px;
+@media(max-width:700px){
 
-padding:10px;
-
-border-radius:12px;
-
-background:
-linear-gradient(
-135deg,
-#111827,
-#1e293b
-);
-
-text-align:center;
+.table-header,
+.table-row{
+font-size:9px;
+padding:8px 3px;
 }
 
-.popup-box h2{
-font-size:10px;
-font-weight:800;
+.badge{
+font-size:8px;
+padding:4px 6px;
+min-width:65px;
 }
 
-.reward{
-margin-top:5px;
-font-size:22px;
-font-weight:800;
-color:#22c55e;
+.claim-btn{
+font-size:8px;
+padding:5px 6px;
 }
 
-.claim{
-width:100%;
-height:28px;
-border:none;
-margin-top:7px;
-border-radius:8px;
-font-size:7px;
-font-weight:800;
-background:
-linear-gradient(
-135deg,
-#22c55e,
-#16a34a
-);
-color:white;
+.title{
+font-size:21px;
 }
 
-.close{
-width:100%;
-height:26px;
-border:none;
-margin-top:5px;
-border-radius:7px;
-font-size:6px;
-font-weight:800;
-background:
-linear-gradient(
-135deg,
-#ef4444,
-#dc2626
-);
-color:white;
+.wallet-box h1{
+font-size:24px;
+}
+
+.small{
+font-size:8px;
+}
+
 }
 
 </style>
@@ -587,655 +243,517 @@ color:white;
 
 <body>
 
-<div class="header">
-
-<a href="home.html"
-class="back">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-</a>
-
-<div class="head-title">
-Scratch Card
-</div>
-
+<div class="title">
+UNITED4ADCARD REWARD
 </div>
 
 <!-- WALLET -->
 
-<div class="wallet">
+<div class="wallet-box">
 
-<div class="wallet-top">
+<h2>
+Total Wallet Balance
+</h2>
 
-<div class="wallet-icon">
-<i class="fa-solid fa-coins"></i>
-</div>
-
-<div class="wallet-info">
-
-<h3>
-Coin Balance
-</h3>
-
-<h1 id="coinBalance">
-0
+<h1>
+₹<span id="wallet">0</span>
 </h1>
 
-<p>
-100 Coin = ₹1
-</p>
+</div>
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<div class="table-header">
+
+<div>Reward</div>
+<div>Target Team</div>
+<div>Your Team</div>
+<div>Target Business</div>
+<div>Your Business</div>
+<div>Income</div>
+<div>Status</div>
 
 </div>
 
-</div>
-
-<div class="wallet-mini">
-
-<div class="mini">
-
-<p>
-Transfer Coin
-</p>
-
-<h2 id="transferCoin">
-0
-</h2>
-
-</div>
-
-<div class="mini">
-
-<p>
-Wallet Balance
-</p>
-
-<h2 id="walletBalance">
-₹0
-</h2>
-
-</div>
-
-</div>
-
-<button class="transfer-btn"
-onclick="transferCoinToWallet()">
-
-TRANSFER TO WALLET
-
-</button>
-
-</div>
-
-<!-- BONUS -->
-
-<div class="section">
-
-<div class="section-title">
-
-<i class="fa-solid fa-gift"></i>
-
-Scratch Reward Bonus
-
-</div>
-
-<div class="timeline">
-
-<!-- JOIN -->
-
-<div class="step">
-
-<div class="number num1">
-1
-</div>
-
-<div class="step-left">
-
-<div class="step-icon icon1">
-<i class="fa-solid fa-user-plus"></i>
-</div>
-
-<div class="step-info">
-
-<h2>
-JOIN BONUS
-</h2>
-
-<p>
-Registration Success
-</p>
-
-<h3>
-100 Coin
-</h3>
-
-</div>
-
-</div>
-
-<div class="status"
-id="joinStatus">
-PENDING
-</div>
-
-</div>
-
-<!-- KYC -->
-
-<div class="step">
-
-<div class="number num2">
-2
-</div>
-
-<div class="step-left">
-
-<div class="step-icon icon2">
-<i class="fa-solid fa-id-card"></i>
-</div>
-
-<div class="step-info">
-
-<h2>
-KYC BONUS
-</h2>
-
-<p>
-KYC Verify
-</p>
-
-<h3>
-100 Coin
-</h3>
-
-</div>
-
-</div>
-
-<div class="status"
-id="kycStatus">
-PENDING
-</div>
-
-</div>
-
-<!-- ACTIVE -->
-
-<div class="step">
-
-<div class="number num3">
-3
-</div>
-
-<div class="step-left">
-
-<div class="step-icon icon3">
-<i class="fa-solid fa-bolt"></i>
-</div>
-
-<div class="step-info">
-
-<h2>
-ACTIVE BONUS
-</h2>
-
-<p>
-Sponsor ₹100
-</p>
-
-<h3>
-300 Coin
-</h3>
-
-</div>
-
-</div>
-
-<div class="status"
-id="activeStatus">
-PENDING
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PENDING -->
-
-<div class="section">
-
-<div class="section-title">
-
-<i class="fa-solid fa-clock"></i>
-
-Pending Scratch
-
-</div>
-
-<div class="grid"
-id="pendingCards">
-
-</div>
-
-</div>
-
-<!-- HISTORY -->
-
-<div class="section">
-
-<div class="section-title">
-
-<i class="fa-solid fa-receipt"></i>
-
-Scratch History
-
-</div>
-
-<div id="historyCards">
-
-</div>
-
-</div>
-
-<!-- POPUP -->
-
-<div class="popup"
-id="popup">
-
-<div class="popup-box">
-
-<h2 id="popupTitle">
-Scratch Reward
-</h2>
-
-<div class="reward"
-id="rewardAmount">
-+0
-</div>
-
-<button class="claim"
-onclick="claimReward()">
-
-CLAIM REWARD
-
-</button>
-
-<button class="close"
-onclick="closePopup()">
-
-CLOSE
-
-</button>
-
-</div>
+<div id="rewardTable"></div>
 
 </div>
 
 <script>
 
-/* USER */
+/* CURRENT USER */
 
 let currentUser =
+
 JSON.parse(
 localStorage.getItem(
 "currentUser"
 )
 ) || {};
 
-let userKey =
+/* USER ID */
+
+let currentUserId =
 currentUser.userId || "guest";
 
-/* COIN */
+/* WALLET KEY */
 
-let totalCoin =
-parseInt(
-localStorage.getItem(
-"totalCoin_" + userKey
-)
-) || 0;
+let walletKey =
+"wallet_" + currentUserId;
+
+/* HISTORY KEY */
+
+let historyKey =
+"walletHistory_" + currentUserId;
 
 /* WALLET */
 
-let wallet =
-parseFloat(
+function getWallet(){
+
+return Number(
+
 localStorage.getItem(
-"wallet_" + userKey
+walletKey
 )
+
 ) || 0;
 
-/* CLAIMED */
+}
 
-let claimed =
+/* SHOW WALLET */
+
+document.getElementById(
+"wallet"
+).innerText =
+formatShort(
+getWallet()
+);
+
+/* ALL TEAMS */
+
+let allTeams =
+
 JSON.parse(
+
 localStorage.getItem(
-"claimedScratch_" + userKey
+"allTeams"
 )
-) || [];
 
-/* REWARD */
+) || {};
 
-let rewards = [];
+/* USER TEAM */
 
-/* JOIN */
+let teamUsers =
 
-if(currentUser.userId){
+allTeams[currentUserId] || [];
 
-let id =
-"join_" +
-currentUser.userId;
+/* ACTIVE USERS */
 
-joinStatus.innerHTML =
-"DONE";
+let activeUsers =
 
-joinStatus.className =
-"status done";
+teamUsers.filter(user=>
 
-if(!claimed.includes(id)){
+user.status === "Active"
 
-rewards.push({
+);
 
-id:id,
-title:"Joining Income",
-coin:100,
-icon:"fa-user-plus"
+/* TEAM COUNT */
 
-});
+let userTeam =
+activeUsers.length;
 
-}
+/* BUSINESS */
 
-}
+let userBusiness = 0;
 
-/* KYC */
+activeUsers.forEach(user=>{
 
-if(currentUser.kyc == "Verified"){
-
-let id =
-"kyc_" +
-currentUser.userId;
-
-kycStatus.innerHTML =
-"DONE";
-
-kycStatus.className =
-"status done";
-
-if(!claimed.includes(id)){
-
-rewards.push({
-
-id:id,
-title:"KYC Income",
-coin:100,
-icon:"fa-id-card"
+userBusiness +=
+Number(user.wallet || 0);
 
 });
 
-}
+/* ADMIN SETTINGS */
+
+let savedReward = {};
+
+try{
+
+savedReward =
+
+JSON.parse(
+
+localStorage.getItem(
+"rewardSettings"
+)
+
+) || {};
+
+}catch(e){
+
+savedReward = {};
 
 }
 
-/* ACTIVE */
+/* DEFAULT */
 
-if(currentUser.status == "Active"){
+const defaultRewards = [
 
-let id =
-"active_" +
-currentUser.userId;
+{
+badge:"BRONZE",
+badgeClass:"bronze"
+},
 
-activeStatus.innerHTML =
-"DONE";
+{
+badge:"SILVER",
+badgeClass:"silver"
+},
 
-activeStatus.className =
-"status done";
+{
+badge:"GOLD",
+badgeClass:"gold"
+},
 
-if(!claimed.includes(id)){
+{
+badge:"DIAMOND",
+badgeClass:"diamond"
+},
 
-rewards.push({
+{
+badge:"CROWN",
+badgeClass:"crown"
+},
 
-id:id,
-title:"ID Active Income",
-coin:300,
-icon:"fa-bolt"
+{
+badge:"LEGEND",
+badgeClass:"legend"
+},
+
+{
+badge:"PLATINUM",
+badgeClass:"platinum"
+},
+
+{
+badge:"MASTER",
+badgeClass:"master"
+},
+
+{
+badge:"ROYAL",
+badgeClass:"royal"
+},
+
+{
+badge:"INFINITY",
+badgeClass:"infinity"
+}
+
+];
+
+/* FINAL DATA */
+
+const rewards = defaultRewards.map(item=>{
+
+let data =
+savedReward?.[item.badge] || {};
+
+return{
+
+badge:item.badge,
+
+badgeClass:item.badgeClass,
+
+team:Number(data.team || 0),
+
+business:Number(data.business || 0),
+
+income:Number(data.coin || 0)
+
+};
 
 });
 
-}
+/* SHORT FORMAT */
+
+function formatShort(num){
+
+num = Number(num);
+
+if(num >= 10000000){
+
+return (
+num / 10000000
+).toFixed(1) + "Cr";
 
 }
 
-/* UPDATE */
+if(num >= 100000){
 
-function updateTop(){
-
-coinBalance.innerHTML =
-totalCoin;
-
-transferCoin.innerHTML =
-totalCoin;
-
-walletBalance.innerHTML =
-"₹" + wallet;
+return (
+num / 100000
+).toFixed(1) + "L";
 
 }
+
+if(num >= 1000){
+
+return (
+num / 1000
+).toFixed(1) + "K";
+
+}
+
+return num;
+
+}
+
+/* MONEY */
+
+function formatMoney(x){
+
+return "₹" +
+formatShort(x);
+
+}
+
+/* TABLE */
+
+const rewardTable =
+document.getElementById(
+"rewardTable"
+);
 
 /* LOAD */
 
-function loadCards(){
+function loadRewards(){
 
-pendingCards.innerHTML="";
-historyCards.innerHTML="";
+rewardTable.innerHTML = "";
 
-rewards.forEach(item=>{
+rewards.forEach((reward,index)=>{
 
-if(claimed.includes(item.id)){
+let claimed =
 
-let cls="h1";
+localStorage.getItem(
+"claimedReward_" +
+currentUserId +
+"_" +
+index
+);
 
-if(item.icon=="fa-id-card"){
-cls="h2";
+let completed =
+
+userTeam >= reward.team &&
+
+userBusiness >= reward.business;
+
+let statusButton = "";
+
+if(claimed){
+
+statusButton = `
+
+<button class="claim-btn claimed">
+
+Claimed
+
+</button>
+
+`;
+
 }
 
-if(item.icon=="fa-bolt"){
-cls="h3";
+else if(completed){
+
+statusButton = `
+
+<button class="claim-btn claim"
+
+onclick="claimReward(
+${index},
+${reward.income},
+'${reward.badge}'
+)">
+
+Claim
+
+</button>
+
+`;
+
 }
 
-historyCards.innerHTML += `
+else{
 
-<div class="history">
+statusButton = `
 
-<div class="history-left">
+<button class="claim-btn pending">
 
-<div class="h-icon ${cls}">
-<i class="fa-solid ${item.icon}"></i>
-</div>
+Pending
+
+</button>
+
+`;
+
+}
+
+rewardTable.innerHTML += `
+
+<div class="table-row">
 
 <div>
 
-<h3>
-${item.title}
-</h3>
+<div class="badge
+${reward.badgeClass}">
 
-<p>
-Claimed
-</p>
+${reward.badge}
 
 </div>
 
 </div>
 
-<div class="history-right">
-
-<h2>
-+${item.coin}
-</h2>
-
-<div class="claimed">
-DONE
+<div class="small">
+${formatShort(reward.team)}
 </div>
 
+<div class="small">
+${formatShort(userTeam)}
+</div>
+
+<div class="small">
+${formatMoney(reward.business)}
+</div>
+
+<div class="small">
+${formatMoney(userBusiness)}
+</div>
+
+<div class="small">
+₹${formatShort(reward.income)}
+</div>
+
+<div>
+${statusButton}
 </div>
 
 </div>
 
 `;
-
-}else{
-
-pendingCards.innerHTML += `
-
-<div class="card"
-
-onclick="
-openScratch(
-'${item.id}',
-'${item.title}',
-${item.coin}
-)
-">
-
-<i class="fa-solid ${item.icon}"></i>
-
-<h3>
-${item.title}
-</h3>
-
-<p>
-Tap Here
-</p>
-
-</div>
-
-`;
-
-}
 
 });
-
-}
-
-/* POPUP */
-
-let currentId="";
-let currentCoin=0;
-
-function openScratch(id,title,coin){
-
-currentId=id;
-currentCoin=coin;
-
-popup.style.display="flex";
-
-popupTitle.innerHTML=title;
-
-rewardAmount.innerHTML=
-"+" + coin;
 
 }
 
 /* CLAIM */
 
-function claimReward(){
+function claimReward(
+index,
+amount,
+rewardName
+){
 
-if(claimed.includes(currentId)){
-return;
-}
+let wallet =
+getWallet();
 
-claimed.push(currentId);
+wallet =
+wallet + Number(amount);
 
-localStorage.setItem(
-
-"claimedScratch_" + userKey,
-
-JSON.stringify(claimed)
-
-);
-
-totalCoin += Number(currentCoin);
+/* SAVE WALLET */
 
 localStorage.setItem(
-
-"totalCoin_" + userKey,
-
-totalCoin
-
-);
-
-updateTop();
-
-loadCards();
-
-alert(
-"Reward Claimed Successfully"
-);
-
-closePopup();
-
-}
-
-/* CLOSE */
-
-function closePopup(){
-
-popup.style.display="none";
-
-}
-
-/* TRANSFER */
-
-function transferCoinToWallet(){
-
-if(totalCoin < 100){
-
-alert(
-"Minimum 100 Coin Required"
-);
-
-return;
-
-}
-
-let rupee =
-
-Math.floor(
-totalCoin / 100
-);
-
-wallet += rupee;
-
-localStorage.setItem(
-
-"wallet_" + userKey,
-
+walletKey,
 wallet
-
 );
 
-totalCoin = 0;
+/* CLAIM SAVE */
 
 localStorage.setItem(
 
-"totalCoin_" + userKey,
+"claimedReward_" +
+currentUserId +
+"_" +
+index,
 
-0
+true
 
 );
 
-updateTop();
+/* HISTORY */
+
+let history =
+
+JSON.parse(
+
+localStorage.getItem(
+historyKey
+)
+
+) || [];
+
+/* ADD HISTORY */
+
+history.unshift({
+
+date:new Date().toLocaleString(),
+
+msg:
+rewardName +
+" Reward Income",
+
+amount:amount,
+
+type:"Credit",
+
+balance:wallet
+
+});
+
+/* SAVE HISTORY */
+
+localStorage.setItem(
+
+historyKey,
+
+JSON.stringify(history)
+
+);
+
+/* UPDATE */
+
+document.getElementById(
+"wallet"
+).innerText =
+formatShort(wallet);
+
+/* RELOAD */
+
+loadRewards();
 
 alert(
-"₹" + rupee +
-" Transfer Successful"
+rewardName +
+" Reward Claimed Successfully"
 );
 
 }
+
+/* AUTO UPDATE */
+
+setInterval(()=>{
+
+document.getElementById(
+"wallet"
+).innerText =
+formatShort(
+getWallet()
+);
+
+},1000);
 
 /* START */
 
-updateTop();
-
-loadCards();
+loadRewards();
 
 </script>
 
