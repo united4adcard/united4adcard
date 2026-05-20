@@ -127,25 +127,6 @@ margin:10px 0;
 font-size:18px;
 }
 
-/* CHARGE */
-
-#chargeText{
-font-size:13px;
-font-weight:700;
-color:green;
-text-align:center;
-margin-top:5px;
-}
-
-/* MEMBER NAME */
-
-#name{
-color:#00a651;
-font-size:15px;
-font-weight:900;
-margin:6px 0 2px 4px;
-}
-
 /* TABLE */
 
 .tableBox{
@@ -180,58 +161,6 @@ color:red;
 font-weight:bold;
 }
 
-/* WITHDRAW */
-
-.withdrawCard{
-width:75%;
-margin:12px auto;
-background:linear-gradient(135deg,#7b00ff,#00c6ff);
-padding:18px;
-border-radius:28px;
-color:white;
-box-shadow:0 10px 25px rgba(123,0,255,0.30);
-}
-
-.withdrawTitle{
-text-align:center;
-font-size:22px;
-font-weight:900;
-margin-bottom:15px;
-}
-
-.withdrawInfo{
-background:white;
-padding:18px;
-border-radius:22px;
-color:#222;
-}
-
-.withdrawInfo p{
-font-size:13px;
-font-weight:800;
-margin:8px 0;
-}
-
-.preview{
-margin-top:10px;
-font-size:15px;
-font-weight:900;
-color:#00a651;
-text-align:center;
-}
-
-@media(max-width:500px){
-
-.withdrawCard{
-width:92%;
-}
-
-.balance{
-font-size:24px;
-}
-
-}
-
 </style>
 
 </head>
@@ -256,12 +185,6 @@ Balance: ₹<span id="bal">0</span>
 class="activeBtn"
 onclick="showWallet()">
 Wallet
-</button>
-
-<button id="withdrawBtn"
-class="inactiveBtn"
-onclick="showWithdraw()">
-Withdrawal
 </button>
 
 <button id="historyBtn"
@@ -309,87 +232,6 @@ onclick="addMoney()">
 Submit Request
 </button>
 
-<hr style="margin:15px 0">
-
-<!-- TRANSFER -->
-
-<h3>Transfer Money</h3>
-
-<div class="inputBox">
-
-<input id="mobile"
-maxlength="10"
-placeholder="Receiver Mobile">
-
-<div id="name"></div>
-
-<input id="sendAmount"
-type="number"
-placeholder="Amount">
-
-</div>
-
-<div id="chargeText"></div>
-
-<button class="btn"
-onclick="sendMoney()">
-Send Money
-</button>
-
-</div>
-
-<!-- WITHDRAW -->
-
-<div id="withdrawSection"
-style="display:none">
-
-<div class="withdrawCard">
-
-<div class="withdrawTitle">
-💸 Withdrawal
-</div>
-
-<div class="withdrawInfo">
-
-<p>Minimum Withdrawal ₹100</p>
-
-<p>TDS Charge 5%</p>
-
-<p>Platform Charge 5%</p>
-
-<p>Payment Only KYC Bank Account</p>
-
-<p>Processing Time 0-24 Hours</p>
-
-<input id="withdrawAmount"
-type="number"
-placeholder="Enter Withdrawal Amount">
-
-<input id="accName"
-readonly
-placeholder="Account Holder Name">
-
-<input id="accountNumber"
-readonly
-placeholder="Account Number">
-
-<input id="ifsc"
-readonly
-placeholder="IFSC Code">
-
-<div class="preview"
-id="withdrawPreview">
-</div>
-
-<button class="btn"
-onclick="withdrawMoney()">
-Withdraw Now
-</button>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- HISTORY -->
@@ -431,39 +273,22 @@ style="display:none">
 
 <script>
 
-/* =========================================
-CURRENT USER
-========================================= */
+/* USER */
 
 let currentUser =
-JSON.parse(
 localStorage.getItem(
 "currentUser"
-)
-) || {};
-
-/* =========================================
-USER KEY
-========================================= */
+);
 
 let userKey =
-"user_" +
-currentUser.mobile;
-
-/* =========================================
-USER DATA
-========================================= */
+"user_" + currentUser;
 
 let user =
 JSON.parse(
-localStorage.getItem(
-userKey
-)
+localStorage.getItem(userKey)
 ) || {};
 
-/* =========================================
-FIX USER DATA
-========================================= */
+/* DEFAULT */
 
 if(!user.wallet){
 user.wallet = 0;
@@ -473,126 +298,72 @@ if(!user.history){
 user.history = [];
 }
 
-/* =========================================
-MAIN WALLET
-========================================= */
+/* SCRATCH WALLET */
 
-let balance =
-parseInt(
-
+let scratchWallet =
+parseFloat(
 localStorage.getItem(
-"wallet_" +
-currentUser.userId
+"wallet_" + currentUser
 )
-
 ) || 0;
 
-/* =========================================
-SYNC OLD SYSTEM
-========================================= */
+/* SYNC */
 
-user.wallet =
-balance;
+if(scratchWallet > 0){
 
-/* =========================================
-HISTORY
-========================================= */
+user.wallet = scratchWallet;
+
+}
+
+/* DATA */
+
+let balance =
+user.wallet;
 
 let history =
 user.history;
 
-/* =========================================
-SHOW BALANCE
-========================================= */
+/* BALANCE */
 
 document.getElementById(
 "bal"
 ).innerText =
 balance;
 
-/* =========================================
-AUTO KYC DATA
-========================================= */
-
-accName.value =
-user.accName || "";
-
-accountNumber.value =
-user.accNumber || "";
-
-ifsc.value =
-user.ifsc || "";
-
-/* =========================================
-SAVE USER
-========================================= */
+/* SAVE */
 
 function saveUser(){
-
-user.wallet =
-balance;
-
-/* OLD SYSTEM SAVE */
 
 localStorage.setItem(
 userKey,
 JSON.stringify(user)
 );
 
-/* MAIN WALLET SAVE */
+/* SYNC */
 
 localStorage.setItem(
+"wallet_" + currentUser,
+user.wallet
+);
 
-"wallet_" +
-currentUser.userId,
-
-balance
-
+localStorage.setItem(
+"mainWallet",
+user.wallet
 );
 
 }
 
-/* =========================================
-SWITCH
-========================================= */
+/* SWITCH */
 
 function showWallet(){
 
 walletSection.style.display =
 "block";
 
-withdrawSection.style.display =
-"none";
-
 historySection.style.display =
 "none";
 
 walletBtn.className =
-"activeBtn";
-
-withdrawBtn.className =
-"inactiveBtn";
-
-historyBtn.className =
-"inactiveBtn";
-
-}
-
-function showWithdraw(){
-
-walletSection.style.display =
-"none";
-
-withdrawSection.style.display =
-"block";
-
-historySection.style.display =
-"none";
-
-walletBtn.className =
-"inactiveBtn";
-
-withdrawBtn.className =
 "activeBtn";
 
 historyBtn.className =
@@ -605,16 +376,10 @@ function showHistory(){
 walletSection.style.display =
 "none";
 
-withdrawSection.style.display =
-"none";
-
 historySection.style.display =
 "block";
 
 walletBtn.className =
-"inactiveBtn";
-
-withdrawBtn.className =
 "inactiveBtn";
 
 historyBtn.className =
@@ -624,9 +389,7 @@ loadHistory();
 
 }
 
-/* =========================================
-ADD MONEY
-========================================= */
+/* ADD MONEY */
 
 function addMoney(){
 
@@ -686,386 +449,7 @@ method.value="";
 
 }
 
-/* =========================================
-MEMBER NAME
-========================================= */
-
-document.getElementById(
-"mobile"
-).addEventListener(
-"input",
-function(){
-
-let m =
-this.value.trim();
-
-if(m.length===10){
-
-let data =
-localStorage.getItem(
-"user_"+m
-);
-
-if(data){
-
-let u =
-JSON.parse(data);
-
-document.getElementById(
-"name"
-).innerText =
-"Member Name : " + u.name;
-
-}else{
-
-document.getElementById(
-"name"
-).innerText =
-"User Not Found";
-
-}
-
-}else{
-
-document.getElementById(
-"name"
-).innerText = "";
-
-}
-
-});
-
-/* =========================================
-CHARGE
-========================================= */
-
-sendAmount.oninput=function(){
-
-let amt =
-Number(sendAmount.value);
-
-let charge =
-Math.ceil(amt/100)*2;
-
-if(amt>0){
-
-chargeText.innerText =
-"Charge ₹"+charge+
-" | Total ₹"+(amt+charge);
-
-}else{
-
-chargeText.innerText="";
-
-}
-
-}
-
-/* =========================================
-SEND MONEY
-========================================= */
-
-function sendMoney(){
-
-let m =
-mobile.value.trim();
-
-let amt =
-Number(sendAmount.value);
-
-let receiver =
-JSON.parse(
-localStorage.getItem(
-"user_"+m
-));
-
-if(!receiver){
-
-alert("User Not Found");
-
-return;
-
-}
-
-if(amt<=0){
-
-alert("Enter Valid Amount");
-
-return;
-
-}
-
-let charge =
-Math.ceil(amt/100)*2;
-
-let total =
-amt + charge;
-
-if(total > balance){
-
-alert("Insufficient Balance");
-
-return;
-
-}
-
-/* BALANCE */
-
-balance -= total;
-
-user.wallet = balance;
-
-/* RECEIVER */
-
-receiver.wallet =
-(receiver.wallet || 0) + amt;
-
-/* MAIN WALLET UPDATE */
-
-localStorage.setItem(
-
-"wallet_" +
-receiver.userId,
-
-receiver.wallet
-
-);
-
-let date =
-new Date().toLocaleString();
-
-/* SENDER HISTORY */
-
-history.unshift({
-
-date:date,
-
-type:"Debit",
-
-amt:total,
-
-msg:
-"Money Transfer To " +
-receiver.name,
-
-bal:balance
-
-});
-
-/* RECEIVER HISTORY */
-
-receiver.history =
-receiver.history || [];
-
-receiver.history.unshift({
-
-date:date,
-
-type:"Credit",
-
-amt:amt,
-
-msg:
-"Received Money From " +
-user.name,
-
-bal:receiver.wallet
-
-});
-
-/* SAVE */
-
-saveUser();
-
-localStorage.setItem(
-"user_"+m,
-JSON.stringify(receiver)
-);
-
-bal.innerText =
-balance;
-
-alert(
-"Money Sent Successfully"
-);
-
-/* RESET */
-
-mobile.value="";
-
-sendAmount.value="";
-
-document.getElementById(
-"name"
-).innerText="";
-
-chargeText.innerText="";
-
-}
-
-/* =========================================
-WITHDRAW PREVIEW
-========================================= */
-
-withdrawAmount.oninput=function(){
-
-let amt =
-Number(this.value);
-
-if(amt>0){
-
-let tds =
-amt * 0.05;
-
-let charge =
-amt * 0.05;
-
-let final =
-amt - tds - charge;
-
-withdrawPreview.innerHTML =
-
-"Final Receive Amount ₹"+
-final.toFixed(2);
-
-}else{
-
-withdrawPreview.innerHTML="";
-
-}
-
-}
-
-/* =========================================
-WITHDRAW
-========================================= */
-
-function withdrawMoney(){
-
-let amt =
-Number(
-withdrawAmount.value
-);
-
-if(amt < 100){
-
-alert(
-"Minimum Withdrawal ₹100"
-);
-
-return;
-
-}
-
-if(amt > balance){
-
-alert("Insufficient Balance");
-
-return;
-
-}
-
-if(!user.accNumber){
-
-alert("Complete KYC First");
-
-return;
-
-}
-
-let tds =
-amt * 0.05;
-
-let charge =
-amt * 0.05;
-
-let final =
-amt - tds - charge;
-
-balance -= amt;
-
-user.wallet = balance;
-
-let date =
-new Date().toLocaleString();
-
 /* HISTORY */
-
-history.unshift({
-
-date:date,
-
-type:"Debit",
-
-amt:amt,
-
-msg:
-"Withdrawal | TDS ₹"+
-tds.toFixed(0)+
-" | Charge ₹"+
-charge.toFixed(0)+
-" | Receive ₹"+
-final.toFixed(0),
-
-bal:balance
-
-});
-
-/* REQUEST */
-
-let withdrawReq =
-JSON.parse(
-localStorage.getItem(
-"withdrawRequests"
-)) || [];
-
-withdrawReq.push({
-
-mobile:user.mobile,
-
-name:user.name,
-
-amount:amt,
-
-tds:tds,
-
-charge:charge,
-
-final:final,
-
-account:user.accNumber,
-
-ifsc:user.ifsc,
-
-status:"Pending",
-
-date:date
-
-});
-
-localStorage.setItem(
-"withdrawRequests",
-JSON.stringify(withdrawReq)
-);
-
-saveUser();
-
-bal.innerText =
-balance;
-
-alert(
-"Withdrawal Request Sent"
-);
-
-withdrawAmount.value="";
-
-withdrawPreview.innerHTML="";
-
-}
-
-/* =========================================
-HISTORY
-========================================= */
 
 function loadHistory(){
 
@@ -1136,28 +520,29 @@ x.type=="Credit"
 
 }
 
-/* =========================================
-AUTO UPDATE
-========================================= */
+/* AUTO UPDATE */
 
 setInterval(()=>{
 
-balance =
-parseInt(
+let latestWallet =
+
+parseFloat(
 
 localStorage.getItem(
-"wallet_" +
-currentUser.userId
+"wallet_" + currentUser
 )
 
 ) || 0;
 
-bal.innerText =
-balance;
+user.wallet = latestWallet;
+
+balance = latestWallet;
+
+bal.innerText = balance;
 
 },1000);
 
 </script>
 
 </body>
-</html>
+  </html>
