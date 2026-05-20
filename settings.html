@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Settings
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:14px 16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:44px;
+height:44px;
+
+border-radius:12px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.setting-icon{
+
+width:36px;
+height:36px;
+
+border-radius:10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.06);
+
+font-size:14px;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+/* SETTING CARD */
+
+.card{
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:10px;
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+/* ICON */
+
+.icon{
+
+width:42px;
+height:42px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+
+color:white;
+}
+
+/* TEXT */
+
+.text h3{
+font-size:13px;
+}
+
+.text p{
+margin-top:4px;
+font-size:9px;
+color:#94a3b8;
+}
+
+/* SWITCH */
+
+.switch{
+position:relative;
+width:44px;
+height:24px;
+}
+
+.switch input{
+display:none;
+}
+
+.slider{
+
+position:absolute;
+cursor:pointer;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:#334155;
+
+border-radius:30px;
+
+transition:.3s;
+}
+
+.slider:before{
+
+content:'';
+
+position:absolute;
+
+height:18px;
+width:18px;
+
+left:3px;
+top:3px;
+
+background:white;
+
+border-radius:50%;
+
+transition:.3s;
+}
+
+input:checked + .slider{
+background:#14b8a6;
+}
+
+input:checked + .slider:before{
+transform:translateX(20px);
+}
+
+/* LOGOUT */
+
+.logout{
+
+margin-top:18px;
+
+height:48px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:13px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#dc2626,
+#ef4444
+);
+
+color:white;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:10px;
+right:10px;
+bottom:10px;
+
+height:70px;
+
+border-radius:22px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:8px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-28px;
+
+font-size:22px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html"
+class="logo">
+
+<img src="image.png">
+
+</a>
+
+<div class="setting-icon">
+<i class="fa-solid fa-gear"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Settings
+</h2>
+
+<p>
+Manage app preferences easily
+</p>
+
+</div>
+
+<!-- SETTINGS -->
+
+<div class="box">
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-moon"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Dark Mode
+</h3>
+
+<p>
+Enable dark appearance
+</p>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-lock"></i>
+</div>
+
+<div class="text">
+
+<h3>
+App Lock
+</h3>
+
+<p>
+Secure app with password
+</p>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Notifications
+</h3>
+
+<p>
+Enable app alerts
+</p>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-language"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Language
+</h3>
+
+<p>
+English / Hindi
+</p>
+
+</div>
+
+</div>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="left">
+
+<div class="icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Privacy Policy
+</h3>
+
+<p>
+Read privacy details
+</p>
+
+</div>
+
+</div>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+<!-- LOGOUT -->
+
+<div class="logout">
+Logout Account
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

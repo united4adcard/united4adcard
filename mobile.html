@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Secure Mobile Transfer
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+color:white;
+
+padding-bottom:120px;
+
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+.header{
+
+padding:16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back{
+
+width:42px;
+height:42px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:16px;
+
+text-decoration:none;
+}
+
+.header-title{
+
+font-size:19px;
+font-weight:800;
+}
+
+/* TOP CARD */
+
+.top-card{
+
+margin:0 16px;
+
+padding:20px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+135deg,
+#111827,
+#1e293b
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+/* BALANCE */
+
+.balance-text{
+
+font-size:13px;
+
+color:#94a3b8;
+}
+
+.balance{
+
+margin-top:6px;
+
+font-size:38px;
+font-weight:800;
+
+color:#22d3ee;
+}
+
+/* OPTION */
+
+.option-box{
+
+display:flex;
+
+gap:10px;
+
+margin-top:18px;
+}
+
+.option-btn{
+
+flex:1;
+
+height:48px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:13px;
+font-weight:800;
+
+cursor:pointer;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+}
+
+.activeOption{
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+}
+
+/* SEARCH */
+
+.search-box{
+
+margin-top:18px;
+
+height:58px;
+
+border-radius:18px;
+
+display:flex;
+align-items:center;
+
+padding:0 16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.search-box i{
+
+font-size:18px;
+
+color:#94a3b8;
+}
+
+.search-box input{
+
+flex:1;
+
+height:100%;
+
+border:none;
+outline:none;
+
+background:none;
+
+padding-left:12px;
+
+font-size:15px;
+
+color:white;
+}
+
+.search-box input::placeholder{
+color:#94a3b8;
+}
+
+/* USER CARD */
+
+.user-card{
+
+margin-top:14px;
+
+padding:14px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.05);
+
+display:none;
+
+align-items:center;
+justify-content:space-between;
+}
+
+.user-left{
+
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.user-icon{
+
+width:52px;
+height:52px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:20px;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+color:white;
+}
+
+.user-name{
+
+font-size:15px;
+font-weight:700;
+}
+
+.user-mobile{
+
+font-size:11px;
+
+color:#94a3b8;
+
+margin-top:3px;
+}
+
+/* AMOUNT */
+
+.amount-box{
+
+margin-top:18px;
+
+display:none;
+}
+
+.amount-title{
+
+font-size:13px;
+font-weight:700;
+
+margin-bottom:10px;
+}
+
+.amount-input{
+
+width:100%;
+
+height:65px;
+
+border:none;
+outline:none;
+
+border-radius:22px;
+
+padding:0 20px;
+
+font-size:28px;
+font-weight:800;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.amount-input::placeholder{
+color:#64748b;
+}
+
+/* CHARGE */
+
+.charge{
+
+margin-top:10px;
+
+font-size:12px;
+font-weight:700;
+
+color:#facc15;
+}
+
+/* BUTTON */
+
+.pay-btn{
+
+width:100%;
+
+height:56px;
+
+margin-top:18px;
+
+border:none;
+
+border-radius:20px;
+
+font-size:16px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+color:white;
+
+display:none;
+
+cursor:pointer;
+}
+
+/* HISTORY */
+
+.history{
+
+padding:18px 16px 0;
+}
+
+.history-title{
+
+font-size:18px;
+font-weight:800;
+
+margin-bottom:12px;
+}
+
+.history-box{
+
+padding:14px;
+
+border-radius:22px;
+
+margin-bottom:12px;
+
+background:
+rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.h-left{
+
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.h-icon{
+
+width:48px;
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:18px;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+}
+
+.h-name{
+
+font-size:14px;
+font-weight:700;
+}
+
+.h-date{
+
+margin-top:4px;
+
+font-size:10px;
+
+color:#94a3b8;
+}
+
+.h-amount{
+
+font-size:17px;
+font-weight:800;
+
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html"
+class="back">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<div class="header-title">
+To Mobile
+</div>
+
+<div style="width:42px"></div>
+
+</div>
+
+<!-- TOP CARD -->
+
+<div class="top-card">
+
+<div class="balance-text">
+Available Balance
+</div>
+
+<div class="balance"
+id="walletBalance">
+₹0
+</div>
+
+<!-- OPTION -->
+
+<div class="option-box">
+
+<button class="option-btn activeOption"
+id="mobileBtn"
+onclick="setMode('mobile')">
+
+Mobile Number
+
+</button>
+
+<button class="option-btn"
+id="referralBtn"
+onclick="setMode('referral')">
+
+Referral Code
+
+</button>
+
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text"
+id="searchInput"
+placeholder="Enter Mobile Number">
+
+</div>
+
+<!-- USER CARD -->
+
+<div class="user-card"
+id="userCard">
+
+<div class="user-left">
+
+<div class="user-icon">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div>
+
+<div class="user-name"
+id="userName">
+Member Name
+</div>
+
+<div class="user-mobile"
+id="userMobile">
+9999999999
+</div>
+
+</div>
+
+</div>
+
+<i class="fa-solid fa-circle-check"
+style="
+font-size:22px;
+color:#22c55e;
+"></i>
+
+</div>
+
+<!-- AMOUNT -->
+
+<div class="amount-box"
+id="amountBox">
+
+<div class="amount-title">
+Enter Amount
+</div>
+
+<input type="number"
+id="amount"
+class="amount-input"
+placeholder="₹0">
+
+<div class="charge"
+id="chargeText">
+</div>
+
+</div>
+
+<!-- BUTTON -->
+
+<button class="pay-btn"
+id="payBtn"
+onclick="sendMoney()">
+
+PAY NOW
+
+</button>
+
+</div>
+
+<!-- HISTORY -->
+
+<div class="history">
+
+<div class="history-title">
+Recent Payments
+</div>
+
+<div id="historyBox">
+
+</div>
+
+</div>
+
+<script>
+
+/* CURRENT USER */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+) || {};
+
+/* WALLET */
+
+let walletKey =
+"wallet_" +
+currentUser.userId;
+
+let balance =
+parseInt(
+localStorage.getItem(
+walletKey
+)
+) || 0;
+
+/* SHOW BALANCE */
+
+walletBalance.innerHTML =
+"₹" + balance;
+
+/* USER */
+
+let userKey =
+"user_" +
+currentUser.mobile;
+
+let user =
+JSON.parse(
+localStorage.getItem(
+userKey
+)
+) || {};
+
+if(!user.history){
+user.history = [];
+}
+
+/* MODE */
+
+let currentMode =
+"mobile";
+
+/* SELECTED USER */
+
+let selectedUser =
+null;
+
+/* MODE CHANGE */
+
+function setMode(mode){
+
+currentMode = mode;
+
+searchInput.value = "";
+
+userCard.style.display =
+"none";
+
+amountBox.style.display =
+"none";
+
+payBtn.style.display =
+"none";
+
+selectedUser = null;
+
+if(mode == "mobile"){
+
+mobileBtn.classList.add(
+"activeOption"
+);
+
+referralBtn.classList.remove(
+"activeOption"
+);
+
+searchInput.placeholder =
+"Enter Mobile Number";
+
+}else{
+
+referralBtn.classList.add(
+"activeOption"
+);
+
+mobileBtn.classList.remove(
+"activeOption"
+);
+
+searchInput.placeholder =
+"Enter Referral Code";
+
+}
+
+}
+
+/* SEARCH */
+
+searchInput.addEventListener(
+"input",
+function(){
+
+let value =
+this.value.trim();
+
+selectedUser = null;
+
+/* MOBILE */
+
+if(currentMode == "mobile"){
+
+/* SECURITY */
+
+this.value =
+this.value.replace(
+/[^0-9]/g,
+''
+);
+
+if(this.value.length > 10){
+
+this.value =
+this.value.slice(0,10);
+
+}
+
+if(this.value.length == 10){
+
+let data =
+localStorage.getItem(
+"user_" + this.value
+);
+
+if(data){
+
+selectedUser =
+JSON.parse(data);
+
+showUser();
+
+}else{
+
+hideUser();
+
+}
+
+}else{
+
+hideUser();
+
+}
+
+}
+
+/* REFERRAL */
+
+else{
+
+let allUsers =
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+let found =
+allUsers.find(x =>
+
+x.userId &&
+x.userId.toUpperCase() ==
+value.toUpperCase()
+
+);
+
+if(found){
+
+selectedUser = found;
+
+showUser();
+
+}else{
+
+hideUser();
+
+}
+
+}
+
+});
+
+/* SHOW USER */
+
+function showUser(){
+
+userCard.style.display =
+"flex";
+
+amountBox.style.display =
+"block";
+
+payBtn.style.display =
+"block";
+
+userName.innerHTML =
+selectedUser.name;
+
+userMobile.innerHTML =
+selectedUser.mobile;
+
+}
+
+/* HIDE USER */
+
+function hideUser(){
+
+userCard.style.display =
+"none";
+
+amountBox.style.display =
+"none";
+
+payBtn.style.display =
+"none";
+
+}
+
+/* CHARGE */
+
+amount.addEventListener(
+"input",
+function(){
+
+let amountVal =
+Number(this.value);
+
+if(amountVal > 0){
+
+let charge =
+Math.ceil(
+amountVal / 100
+) * 2;
+
+chargeText.innerHTML =
+
+"Transfer Charge ₹" +
+charge;
+
+}else{
+
+chargeText.innerHTML = "";
+
+}
+
+});
+
+/* SEND MONEY */
+
+function sendMoney(){
+
+if(!selectedUser){
+
+alert(
+"User Not Found"
+);
+
+return;
+
+}
+
+/* SELF CHECK */
+
+if(
+selectedUser.mobile ==
+currentUser.mobile
+){
+
+alert(
+"Cannot Send To Yourself"
+);
+
+return;
+
+}
+
+let amountVal =
+Number(amount.value);
+
+if(amountVal <= 0){
+
+alert(
+"Enter Valid Amount"
+);
+
+return;
+
+}
+
+/* CHARGE */
+
+let charge =
+Math.ceil(
+amountVal / 100
+) * 2;
+
+let total =
+amountVal + charge;
+
+/* BALANCE CHECK */
+
+if(total > balance){
+
+alert(
+"Insufficient Balance"
+);
+
+return;
+
+}
+
+/* DEDUCT */
+
+balance -= total;
+
+/* CREDIT */
+
+selectedUser.wallet =
+(selectedUser.wallet || 0)
++ amountVal;
+
+/* SAVE RECEIVER */
+
+localStorage.setItem(
+
+"wallet_" +
+selectedUser.userId,
+
+selectedUser.wallet
+
+);
+
+/* HISTORY */
+
+selectedUser.history =
+selectedUser.history || [];
+
+let date =
+new Date().toLocaleString();
+
+/* RECEIVER HISTORY */
+
+selectedUser.history.unshift({
+
+date:date,
+
+type:"Credit",
+
+amt:amountVal,
+
+msg:
+"Received From " +
+currentUser.name,
+
+bal:selectedUser.wallet
+
+});
+
+/* SAVE RECEIVER */
+
+localStorage.setItem(
+
+"user_" +
+selectedUser.mobile,
+
+JSON.stringify(
+selectedUser
+)
+
+);
+
+/* SENDER HISTORY */
+
+user.history.unshift({
+
+date:date,
+
+type:"Debit",
+
+amt:total,
+
+msg:
+"Sent To " +
+selectedUser.name,
+
+bal:balance
+
+});
+
+/* SAVE USER */
+
+user.wallet = balance;
+
+localStorage.setItem(
+userKey,
+JSON.stringify(user)
+);
+
+localStorage.setItem(
+walletKey,
+balance
+);
+
+/* TRANSFER HISTORY */
+
+let transferHistory =
+JSON.parse(
+localStorage.getItem(
+"mobileTransfer_" +
+currentUser.userId
+)
+) || [];
+
+transferHistory.unshift({
+
+name:selectedUser.name,
+
+mobile:selectedUser.mobile,
+
+amount:amountVal,
+
+charge:charge,
+
+date:date
+
+});
+
+localStorage.setItem(
+
+"mobileTransfer_" +
+currentUser.userId,
+
+JSON.stringify(
+transferHistory
+)
+
+);
+
+/* UPDATE */
+
+walletBalance.innerHTML =
+"₹" + balance;
+
+/* SUCCESS */
+
+alert(
+"Payment Successful"
+);
+
+/* RESET */
+
+searchInput.value = "";
+
+amount.value = "";
+
+chargeText.innerHTML = "";
+
+hideUser();
+
+/* LOAD */
+
+loadHistory();
+
+}
+
+/* HISTORY */
+
+function loadHistory(){
+
+let box =
+historyBox;
+
+box.innerHTML = "";
+
+let history =
+JSON.parse(
+localStorage.getItem(
+"mobileTransfer_" +
+currentUser.userId
+)
+) || [];
+
+if(history.length == 0){
+
+box.innerHTML = `
+
+<div style="
+padding:20px;
+text-align:center;
+font-size:13px;
+color:#94a3b8;
+">
+
+No Payment History
+
+</div>
+
+`;
+
+return;
+
+}
+
+history.forEach(item=>{
+
+box.innerHTML += `
+
+<div class="history-box">
+
+<div class="h-left">
+
+<div class="h-icon">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div>
+
+<div class="h-name">
+
+${item.name}
+
+</div>
+
+<div class="h-date">
+
+${item.mobile}
+
+</div>
+
+<div class="h-date">
+
+${item.date}
+
+</div>
+
+</div>
+
+</div>
+
+<div class="h-amount">
+
+-₹${item.amount}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* AUTO UPDATE */
+
+setInterval(()=>{
+
+balance =
+parseInt(
+localStorage.getItem(
+walletKey
+)
+) || 0;
+
+walletBalance.innerHTML =
+"₹" + balance;
+
+},1000);
+
+/* START */
+
+loadHistory();
+
+</script>
+
+</body>
+
+</html>

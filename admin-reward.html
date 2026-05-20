@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Admin Reward Settings
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:#eef2ff;
+padding:12px;
+color:#111827;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+font-size:28px;
+font-weight:800;
+margin-bottom:18px;
+color:#7c3aed;
+}
+
+/* WALLET */
+
+.wallet-box{
+background:linear-gradient(135deg,#7c3aed,#9333ea);
+padding:18px;
+border-radius:20px;
+text-align:center;
+margin-bottom:20px;
+box-shadow:0 4px 14px rgba(0,0,0,.15);
+color:white;
+}
+
+.wallet-box h2{
+font-size:18px;
+margin-bottom:6px;
+}
+
+.wallet-box h1{
+font-size:38px;
+font-weight:800;
+}
+
+/* TABLE */
+
+.table-box{
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+/* HEADER */
+
+.table-header{
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr 1fr;
+background:#7c3aed;
+padding:14px 6px;
+font-weight:700;
+text-align:center;
+font-size:12px;
+color:white;
+}
+
+/* ROW */
+
+.table-row{
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr 1fr;
+align-items:center;
+text-align:center;
+padding:12px 6px;
+border-bottom:1px solid #e5e7eb;
+}
+
+/* BADGE */
+
+.badge{
+display:inline-block;
+padding:7px 10px;
+border-radius:30px;
+font-size:10px;
+font-weight:800;
+color:white;
+min-width:90px;
+}
+
+/* COLORS */
+
+.bronze{
+background:#cd7f32;
+}
+
+.silver{
+background:#9ca3af;
+}
+
+.gold{
+background:#facc15;
+color:black;
+}
+
+.diamond{
+background:#38bdf8;
+}
+
+.crown{
+background:#a855f7;
+}
+
+.legend{
+background:#f43f5e;
+}
+
+.platinum{
+background:#14b8a6;
+}
+
+.master{
+background:#f97316;
+}
+
+.royal{
+background:#8b5cf6;
+}
+
+.infinity{
+background:#22c55e;
+}
+
+/* INPUT */
+
+.input-box{
+padding:0 3px;
+}
+
+.input-box input{
+width:100%;
+height:38px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#f3f4f6;
+text-align:center;
+font-size:11px;
+font-weight:700;
+padding:0 5px;
+}
+
+/* SAVE BUTTON */
+
+.save-btn{
+width:100%;
+height:50px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#7c3aed,#9333ea);
+color:white;
+font-size:15px;
+font-weight:800;
+margin-top:18px;
+cursor:pointer;
+box-shadow:0 4px 14px rgba(124,58,237,.3);
+}
+
+/* BACK */
+
+.back-btn{
+width:100%;
+height:45px;
+border:none;
+border-radius:15px;
+background:#111827;
+color:white;
+font-size:13px;
+font-weight:700;
+margin-top:12px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.table-header,
+.table-row{
+font-size:10px;
+padding:10px 4px;
+}
+
+.badge{
+font-size:8px;
+padding:5px 8px;
+min-width:75px;
+}
+
+.input-box input{
+height:34px;
+font-size:9px;
+}
+
+.title{
+font-size:22px;
+}
+
+.wallet-box h1{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="title">
+UNITED4ADCARD REWARD
+</div>
+
+<!-- WALLET -->
+
+<div class="wallet-box">
+
+<h2>
+Reward Setting Panel
+</h2>
+
+<h1>
+ADMIN
+</h1>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<div class="table-header">
+
+<div>Reward</div>
+<div>Target Team</div>
+<div>Business</div>
+<div>Coin</div>
+
+</div>
+
+<div id="rewardTable"></div>
+
+</div>
+
+<!-- SAVE -->
+
+<button class="save-btn"
+onclick="saveRewardSettings()">
+
+SAVE REWARD SETTINGS
+
+</button>
+
+<!-- BACK -->
+
+<button class="back-btn"
+onclick="goBack()">
+
+BACK TO ADMIN PANEL
+
+</button>
+
+<script>
+
+/* REWARDS */
+
+const rewards = [
+
+{
+name:"BRONZE",
+class:"bronze"
+},
+
+{
+name:"SILVER",
+class:"silver"
+},
+
+{
+name:"GOLD",
+class:"gold"
+},
+
+{
+name:"DIAMOND",
+class:"diamond"
+},
+
+{
+name:"CROWN",
+class:"crown"
+},
+
+{
+name:"LEGEND",
+class:"legend"
+},
+
+{
+name:"PLATINUM",
+class:"platinum"
+},
+
+{
+name:"MASTER",
+class:"master"
+},
+
+{
+name:"ROYAL",
+class:"royal"
+},
+
+{
+name:"INFINITY",
+class:"infinity"
+}
+
+];
+
+/* TABLE */
+
+const rewardTable =
+document.getElementById(
+"rewardTable"
+);
+
+rewards.forEach((item,index)=>{
+
+rewardTable.innerHTML += `
+
+<div class="table-row">
+
+<div>
+
+<div class="badge
+${item.class}">
+${item.name}
+</div>
+
+</div>
+
+<div class="input-box">
+
+<input type="number"
+id="team${index}"
+placeholder="25">
+
+</div>
+
+<div class="input-box">
+
+<input type="number"
+id="business${index}"
+placeholder="5000">
+
+</div>
+
+<div class="input-box">
+
+<input type="number"
+id="coin${index}"
+placeholder="500">
+
+</div>
+
+</div>
+
+`;
+
+});
+
+/* SAVE */
+
+function saveRewardSettings(){
+
+let rewardData = {};
+
+rewards.forEach((item,index)=>{
+
+rewardData[item.name] = {
+
+team:
+document.getElementById(
+"team"+index
+).value,
+
+business:
+document.getElementById(
+"business"+index
+).value,
+
+coin:
+document.getElementById(
+"coin"+index
+).value
+
+};
+
+});
+
+localStorage.setItem(
+
+"rewardSettings",
+
+JSON.stringify(
+rewardData
+)
+
+);
+
+window.rewardSettings =
+rewardData;
+
+alert(
+"Reward Settings Saved Successfully"
+);
+
+}
+
+/* LOAD */
+
+let saved =
+
+JSON.parse(
+
+localStorage.getItem(
+"rewardSettings"
+)
+
+);
+
+if(saved){
+
+rewards.forEach((item,index)=>{
+
+if(saved[item.name]){
+
+document.getElementById(
+"team"+index
+).value =
+
+saved[item.name].team || "";
+
+document.getElementById(
+"business"+index
+).value =
+
+saved[item.name].business || "";
+
+document.getElementById(
+"coin"+index
+).value =
+
+saved[item.name].coin || "";
+
+}
+
+});
+
+}
+
+/* BACK */
+
+function goBack(){
+
+window.location.href =
+"admin.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

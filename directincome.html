@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Direct Income
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+padding-bottom:120px;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:10px 12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back,
+.notify{
+
+width:38px;
+height:38px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:15px;
+}
+
+.title{
+
+font-size:19px;
+font-weight:900;
+color:white;
+}
+
+/* WALLET */
+
+.wallet{
+
+margin:0 12px 12px;
+
+padding:15px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.wallet-top{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.wallet-title{
+
+font-size:18px;
+font-weight:900;
+color:white;
+}
+
+.wallet-coin{
+
+margin-top:10px;
+
+font-size:34px;
+font-weight:900;
+
+color:#facc15;
+}
+
+.wallet-sub{
+
+margin-top:4px;
+
+font-size:11px;
+font-weight:700;
+
+color:#94a3b8;
+}
+
+.info-grid{
+
+margin-top:14px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:8px;
+}
+
+.info-box{
+
+padding:10px 6px;
+
+border-radius:14px;
+
+background:
+rgba(255,255,255,.05);
+
+text-align:center;
+}
+
+.info-box h3{
+
+font-size:9px;
+font-weight:700;
+
+color:#94a3b8;
+}
+
+.info-box p{
+
+margin-top:5px;
+
+font-size:15px;
+font-weight:900;
+
+color:white;
+}
+
+/* BUTTON */
+
+.transfer-btn{
+
+margin-top:14px;
+
+width:100%;
+
+height:48px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:15px;
+font-weight:900;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+color:white;
+
+cursor:pointer;
+}
+
+/* GIFT */
+
+.gift-area{
+
+padding:0 12px;
+
+display:flex;
+flex-wrap:wrap;
+
+gap:12px;
+}
+
+.gift{
+
+width:58px;
+height:58px;
+
+border-radius:18px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#f59e0b,
+#fb7185
+);
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+}
+
+/* OVERLAY */
+
+.overlay{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+rgba(0,0,0,.75);
+
+backdrop-filter:blur(5px);
+
+display:none;
+
+z-index:999;
+}
+
+.overlay.active{
+display:block;
+}
+
+/* CARD */
+
+.open-card{
+
+position:fixed;
+
+left:50%;
+top:50%;
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+width:84%;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+135deg,
+#f59e0b,
+#fb7185
+);
+
+padding:22px 16px;
+
+z-index:1000;
+
+transition:.3s;
+}
+
+.open-card.active{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+.big-gift{
+
+width:92px;
+height:92px;
+
+margin:auto;
+
+border-radius:24px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.18);
+
+font-size:42px;
+
+color:white;
+}
+
+/* SCRATCH AREA */
+
+.scratch-box{
+
+margin-top:18px;
+
+height:120px;
+
+border-radius:24px;
+
+background:#dbe4ee;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.scratch-layer{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+135deg,
+#cbd5e1,
+#e2e8f0
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+font-weight:900;
+
+color:#334155;
+
+user-select:none;
+
+touch-action:none;
+}
+
+.reward{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:30px;
+font-weight:900;
+
+color:#16a34a;
+}
+
+/* CLOSE */
+
+.close{
+
+position:absolute;
+
+right:15px;
+top:10px;
+
+font-size:22px;
+
+color:white;
+
+cursor:pointer;
+}
+
+/* HISTORY */
+
+.history{
+
+margin:18px 12px 0;
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+}
+
+.head{
+
+padding:12px;
+
+background:#0ea5e9;
+
+font-size:13px;
+font-weight:900;
+
+color:white;
+}
+
+.row{
+
+padding:11px 12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border-bottom:1px solid #e5e7eb;
+}
+
+.user{
+
+font-size:11px;
+font-weight:800;
+color:#0f172a;
+}
+
+.user span{
+
+display:block;
+
+font-size:9px;
+
+margin-top:2px;
+
+font-weight:700;
+
+color:#64748b;
+}
+
+.coin{
+
+font-size:14px;
+font-weight:900;
+
+color:#f59e0b;
+}
+
+/* NEW PREMIUM BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+
+transition:.25s;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+box-shadow:
+0 0 20px rgba(255,255,255,.15);
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+
+box-shadow:
+0 10px 25px rgba(6,182,212,.45);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<div class="title">
+Direct Income
+</div>
+
+<a href="#" class="notify">
+<i class="fa-solid fa-wallet"></i>
+</a>
+
+</div>
+
+<!-- WALLET -->
+
+<div class="wallet">
+
+<div class="wallet-top">
+
+<div class="wallet-title">
+Coin Wallet
+</div>
+
+<i class="fa-solid fa-coins"
+style="font-size:24px;color:#facc15;">
+</i>
+
+</div>
+
+<div class="wallet-coin"
+id="totalCoins">
+1400
+</div>
+
+<div class="wallet-sub">
+100 Coin = ₹1
+</div>
+
+<div class="info-grid">
+
+<div class="info-box">
+
+<h3>
+Income Coin
+</h3>
+
+<p id="incomeCoin">
+1400
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>
+Transfer Coin
+</h3>
+
+<p id="transferCoin">
+0
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>
+Balance
+</h3>
+
+<p id="walletMoney">
+₹14
+</p>
+
+</div>
+
+</div>
+
+<button class="transfer-btn"
+onclick="transferCoins()">
+
+TRANSFER TO WALLET
+
+</button>
+
+</div>
+
+<!-- GIFT -->
+
+<div class="gift-area">
+
+<div class="gift"
+onclick="openGift(this)">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="gift"
+onclick="openGift(this)">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="gift"
+onclick="openGift(this)">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="gift"
+onclick="openGift(this)">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div class="overlay"
+id="overlay"
+onclick="closeGift()">
+</div>
+
+<!-- OPEN CARD -->
+
+<div class="open-card"
+id="openCard">
+
+<div class="close"
+onclick="closeGift()">
+✕
+</div>
+
+<div class="big-gift">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="scratch-box">
+
+<div class="reward"
+id="rewardText">
++500
+</div>
+
+<div class="scratch-layer"
+id="scratchLayer">
+
+SCRATCH
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HISTORY -->
+
+<div class="history">
+
+<div class="head">
+Recent Rewards
+</div>
+
+<div id="historyBox">
+
+<div class="row">
+
+<div class="user">
+
+Mukesh
+
+<span>
+Reward Claimed
+</span>
+
+</div>
+
+<div class="coin">
++500
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NEW PREMIUM BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+let selectedGift = null;
+
+let scratched = false;
+
+/* OPEN */
+
+function openGift(gift){
+
+selectedGift = gift;
+
+scratched = false;
+
+document
+.getElementById("overlay")
+.classList.add("active");
+
+document
+.getElementById("openCard")
+.classList.add("active");
+
+document.body.style.overflow = "hidden";
+
+/* RANDOM REWARD */
+
+let rewards =
+[300,500,600,800,1000];
+
+let reward =
+rewards[
+Math.floor(
+Math.random()*rewards.length
+)
+];
+
+document
+.getElementById("rewardText")
+.innerHTML =
+"+" + reward + " COINS";
+
+/* RESET */
+
+let layer =
+document.getElementById("scratchLayer");
+
+layer.style.opacity = "1";
+
+}
+
+/* CLOSE */
+
+function closeGift(){
+
+document
+.getElementById("overlay")
+.classList.remove("active");
+
+document
+.getElementById("openCard")
+.classList.remove("active");
+
+document.body.style.overflow = "auto";
+
+}
+
+/* SCRATCH EFFECT */
+
+let layer =
+document.getElementById("scratchLayer");
+
+layer.addEventListener(
+"touchmove",
+function(){
+
+if(scratched) return;
+
+scratched = true;
+
+layer.style.transition = ".5s";
+
+layer.style.opacity = "0";
+
+let reward =
+parseInt(
+document
+.getElementById("rewardText")
+.innerHTML
+.replace("+","")
+.replace(" COINS","")
+);
+
+let totalCoins =
+parseInt(
+document
+.getElementById("totalCoins")
+.innerHTML
+);
+
+totalCoins += reward;
+
+document
+.getElementById("totalCoins")
+.innerHTML = totalCoins;
+
+document
+.getElementById("incomeCoin")
+.innerHTML = totalCoins;
+
+document
+.getElementById("walletMoney")
+.innerHTML =
+"₹" + (totalCoins/100);
+
+let row =
+document.createElement("div");
+
+row.className = "row";
+
+row.innerHTML = `
+
+<div class="user">
+
+Scratch Reward
+
+<span>
+Coin Added Successfully
+</span>
+
+</div>
+
+<div class="coin">
++${reward}
+</div>
+
+`;
+
+document
+.getElementById("historyBox")
+.prepend(row);
+
+selectedGift.style.display = "none";
+
+setTimeout(()=>{
+
+closeGift();
+
+},1500);
+
+});
+
+/* TRANSFER */
+
+function transferCoins(){
+
+let totalCoins =
+parseInt(
+document
+.getElementById("totalCoins")
+.innerHTML
+);
+
+if(totalCoins<=0){
+
+alert("No Coins Available");
+
+return;
+
+}
+
+document
+.getElementById("transferCoin")
+.innerHTML = totalCoins;
+
+document
+.getElementById("walletMoney")
+.innerHTML =
+"₹" + (totalCoins/100);
+
+document
+.getElementById("totalCoins")
+.innerHTML = 0;
+
+document
+.getElementById("incomeCoin")
+.innerHTML = 0;
+
+alert("Coins Transfer Successfully");
+
+}
+
+</script>
+
+</body>
+
+</html>

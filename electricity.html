@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Electricity Bill
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:110px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:48px;
+height:48px;
+
+border-radius:14px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.noty{
+
+width:40px;
+height:40px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.06);
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:16px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:20px;
+}
+
+.top p{
+font-size:11px;
+margin-top:4px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:18px 16px 0;
+}
+
+.label{
+font-size:12px;
+margin-bottom:8px;
+display:block;
+color:#cbd5e1;
+}
+
+.input{
+
+width:100%;
+height:50px;
+
+border:none;
+outline:none;
+
+border-radius:15px;
+
+padding:0 14px;
+
+font-size:13px;
+
+background:
+rgba(255,255,255,.06);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+color:white;
+
+margin-bottom:12px;
+}
+
+select{
+appearance:none;
+}
+
+/* BILL CARD */
+
+.bill{
+
+margin-top:8px;
+
+padding:16px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.bill-top{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.bill-top h3{
+font-size:15px;
+}
+
+.status{
+
+padding:5px 10px;
+
+border-radius:20px;
+
+font-size:10px;
+font-weight:700;
+
+background:#14532d;
+color:#4ade80;
+}
+
+.amount{
+
+margin-top:14px;
+
+font-size:28px;
+font-weight:800;
+
+color:#22d3ee;
+}
+
+.bill p{
+margin-top:4px;
+font-size:11px;
+color:#94a3b8;
+}
+
+/* BUTTONS */
+
+.btn{
+
+margin-top:14px;
+
+width:100%;
+height:52px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:14px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+
+color:white;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:74px;
+
+border-radius:24px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:9px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:18px;
+margin-bottom:4px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:64px;
+height:64px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-30px;
+
+font-size:24px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+<img src="image.png">
+</div>
+
+<div class="noty">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Electricity Bill
+</h2>
+
+<p>
+Fast secure electricity payment
+</p>
+
+</div>
+
+<!-- FORM -->
+
+<div class="box">
+
+<label class="label">
+Consumer Number
+</label>
+
+<input type="number"
+class="input"
+placeholder="Enter consumer number">
+
+<label class="label">
+State
+</label>
+
+<select class="input">
+
+<option>
+Select State
+</option>
+
+<option>
+Rajasthan
+</option>
+
+<option>
+Gujarat
+</option>
+
+<option>
+Delhi
+</option>
+
+<option>
+Maharashtra
+</option>
+
+<option>
+Uttar Pradesh
+</option>
+
+</select>
+
+<label class="label">
+Electricity Board
+</label>
+
+<select class="input">
+
+<option>
+Select Board
+</option>
+
+<option>
+JVVNL
+</option>
+
+<option>
+AVVNL
+</option>
+
+<option>
+TPDDL
+</option>
+
+<option>
+MGVCL
+</option>
+
+<option>
+BSES
+</option>
+
+</select>
+
+<button class="btn">
+Fetch Bill
+</button>
+
+<!-- BILL -->
+
+<div class="bill">
+
+<div class="bill-top">
+
+<h3>
+Current Bill
+</h3>
+
+<div class="status">
+Pending
+</div>
+
+</div>
+
+<div class="amount">
+₹1,480
+</div>
+
+<p>
+Due Date : 28 May 2026
+</p>
+
+<button class="btn">
+Pay Electricity Bill
+</button>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

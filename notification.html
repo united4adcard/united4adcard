@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Notifications
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:14px 16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:44px;
+height:44px;
+
+border-radius:12px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.clear{
+
+font-size:10px;
+font-weight:700;
+
+padding:8px 12px;
+
+border-radius:10px;
+
+background:
+rgba(255,255,255,.06);
+
+color:white;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+/* NOTIFICATION */
+
+.notify{
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+gap:12px;
+
+margin-bottom:10px;
+
+position:relative;
+}
+
+.unread::after{
+
+content:'';
+
+position:absolute;
+
+right:12px;
+top:12px;
+
+width:8px;
+height:8px;
+
+border-radius:50%;
+
+background:#22d3ee;
+}
+
+/* ICON */
+
+.icon{
+
+width:42px;
+height:42px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+
+color:white;
+
+flex-shrink:0;
+}
+
+/* TEXT */
+
+.text h3{
+font-size:13px;
+}
+
+.text p{
+margin-top:4px;
+font-size:9px;
+line-height:1.5;
+color:#94a3b8;
+}
+
+.time{
+margin-top:5px;
+font-size:8px;
+color:#64748b;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:10px;
+right:10px;
+bottom:10px;
+
+height:70px;
+
+border-radius:22px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:8px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-28px;
+
+font-size:22px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html"
+class="logo">
+
+<img src="image.png">
+
+</a>
+
+<div class="clear">
+Clear All
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Notifications
+</h2>
+
+<p>
+Latest updates and alerts
+</p>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="box">
+
+<!-- NOTIFICATION -->
+
+<div class="notify unread">
+
+<div class="icon">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Recharge Successful
+</h3>
+
+<p>
+Your mobile recharge of ₹299 completed successfully.
+</p>
+
+<div class="time">
+2 Minutes Ago
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div class="notify unread">
+
+<div class="icon">
+<i class="fa-solid fa-bolt"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Electricity Bill Pending
+</h3>
+
+<p>
+Your electricity bill payment is pending. Pay before due date.
+</p>
+
+<div class="time">
+15 Minutes Ago
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div class="notify">
+
+<div class="icon">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Referral Bonus Added
+</h3>
+
+<p>
+₹250 referral bonus credited to your wallet balance.
+</p>
+
+<div class="time">
+Today • 10:25 AM
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div class="notify">
+
+<div class="icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
+
+<div class="text">
+
+<h3>
+KYC Under Review
+</h3>
+
+<p>
+Your KYC documents are currently under verification process.
+</p>
+
+<div class="time">
+Yesterday • 08:40 PM
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTIFICATION -->
+
+<div class="notify">
+
+<div class="icon">
+<i class="fa-solid fa-wallet"></i>
+</div>
+
+<div class="text">
+
+<h3>
+Money Added
+</h3>
+
+<p>
+₹500 successfully added to your wallet balance.
+</p>
+
+<div class="time">
+18 May • 04:10 PM
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

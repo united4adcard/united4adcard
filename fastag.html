@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+FASTag Recharge
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:14px 16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:44px;
+height:44px;
+
+border-radius:12px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.noty{
+
+width:36px;
+height:36px;
+
+border-radius:10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.06);
+
+font-size:14px;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+.label{
+font-size:11px;
+margin-bottom:6px;
+display:block;
+color:#cbd5e1;
+}
+
+.input{
+
+width:100%;
+height:46px;
+
+border:none;
+outline:none;
+
+border-radius:13px;
+
+padding:0 12px;
+
+font-size:12px;
+
+background:
+rgba(255,255,255,.06);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+color:white;
+
+margin-bottom:10px;
+}
+
+select{
+appearance:none;
+}
+
+/* BALANCE */
+
+.balance{
+
+margin-top:6px;
+
+padding:12px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.balance h3{
+font-size:12px;
+}
+
+.balance-amount{
+
+margin-top:6px;
+
+font-size:22px;
+font-weight:800;
+
+color:#22d3ee;
+}
+
+.balance p{
+margin-top:3px;
+font-size:9px;
+color:#94a3b8;
+}
+
+/* PLAN */
+
+.plan-title{
+font-size:14px;
+font-weight:700;
+margin:14px 0 10px;
+}
+
+.plans{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:8px;
+}
+
+.plan{
+
+padding:10px;
+
+border-radius:14px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.plan h3{
+font-size:16px;
+}
+
+.plan p{
+font-size:9px;
+color:#94a3b8;
+margin-top:3px;
+}
+
+.btn2{
+
+margin-top:8px;
+
+height:30px;
+
+border-radius:8px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:10px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+}
+
+/* PAY */
+
+.pay{
+
+margin-top:14px;
+
+width:100%;
+height:48px;
+
+border:none;
+
+border-radius:13px;
+
+font-size:13px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:10px;
+right:10px;
+bottom:10px;
+
+height:70px;
+
+border-radius:22px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:8px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-28px;
+
+font-size:22px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+<img src="image.png">
+</div>
+
+<div class="noty">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+FASTag Recharge
+</h2>
+
+<p>
+Quick vehicle recharge
+</p>
+
+</div>
+
+<!-- FORM -->
+
+<div class="box">
+
+<label class="label">
+Vehicle Number
+</label>
+
+<input type="text"
+class="input"
+placeholder="RJ14AB1234">
+
+<label class="label">
+FASTag Company
+</label>
+
+<select class="input">
+
+<option>
+Select Company
+</option>
+
+<option>
+Paytm FASTag
+</option>
+
+<option>
+Airtel FASTag
+</option>
+
+<option>
+ICICI FASTag
+</option>
+
+<option>
+HDFC FASTag
+</option>
+
+</select>
+
+<label class="label">
+Recharge Amount
+</label>
+
+<input type="number"
+class="input"
+placeholder="₹ Enter amount">
+
+<!-- BALANCE -->
+
+<div class="balance">
+
+<h3>
+FASTag Balance
+</h3>
+
+<div class="balance-amount">
+₹850
+</div>
+
+<p>
+Updated now
+</p>
+
+</div>
+
+<!-- PLAN -->
+
+<div class="plan-title">
+Quick Plans
+</div>
+
+<div class="plans">
+
+<div class="plan">
+
+<h3>
+₹200
+</h3>
+
+<p>
+Small Plan
+</p>
+
+<div class="btn2">
+Select
+</div>
+
+</div>
+
+<div class="plan">
+
+<h3>
+₹500
+</h3>
+
+<p>
+Popular
+</p>
+
+<div class="btn2">
+Select
+</div>
+
+</div>
+
+<div class="plan">
+
+<h3>
+₹1000
+</h3>
+
+<p>
+Premium
+</p>
+
+<div class="btn2">
+Select
+</div>
+
+</div>
+
+<div class="plan">
+
+<h3>
+₹2000
+</h3>
+
+<p>
+Unlimited
+</p>
+
+<div class="btn2">
+Select
+</div>
+
+</div>
+
+</div>
+
+<button class="pay">
+Recharge Now
+</button>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

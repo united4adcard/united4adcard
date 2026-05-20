@@ -1,0 +1,722 @@
+<!-- =========================================
+FILE NAME = create-account.html
+FINAL REFERRAL NAME SHOW FIXED
+REAL TIME REFERRAL CHECK
+AUTO REFERRAL USER SHOW
+ALL OLD DESIGN SAFE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Create Account
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+background:#020617;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:14px;
+}
+
+/* BACKGROUND */
+
+.bg1{
+position:absolute;
+width:200px;
+height:200px;
+background:#9333ea;
+border-radius:50%;
+filter:blur(100px);
+top:-100px;
+left:-100px;
+opacity:.35;
+}
+
+.bg2{
+position:absolute;
+width:200px;
+height:200px;
+background:#06b6d4;
+border-radius:50%;
+filter:blur(100px);
+bottom:-100px;
+right:-100px;
+opacity:.25;
+}
+
+/* CARD */
+
+.register-card{
+
+position:relative;
+
+width:100%;
+max-width:320px;
+
+padding:16px 16px 18px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+180deg,
+rgba(17,24,39,.96),
+rgba(2,6,23,.95)
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+box-shadow:
+0 0 28px rgba(0,0,0,.5);
+
+overflow:hidden;
+z-index:2;
+}
+
+/* LOGO */
+
+.logo-box{
+text-align:center;
+margin-bottom:8px;
+}
+
+.logo-image{
+width:150px;
+display:block;
+margin:auto;
+object-fit:contain;
+}
+
+/* TITLE */
+
+.title{
+margin-top:4px;
+text-align:center;
+}
+
+.title h1{
+font-size:24px;
+font-weight:800;
+color:white;
+}
+
+.title p{
+margin-top:5px;
+font-size:10px;
+color:#94a3b8;
+}
+
+/* INPUT */
+
+.input-box{
+margin-top:11px;
+position:relative;
+}
+
+.input-box input{
+
+width:100%;
+height:44px;
+
+border:none;
+outline:none;
+
+padding:0 14px;
+
+border-radius:14px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+font-size:12px;
+color:white;
+}
+
+.input-box input:focus{
+border-color:#38bdf8;
+}
+
+.input-box label{
+
+position:absolute;
+
+left:14px;
+top:13px;
+
+font-size:11px;
+
+color:#94a3b8;
+
+pointer-events:none;
+
+transition:.25s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+
+top:-6px;
+left:10px;
+
+font-size:7px;
+
+padding:2px 5px;
+
+background:#020617;
+
+border-radius:20px;
+
+color:#38bdf8;
+}
+
+/* REFERRAL NAME */
+
+.referral-name{
+
+margin-top:7px;
+margin-left:6px;
+
+font-size:10px;
+
+font-weight:700;
+
+color:#22d3ee;
+
+display:none;
+}
+
+/* BUTTON */
+
+.create-btn{
+
+width:100%;
+height:44px;
+
+margin-top:15px;
+
+border:none;
+outline:none;
+
+border-radius:14px;
+
+font-size:15px;
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+#9333ea,
+#3b82f6,
+#22d3ee
+);
+
+cursor:pointer;
+}
+
+/* SUCCESS */
+
+.success{
+
+margin-top:10px;
+
+text-align:center;
+
+font-size:11px;
+
+font-weight:700;
+
+color:#22c55e;
+
+display:none;
+}
+
+/* LOGIN */
+
+.login-text{
+
+margin-top:12px;
+
+text-align:center;
+
+font-size:9px;
+
+color:#94a3b8;
+}
+
+.login-text a{
+
+text-decoration:none;
+
+color:#22d3ee;
+
+font-weight:600;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg1"></div>
+<div class="bg2"></div>
+
+<div class="register-card">
+
+<!-- LOGO -->
+
+<div class="logo-box">
+
+<img src="image.png"
+class="logo-image">
+
+</div>
+
+<!-- TITLE -->
+
+<div class="title">
+
+<h1>
+Create Account
+</h1>
+
+<p>
+Join United4adcard today
+</p>
+
+</div>
+
+<!-- FORM -->
+
+<form id="registerForm">
+
+<!-- NAME -->
+
+<div class="input-box">
+
+<input type="text"
+id="fullName"
+required>
+
+<label>
+Full Name
+</label>
+
+</div>
+
+<!-- MOBILE -->
+
+<div class="input-box">
+
+<input type="tel"
+id="mobile"
+maxlength="10"
+required>
+
+<label>
+Mobile Number
+</label>
+
+</div>
+
+<!-- EMAIL -->
+
+<div class="input-box">
+
+<input type="email"
+id="email"
+required>
+
+<label>
+Email Address
+</label>
+
+</div>
+
+<!-- PASSWORD -->
+
+<div class="input-box">
+
+<input type="password"
+id="password"
+required>
+
+<label>
+Create Password
+</label>
+
+</div>
+
+<!-- REFERRAL -->
+
+<div class="input-box">
+
+<input type="text"
+id="referral"
+required>
+
+<label>
+Referral Code
+</label>
+
+</div>
+
+<!-- REFERRAL NAME -->
+
+<div class="referral-name"
+id="referralName">
+
+Referral By :
+<span id="referralUser"></span>
+
+</div>
+
+<!-- BUTTON -->
+
+<button class="create-btn"
+type="submit">
+
+Create Account
+
+</button>
+
+<!-- SUCCESS -->
+
+<div class="success"
+id="successMsg">
+
+Registration Successful
+
+</div>
+
+<!-- LOGIN -->
+
+<div class="login-text">
+
+Already have account?
+
+<a href="login.html">
+Login
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+/* MOBILE VALIDATION */
+
+document
+.getElementById("mobile")
+.addEventListener(
+"input",
+function(){
+
+this.value =
+this.value.replace(/\D/g,'');
+
+if(this.value.length > 10){
+
+this.value =
+this.value.slice(0,10);
+
+}
+
+}
+);
+
+/* =========================================
+REFERRAL LIVE CHECK FIXED
+========================================= */
+
+document
+.getElementById("referral")
+.addEventListener(
+"input",
+function(){
+
+let code =
+
+this.value
+.trim()
+.toUpperCase();
+
+/* USERS */
+
+let users = [];
+
+try{
+
+users =
+
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+}catch(e){
+
+users = [];
+
+}
+
+/* FIND */
+
+let foundUser =
+
+users.find(user =>
+
+user.userId &&
+
+user.userId
+.toUpperCase()
+.trim()
+
+===
+
+code
+
+);
+
+/* SHOW */
+
+if(foundUser){
+
+document
+.getElementById(
+"referralName"
+)
+.style.display =
+"block";
+
+document
+.getElementById(
+"referralUser"
+)
+.innerHTML =
+foundUser.name;
+
+}else{
+
+document
+.getElementById(
+"referralName"
+)
+.style.display =
+"none";
+
+document
+.getElementById(
+"referralUser"
+)
+.innerHTML = "";
+
+}
+
+}
+);
+
+/* =========================================
+REGISTER
+========================================= */
+
+document
+.getElementById(
+"registerForm"
+)
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+/* VALUES */
+
+let name =
+document.getElementById(
+"fullName"
+).value.trim();
+
+let mobile =
+document.getElementById(
+"mobile"
+).value.trim();
+
+let email =
+document.getElementById(
+"email"
+).value.trim();
+
+let password =
+document.getElementById(
+"password"
+).value.trim();
+
+let referral =
+document.getElementById(
+"referral"
+).value.trim().toUpperCase();
+
+/* USERS */
+
+let users =
+
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+/* CHECK MOBILE */
+
+let alreadyUser =
+
+users.find(user =>
+
+user.mobile === mobile
+
+);
+
+if(alreadyUser){
+
+alert(
+"Mobile Already Registered"
+);
+
+return;
+
+}
+
+/* USER ID */
+
+let userId =
+
+"U4AD" +
+
+Math.floor(
+100000 + Math.random()*900000
+);
+
+/* NEW USER */
+
+let newUser = {
+
+name:name,
+
+mobile:mobile,
+
+email:email,
+
+password:password,
+
+referral:referral,
+
+userId:userId,
+
+wallet:100,
+
+teamIncome:0,
+
+status:"Active",
+
+kyc:"Pending",
+
+date:new Date().toLocaleDateString()
+
+};
+
+/* SAVE */
+
+users.push(newUser);
+
+localStorage.setItem(
+"allUsers",
+JSON.stringify(users)
+);
+
+/* LOGIN */
+
+localStorage.setItem(
+"isLoggedIn",
+"true"
+);
+
+localStorage.setItem(
+"currentUser",
+JSON.stringify(newUser)
+);
+
+localStorage.setItem(
+"userId",
+userId
+);
+
+localStorage.setItem(
+"userName",
+name
+);
+
+/* SUCCESS */
+
+document
+.getElementById(
+"successMsg"
+).style.display =
+"block";
+
+/* REDIRECT */
+
+setTimeout(()=>{
+
+window.location.href =
+"home.html";
+
+},1500);
+
+});
+
+</script>
+
+</body>
+
+</html>

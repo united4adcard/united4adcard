@@ -1,0 +1,767 @@
+<!-- =========================================
+REFER.HTML FINAL FULL WORKING CODE
+SAME REFERRAL CODE AS HOME PAGE
+ALL OLD SETTINGS SAFE
+NOTHING DELETE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Refer & Earn
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+padding-bottom:100px;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+padding:14px 16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+width:44px;
+height:44px;
+border-radius:12px;
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.noty{
+width:36px;
+height:36px;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.06);
+font-size:14px;
+color:white;
+}
+
+/* TOP */
+
+.top{
+margin:0 16px;
+padding:14px;
+border-radius:18px;
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+/* CARD */
+
+.ref-card{
+padding:16px;
+border-radius:18px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.05);
+text-align:center;
+}
+
+.ref-icon{
+width:58px;
+height:58px;
+margin:auto;
+border-radius:18px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+color:white;
+}
+
+.ref-card h3{
+margin-top:12px;
+font-size:16px;
+}
+
+.ref-card p{
+margin-top:5px;
+font-size:10px;
+color:#94a3b8;
+line-height:1.5;
+}
+
+/* CODE */
+
+.code{
+margin-top:14px;
+height:50px;
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:18px;
+font-weight:800;
+letter-spacing:2px;
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#14b8a6
+);
+color:white;
+}
+
+/* BUTTONS */
+
+.btns{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:14px;
+}
+
+.btn{
+height:42px;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:11px;
+font-weight:700;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.05);
+color:white;
+cursor:pointer;
+}
+
+.share{
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:16px;
+}
+
+.stat{
+padding:14px;
+border-radius:16px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.05);
+text-align:center;
+}
+
+.stat h2{
+font-size:20px;
+color:#22d3ee;
+}
+
+.stat p{
+margin-top:4px;
+font-size:10px;
+color:#94a3b8;
+}
+
+/* BONUS */
+
+.bonus{
+margin-top:16px;
+padding:16px;
+border-radius:18px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.05);
+}
+
+.bonus h3{
+font-size:14px;
+margin-bottom:12px;
+}
+
+.bonus-item{
+display:flex;
+align-items:flex-start;
+gap:10px;
+margin-bottom:14px;
+}
+
+.bonus-icon{
+width:42px;
+height:42px;
+min-width:42px;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#14b8a6
+);
+font-size:16px;
+}
+
+.bonus-text h4{
+font-size:12px;
+}
+
+.bonus-text p{
+font-size:9px;
+color:#94a3b8;
+margin-top:2px;
+line-height:1.5;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+margin-top:18px;
+height:48px;
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:8px;
+font-size:13px;
+font-weight:700;
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+color:white;
+cursor:pointer;
+}
+
+/* BOTTOM */
+
+.bottom{
+position:fixed;
+left:10px;
+right:10px;
+bottom:10px;
+height:70px;
+border-radius:22px;
+background:rgba(15,23,42,.95);
+border:1px solid rgba(255,255,255,.05);
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+text-align:center;
+font-size:8px;
+color:#94a3b8;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+width:58px;
+height:58px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+margin-top:-28px;
+font-size:22px;
+border:4px solid #0f172a;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="logo">
+<img src="image.png">
+</a>
+
+<div class="noty">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Refer & Earn
+</h2>
+
+<p>
+Invite friends and earn unlimited rewards daily
+</p>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="box">
+
+<!-- REF CARD -->
+
+<div class="ref-card">
+
+<div class="ref-icon">
+<i class="fa-solid fa-user-plus"></i>
+</div>
+
+<h3>
+Invite Your Friends
+</h3>
+
+<p>
+Share your referral code and start earning daily commissions instantly
+</p>
+
+<div class="code" id="refCode">
+U4AD000000
+</div>
+
+<div class="btns">
+
+<div class="btn" onclick="copyCode()">
+Copy Code
+</div>
+
+<div class="btn share" onclick="shareCode()">
+Share Now
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+
+<h2 id="totalRef">
+0
+</h2>
+
+<p>
+Total Referrals
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2 id="earning">
+₹0
+</h2>
+
+<p>
+Referral Earnings
+</p>
+
+</div>
+
+</div>
+
+<!-- BONUS -->
+
+<div class="bonus">
+
+<h3>
+Referral Income Benefits
+</h3>
+
+<div class="bonus-item">
+
+<div class="bonus-icon">
+<i class="fa-solid fa-user"></i>
+</div>
+
+<div class="bonus-text">
+
+<h4>
+₹100 Registration Bonus
+</h4>
+
+<p>
+New users get ₹100 instantly after successful registration
+</p>
+
+</div>
+
+</div>
+
+<div class="bonus-item">
+
+<div class="bonus-icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
+
+<div class="bonus-text">
+
+<h4>
+₹100 KYC Bonus
+</h4>
+
+<p>
+Complete KYC verification and get ₹100 reward instantly
+</p>
+
+</div>
+
+</div>
+
+<div class="bonus-item">
+
+<div class="bonus-icon">
+<i class="fa-solid fa-money-bill-transfer"></i>
+</div>
+
+<div class="bonus-text">
+
+<h4>
+₹300 Transfer Bonus
+</h4>
+
+<p>
+When your referral transfers ₹100, you receive ₹300 commission
+</p>
+
+</div>
+
+</div>
+
+<div class="bonus-item">
+
+<div class="bonus-icon">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+
+<div class="bonus-text">
+
+<h4>
+16 Level Daily Recharge Commission
+</h4>
+
+<p>
+Earn daily commission up to 16 levels whenever your team members recharge their account
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- WHATSAPP -->
+
+<div class="whatsapp" onclick="shareWhatsapp()">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Share On WhatsApp
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+<!-- SCRIPT -->
+
+<script>
+
+/* REFERRAL CODE SAME AS HOME */
+
+let referralCode =
+localStorage.getItem(
+"userId"
+);
+
+if(!referralCode){
+
+referralCode =
+"U4AD000000";
+
+}
+
+/* SHOW REFERRAL */
+
+document.getElementById(
+"refCode"
+).innerText =
+referralCode;
+
+
+/* DEFAULT STATS */
+
+if(localStorage.getItem("totalReferrals")==null){
+
+localStorage.setItem(
+"totalReferrals",
+0
+);
+
+}
+
+if(localStorage.getItem("referralIncome")==null){
+
+localStorage.setItem(
+"referralIncome",
+0
+);
+
+}
+
+document.getElementById(
+"totalRef"
+).innerText =
+localStorage.getItem(
+"totalReferrals"
+);
+
+document.getElementById(
+"earning"
+).innerText =
+"₹" +
+localStorage.getItem(
+"referralIncome"
+);
+
+
+/* COPY CODE */
+
+function copyCode(){
+
+navigator.clipboard.writeText(
+referralCode
+);
+
+alert(
+"Referral Code Copied Successfully"
+);
+
+}
+
+
+/* NORMAL SHARE */
+
+function shareCode(){
+
+let shareText =
+
+"🎉 UNITED4ADCARD REFER & EARN 🎉\n\n" +
+
+"💰 Registration Bonus ₹100\n" +
+
+"🪪 KYC Complete Bonus ₹100\n" +
+
+"🔥 Transfer Bonus ₹300\n" +
+
+"💸 16 Level Daily Recharge Commission\n\n" +
+
+"📢 Join Now & Start Daily Earning\n\n" +
+
+"✅ Use My Referral Code:\n" +
+
+referralCode +
+
+"\n\n🚀 Download Now & Earn Unlimited Rewards";
+
+if(navigator.share){
+
+navigator.share({
+
+title:"United4adcard",
+
+text:shareText
+
+});
+
+}else{
+
+alert(shareText);
+
+}
+
+}
+
+
+/* WHATSAPP SHARE */
+
+function shareWhatsapp(){
+
+let whatsappText =
+
+"🎉 *UNITED4ADCARD REFER & EARN* 🎉\n\n" +
+
+"💰 *Registration Bonus ₹100*\n" +
+
+"🪪 *KYC Bonus ₹100*\n" +
+
+"🔥 *Transfer Bonus ₹300*\n" +
+
+"💸 *16 Level Daily Recharge Commission*\n\n" +
+
+"📢 Join Today & Start Daily Income\n\n" +
+
+"✅ *Use My Referral Code*\n" +
+
+"👉 " + referralCode +
+
+"\n\n🚀 Earn Unlimited Rewards Daily";
+
+window.open(
+
+"https://wa.me/?text=" +
+encodeURIComponent(
+whatsappText
+),
+
+"_blank"
+
+);
+
+}
+
+</script>
+
+</body>
+
+</html>

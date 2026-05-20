@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+United4adcard QR Pay
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#0b1120
+);
+}
+
+/* APP */
+
+.app{
+height:100vh;
+overflow-y:auto;
+padding-bottom:120px;
+}
+
+/* HEADER */
+
+.header{
+padding:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+width:52px;
+height:52px;
+border-radius:16px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,.08);
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.bell{
+width:42px;
+height:42px;
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:18px;
+background:rgba(255,255,255,.05);
+color:white;
+}
+
+/* SCAN BOX */
+
+.scan-box{
+
+margin:0 16px;
+
+padding:20px;
+
+border-radius:24px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+text-align:center;
+}
+
+/* QR AREA */
+
+.qr-area{
+
+width:220px;
+height:220px;
+
+margin:10px auto;
+
+border-radius:24px;
+
+border:3px solid #14b8a6;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.qr-area::before{
+content:'';
+position:absolute;
+width:100%;
+height:4px;
+background:#14b8a6;
+top:0;
+animation:scan 2s linear infinite;
+}
+
+@keyframes scan{
+
+0%{
+top:0;
+}
+
+100%{
+top:100%;
+}
+
+}
+
+.qr-icon{
+font-size:70px;
+color:#14b8a6;
+}
+
+/* TEXT */
+
+.scan-box h2{
+margin-top:10px;
+font-size:22px;
+color:white;
+}
+
+.scan-box p{
+margin-top:6px;
+font-size:11px;
+color:#94a3b8;
+}
+
+/* INPUT */
+
+.section{
+padding:18px 16px 0;
+}
+
+.label{
+font-size:13px;
+color:white;
+margin-bottom:10px;
+display:block;
+}
+
+.input{
+
+width:100%;
+height:52px;
+
+border:none;
+outline:none;
+
+border-radius:16px;
+
+padding:0 16px;
+
+font-size:14px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+color:white;
+}
+
+/* BUTTONS */
+
+.btn{
+
+margin-top:16px;
+
+width:100%;
+height:52px;
+
+border:none;
+outline:none;
+
+border-radius:16px;
+
+font-size:15px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+.upload-btn{
+
+margin-top:12px;
+
+height:48px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:13px;
+font-weight:700;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+color:white;
+}
+
+/* SUCCESS */
+
+.success{
+
+margin-top:18px;
+
+padding:16px;
+
+border-radius:18px;
+
+background:
+rgba(20,184,166,.12);
+
+border:
+1px solid rgba(20,184,166,.25);
+
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.success-icon{
+
+width:48px;
+height:48px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:22px;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+.success-text h4{
+font-size:14px;
+color:white;
+}
+
+.success-text p{
+font-size:10px;
+color:#94a3b8;
+margin-top:3px;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:76px;
+
+border-radius:26px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+
+z-index:999;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:9px;
+font-weight:600;
+
+color:#94a3b8;
+}
+
+.nav i{
+
+display:block;
+
+font-size:20px;
+
+margin-bottom:4px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+/* QR */
+
+.qr{
+
+width:66px;
+height:66px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-34px;
+
+border:4px solid #0f172a;
+
+font-size:26px;
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+<img src="image.png">
+</div>
+
+<div class="bell">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+</div>
+
+<!-- SCANNER -->
+
+<div class="scan-box">
+
+<div class="qr-area">
+
+<div class="qr-icon">
+<i class="fa-solid fa-qrcode"></i>
+</div>
+
+</div>
+
+<h2>
+Scan & Pay
+</h2>
+
+<p>
+Fast and secure QR payment
+</p>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div class="section">
+
+<label class="label">
+Enter Amount
+</label>
+
+<input type="number"
+class="input"
+placeholder="₹ Enter amount">
+
+<button class="btn">
+Pay Now
+</button>
+
+<label for="uploadQR"
+class="upload-btn">
+
+Upload QR Image
+
+</label>
+
+<input type="file"
+id="uploadQR"
+hidden>
+
+<!-- SUCCESS -->
+
+<div class="success">
+
+<div class="success-icon">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+
+<div class="success-text">
+
+<h4>
+Payment Successful
+</h4>
+
+<p>
+₹500 paid successfully
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+Reward
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+Scratch
+
+</a>
+
+<a href="profile.html" class="nav">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

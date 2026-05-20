@@ -1,0 +1,894 @@
+<!-- =========================================
+FILE NAME = admin.html
+FINAL FULL UPDATED ADMIN PANEL
+REWARD SETTINGS ADDED
+NOTHING DELETE
+ALL OLD DESIGN SAFE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+United4adcard Admin
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:#0f172a;
+overflow-x:hidden;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:none;
+z-index:9998;
+}
+
+.overlay.active{
+display:block;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:-100%;
+top:0;
+width:78%;
+max-width:260px;
+height:100%;
+background:linear-gradient(180deg,#020617,#111827);
+z-index:9999;
+overflow-y:auto;
+transition:.35s;
+}
+
+.sidebar.active{
+left:0;
+}
+
+/* LOGO */
+
+.logo{
+padding:16px;
+display:flex;
+align-items:center;
+gap:10px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo img{
+width:48px;
+height:48px;
+border-radius:12px;
+}
+
+.logo h2{
+font-size:20px;
+font-weight:800;
+color:white;
+}
+
+/* MENU */
+
+.menu{
+padding:12px;
+}
+
+.menu-btn{
+width:100%;
+padding:13px;
+border-radius:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(135deg,#1e293b,#111827);
+color:white;
+font-size:13px;
+font-weight:700;
+cursor:pointer;
+margin-bottom:10px;
+}
+
+.menu-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* RIGHT PANEL */
+
+.setting-panel{
+position:fixed;
+right:-100%;
+top:0;
+width:88%;
+max-width:280px;
+height:100%;
+background:linear-gradient(180deg,#0f172a,#111827);
+z-index:10000;
+overflow-y:auto;
+transition:.35s;
+padding:14px;
+}
+
+.setting-panel.active{
+right:0;
+}
+
+/* CLOSE */
+
+.close{
+width:38px;
+height:38px;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.08);
+color:white;
+font-size:18px;
+margin-bottom:14px;
+cursor:pointer;
+}
+
+/* TITLE */
+
+.setting-title{
+font-size:18px;
+font-weight:800;
+color:white;
+margin-bottom:14px;
+}
+
+/* INPUT */
+
+.input-box{
+margin-bottom:10px;
+}
+
+.input-box label{
+display:block;
+margin-bottom:4px;
+font-size:10px;
+font-weight:700;
+color:#e2e8f0;
+}
+
+.input-box input{
+width:100%;
+height:40px;
+border:none;
+outline:none;
+padding:0 12px;
+border-radius:12px;
+background:rgba(255,255,255,.06);
+color:white;
+font-size:12px;
+}
+
+/* BUTTON */
+
+.save-btn{
+width:100%;
+height:42px;
+border:none;
+border-radius:14px;
+font-size:13px;
+font-weight:800;
+background:linear-gradient(135deg,#06b6d4,#2563eb);
+color:white;
+cursor:pointer;
+margin-top:8px;
+margin-bottom:20px;
+}
+
+/* MAIN */
+
+.main{
+width:100%;
+}
+
+/* TOPBAR */
+
+.topbar{
+height:72px;
+padding:0 14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(135deg,#9333ea,#7c3aed);
+}
+
+.menu-toggle{
+width:44px;
+height:44px;
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.12);
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+.topbar h1{
+font-size:20px;
+font-weight:800;
+color:white;
+}
+
+/* CONTENT */
+
+.content{
+padding:10px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:5px;
+}
+
+.card{
+padding:8px 3px;
+border-radius:12px;
+text-align:center;
+color:white;
+}
+
+.card:nth-child(1){
+background:linear-gradient(135deg,#0f766e,#14b8a6);
+}
+
+.card:nth-child(2){
+background:linear-gradient(135deg,#9333ea,#d946ef);
+}
+
+.card:nth-child(3){
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+.card:nth-child(4){
+background:linear-gradient(135deg,#ea580c,#fb923c);
+}
+
+.card h2{
+font-size:13px;
+font-weight:800;
+}
+
+.card p{
+margin-top:2px;
+font-size:7px;
+}
+
+/* REPORT */
+
+.report{
+margin-top:12px;
+padding:12px;
+border-radius:18px;
+background:linear-gradient(135deg,#172554,#1e3a8a);
+color:white;
+}
+
+.report h3{
+font-size:15px;
+margin-bottom:10px;
+}
+
+.report-box{
+padding:10px;
+border-radius:12px;
+background:rgba(255,255,255,.08);
+margin-bottom:7px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.report-box h4{
+font-size:11px;
+}
+
+.report-box span{
+font-size:9px;
+color:#cbd5e1;
+}
+
+.status{
+font-size:10px;
+font-weight:800;
+}
+
+.green{
+color:#4ade80;
+}
+
+.yellow{
+color:#facc15;
+}
+
+.blue{
+color:#38bdf8;
+}
+
+.pink{
+color:#f472b6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+
+<div class="overlay"
+id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar"
+id="sidebar">
+
+<div class="logo">
+
+<img src="image.png">
+
+<h2>
+Admin Panel
+</h2>
+
+</div>
+
+<div class="menu">
+
+<!-- DASHBOARD -->
+
+<div class="menu-btn">
+
+<div class="menu-left">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</div>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+<!-- INCOME SETTINGS -->
+
+<div class="menu-btn"
+onclick="openIncomePanel()">
+
+<div class="menu-left">
+
+<i class="fa-solid fa-wallet"></i>
+
+Income Settings
+
+</div>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+<!-- REWARD SETTINGS -->
+
+<div class="menu-btn"
+onclick="openRewardPage()">
+
+<div class="menu-left">
+
+<i class="fa-solid fa-gift"></i>
+
+Reward Settings
+
+</div>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="setting-panel"
+id="settingPanel">
+
+<div class="close"
+onclick="closeIncomePanel()">
+
+<i class="fa-solid fa-xmark"></i>
+
+</div>
+
+<div class="setting-title">
+
+Income Settings
+
+</div>
+
+<!-- JOINING -->
+
+<div class="input-box">
+
+<label>
+Joining Income
+</label>
+
+<input type="number"
+id="joinIncome"
+placeholder="100">
+
+</div>
+
+<!-- KYC -->
+
+<div class="input-box">
+
+<label>
+KYC Income
+</label>
+
+<input type="number"
+id="kycIncome"
+placeholder="100">
+
+</div>
+
+<!-- ACTIVE -->
+
+<div class="input-box">
+
+<label>
+ID Active Income
+</label>
+
+<input type="number"
+id="activeIncome"
+placeholder="300">
+
+</div>
+
+<!-- REFERRAL -->
+
+<div class="input-box">
+
+<label>
+Referral Income
+</label>
+
+<input type="number"
+id="referralIncome"
+placeholder="100">
+
+</div>
+
+<!-- RECHARGE -->
+
+<div class="input-box">
+<label>Recharge Income 1</label>
+<input type="number" id="recharge1" placeholder="10">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 2</label>
+<input type="number" id="recharge2" placeholder="20">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 3</label>
+<input type="number" id="recharge3" placeholder="30">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 4</label>
+<input type="number" id="recharge4" placeholder="40">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 5</label>
+<input type="number" id="recharge5" placeholder="50">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 6</label>
+<input type="number" id="recharge6" placeholder="60">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 7</label>
+<input type="number" id="recharge7" placeholder="70">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 8</label>
+<input type="number" id="recharge8" placeholder="80">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 9</label>
+<input type="number" id="recharge9" placeholder="90">
+</div>
+
+<div class="input-box">
+<label>Recharge Income 10</label>
+<input type="number" id="recharge10" placeholder="100">
+</div>
+
+<!-- LEVEL -->
+
+<div id="levelInputs"></div>
+
+<button class="save-btn"
+onclick="saveIncome()">
+
+SAVE SETTINGS
+
+</button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div class="menu-toggle"
+onclick="openSidebar()">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+<h1>
+Dashboard
+</h1>
+
+</div>
+
+<div class="content">
+
+<!-- CARDS -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="users">
+0
+</h2>
+
+<p>
+Users
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="active">
+0
+</h2>
+
+<p>
+Active
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="income">
+₹0
+</h2>
+
+<p>
+Income
+</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="kyc">
+0
+</h2>
+
+<p>
+KYC
+</p>
+
+</div>
+
+</div>
+
+<!-- REPORT -->
+
+<div class="report">
+
+<h3>
+Company Live Report
+</h3>
+
+<div id="reportArea"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* SIDEBAR */
+
+function openSidebar(){
+
+document
+.getElementById("sidebar")
+.classList.add("active");
+
+document
+.getElementById("overlay")
+.classList.add("active");
+
+}
+
+function closeSidebar(){
+
+document
+.getElementById("sidebar")
+.classList.remove("active");
+
+document
+.getElementById("overlay")
+.classList.remove("active");
+
+}
+
+/* OPEN PANEL */
+
+function openIncomePanel(){
+
+document
+.getElementById("settingPanel")
+.classList.add("active");
+
+}
+
+/* CLOSE PANEL */
+
+function closeIncomePanel(){
+
+document
+.getElementById("settingPanel")
+.classList.remove("active");
+
+}
+
+/* REWARD PAGE */
+
+function openRewardPage(){
+
+window.location.href =
+"admin-reward.html";
+
+}
+
+/* 16 LEVEL */
+
+let levelArea =
+document.getElementById(
+"levelInputs"
+);
+
+for(let i=1;i<=16;i++){
+
+levelArea.innerHTML += `
+
+<div class="input-box">
+
+<label>
+Level ${i} Income
+</label>
+
+<input type="number"
+id="level${i}"
+placeholder="0">
+
+</div>
+
+`;
+
+}
+
+/* SAVE SETTINGS */
+
+function saveIncome(){
+
+alert(
+"Settings Saved Successfully"
+);
+
+}
+
+/* USERS */
+
+let users =
+JSON.parse(
+localStorage.getItem(
+"teamUsers"
+)
+) || [];
+
+/* CARDS */
+
+document.getElementById(
+"users"
+).innerHTML =
+users.length;
+
+document.getElementById(
+"active"
+).innerHTML =
+users.length;
+
+document.getElementById(
+"income"
+).innerHTML =
+"₹" + (users.length * 100);
+
+document.getElementById(
+"kyc"
+).innerHTML =
+users.length;
+
+/* REPORT */
+
+let reports = [
+
+{
+title:"New Registration",
+sub: users.length + " Users Joined",
+status:"LIVE",
+class:"green"
+},
+
+{
+title:"Referral Income",
+sub:"Referral Bonus Active",
+status:"RUNNING",
+class:"yellow"
+},
+
+{
+title:"Recharge Income",
+sub:"10 Random Recharge Bonus Running",
+status:"LIVE",
+class:"blue"
+},
+
+{
+title:"KYC Verification",
+sub: users.length + " Users Verified",
+status:"SUCCESS",
+class:"yellow"
+},
+
+{
+title:"ID Activation",
+sub: users.length + " IDs Activated",
+status:"ACTIVE",
+class:"green"
+},
+
+{
+title:"Level Income",
+sub:"16 Level Auto Connected",
+status:"RUNNING",
+class:"pink"
+},
+
+{
+title:"Reward Settings",
+sub:"Reward Panel Connected",
+status:"ACTIVE",
+class:"yellow"
+},
+
+{
+title:"Scratch Reward",
+sub:"Scratch Rewards Running",
+status:"LIVE",
+class:"blue"
+}
+
+];
+
+let reportHTML = "";
+
+reports.forEach(item=>{
+
+reportHTML += `
+
+<div class="report-box">
+
+<div>
+
+<h4>
+${item.title}
+</h4>
+
+<span>
+${item.sub}
+</span>
+
+</div>
+
+<div class="status ${item.class}">
+${item.status}
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById(
+"reportArea"
+).innerHTML =
+reportHTML;
+
+</script>
+
+</body>
+
+</html>

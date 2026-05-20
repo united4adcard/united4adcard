@@ -1,0 +1,723 @@
+<!-- =========================================
+FINAL LEVEL TEAM PERMANENT AUTO SYSTEM
+FILE NAME = levelteam.html
+ALL LEVEL AUTO COUNT FIXED
+AUTO REFERRAL TEAM FIXED
+PERMANENT TEAM STORAGE
+SELF USER REMOVED
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Level Team
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+padding-bottom:130px;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:9px 12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back,
+.notify{
+
+width:36px;
+height:36px;
+
+border-radius:11px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:14px;
+}
+
+.title{
+
+font-size:18px;
+font-weight:900;
+color:white;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 12px 8px;
+
+padding:10px 12px;
+
+border-radius:15px;
+
+background:
+linear-gradient(
+135deg,
+#f59e0b,
+#ffb300
+);
+
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.top i{
+
+font-size:18px;
+color:white;
+}
+
+.top h2{
+
+font-size:16px;
+font-weight:900;
+color:white;
+}
+
+/* LEVEL */
+
+.level{
+
+margin:0 12px 6px;
+
+border-radius:15px;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#0ea5e9
+);
+}
+
+.level-head{
+
+padding:7px 10px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+cursor:pointer;
+}
+
+.left{
+
+display:flex;
+align-items:center;
+gap:7px;
+}
+
+.left i{
+
+font-size:15px;
+color:white;
+}
+
+.text h3{
+
+font-size:13px;
+font-weight:800;
+color:white;
+line-height:1;
+}
+
+.text p{
+
+font-size:7px;
+font-weight:700;
+
+margin-top:2px;
+
+color:#dbeafe;
+}
+
+.count{
+
+font-size:22px;
+font-weight:900;
+color:white;
+}
+
+/* TABLE */
+
+.table-box{
+
+display:none;
+
+background:white;
+
+padding:5px;
+}
+
+.level.active .table-box{
+display:block;
+}
+
+.table-scroll{
+overflow-x:auto;
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+}
+
+thead{
+
+background:#c96a00;
+
+color:white;
+}
+
+th{
+
+padding:7px 3px;
+
+font-size:8px;
+
+font-weight:900;
+
+text-align:center;
+
+white-space:nowrap;
+}
+
+td{
+
+padding:7px 3px;
+
+font-size:8px;
+
+font-weight:800;
+
+color:#111827;
+
+border-bottom:1px solid #e5e7eb;
+
+text-align:center;
+
+white-space:nowrap;
+}
+
+/* STATUS */
+
+.active-status{
+color:#16a34a;
+font-weight:900;
+}
+
+.pending{
+color:#ec4899;
+font-weight:900;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+}
+
+.auto-level{
+margin-bottom:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<div class="title">
+Level Team
+</div>
+
+<a href="notification.html" class="notify">
+<i class="fa-solid fa-users"></i>
+</a>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<i class="fa-solid fa-users"></i>
+
+<h2>
+16 Level Downline Team
+</h2>
+
+</div>
+
+<!-- LEVEL CONTAINER -->
+
+<div id="levelContainer">
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav active">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="profile.html" class="nav">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+/* TOGGLE */
+
+function toggleLevel(element){
+
+let parent =
+element.parentElement;
+
+parent.classList.toggle(
+"active"
+);
+
+}
+
+/* CURRENT USER */
+
+let currentUser =
+
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* ALL USERS */
+
+let allUsers =
+
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+/* CURRENT USER ID */
+
+let currentUserId =
+
+currentUser?.userId || "";
+
+/* GET LEVEL USERS */
+
+function getLevelUsers(parentIds){
+
+let levelUsers = [];
+
+allUsers.forEach(user=>{
+
+if(
+
+user.referral &&
+
+parentIds.includes(
+user.referral
+)
+
+){
+
+levelUsers.push(user);
+
+}
+
+});
+
+return levelUsers;
+
+}
+
+/* LEVEL DATA */
+
+let levels = [];
+
+let level1 =
+getLevelUsers(
+[currentUserId]
+);
+
+levels.push(level1);
+
+for(let i=2;i<=16;i++){
+
+let prevLevel =
+levels[i-2];
+
+let ids =
+prevLevel.map(
+u=>u.userId
+);
+
+let currentLevel =
+getLevelUsers(ids);
+
+levels.push(currentLevel);
+
+}
+
+/* CONTAINER */
+
+let container =
+
+document.getElementById(
+"levelContainer"
+);
+
+container.innerHTML = "";
+
+/* CREATE LEVELS */
+
+levels.forEach((users,index)=>{
+
+let level =
+index + 1;
+
+let html = `
+
+<div class="level auto-level">
+
+<div class="level-head"
+onclick="toggleLevel(this)">
+
+<div class="left">
+
+<i class="fa-solid fa-users"></i>
+
+<div class="text">
+
+<h3>
+Level ${level}
+</h3>
+
+<p>
+Downline Team
+</p>
+
+</div>
+
+</div>
+
+<div class="count">
+${users.length}
+</div>
+
+</div>
+
+<div class="table-box">
+
+<div class="table-scroll">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sr</th>
+<th>Name</th>
+<th>User ID</th>
+<th>Senior ID</th>
+<th>Status</th>
+<th>KYC</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+`;
+
+if(users.length == 0){
+
+html += `
+
+<tr>
+
+<td colspan="6">
+
+No Team Found
+
+</td>
+
+</tr>
+
+`;
+
+}
+
+users.forEach((user,i)=>{
+
+html += `
+
+<tr>
+
+<td>
+${i+1}
+</td>
+
+<td>
+${user.name}
+</td>
+
+<td>
+${user.userId}
+</td>
+
+<td>
+${user.referral}
+</td>
+
+<td class="active-status">
+${user.status || "Active"}
+</td>
+
+<td class="pending">
+${user.kyc || "Pending"}
+</td>
+
+</tr>
+
+`;
+
+});
+
+html += `
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+container.innerHTML += html;
+
+});
+
+</script>
+
+</body>
+
+</html>

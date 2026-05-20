@@ -1,0 +1,799 @@
+<!-- =========================================
+FULL DIRECT TEAM FINAL CONNECTED CODE
+REAL REFERRAL TEAM FIXED
+AUTO DIRECT USER SHOW FIXED
+CURRENT USER FIXED
+NO WRONG USER SHOW
+FILE NAME = directteam.html
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Direct Team
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#0b1120
+);
+
+color:white;
+
+padding-bottom:130px;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back,
+.notify{
+
+width:38px;
+height:38px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:15px;
+}
+
+.title{
+font-size:16px;
+font-weight:700;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 12px;
+
+padding:12px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#06b6d4
+);
+}
+
+.top h2{
+font-size:16px;
+}
+
+.top-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:6px;
+
+margin-top:10px;
+}
+
+.top-box{
+
+background:
+rgba(255,255,255,.12);
+
+padding:8px;
+
+border-radius:12px;
+
+text-align:center;
+}
+
+.top-box h3{
+font-size:13px;
+}
+
+.top-box p{
+margin-top:2px;
+font-size:7px;
+}
+
+/* TABLE AREA */
+
+.table-area{
+
+margin:14px 12px;
+
+background:white;
+
+border-radius:18px;
+
+padding:12px;
+
+overflow:hidden;
+}
+
+/* FILTER */
+
+.filter{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:10px;
+
+gap:6px;
+}
+
+.select{
+
+padding:7px;
+
+border-radius:8px;
+
+border:none;
+
+font-size:11px;
+
+font-weight:600;
+
+outline:none;
+}
+
+.search{
+flex:1;
+}
+
+.search input{
+
+width:100%;
+
+padding:8px 10px;
+
+border-radius:8px;
+
+border:2px solid #e5e7eb;
+
+outline:none;
+
+font-size:11px;
+}
+
+/* TABLE */
+
+.table-scroll{
+overflow-x:auto;
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+min-width:650px;
+}
+
+thead{
+
+background:#c96a00;
+
+color:white;
+}
+
+th{
+
+padding:10px 6px;
+
+font-size:10px;
+
+text-align:left;
+}
+
+td{
+
+padding:10px 6px;
+
+font-size:10px;
+
+font-weight:600;
+
+color:#1e293b;
+
+border-bottom:1px solid #e5e7eb;
+}
+
+/* STATUS */
+
+.active-status{
+color:#16a34a;
+font-weight:700;
+font-size:10px;
+}
+
+.pending{
+color:#ec4899;
+font-weight:700;
+font-size:10px;
+}
+
+/* PREMIUM BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<div class="title">
+Direct Team
+</div>
+
+<a href="notification.html" class="notify">
+<i class="fa-solid fa-users"></i>
+</a>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Direct Team Overview
+</h2>
+
+<div class="top-grid">
+
+<div class="top-box">
+
+<h3 id="totalTeam">
+0
+</h3>
+
+<p>
+Total Team
+</p>
+
+</div>
+
+<div class="top-box">
+
+<h3 id="activeTeam">
+0
+</h3>
+
+<p>
+Active Team
+</p>
+
+</div>
+
+<div class="top-box">
+
+<h3 id="inactiveTeam">
+0
+</h3>
+
+<p>
+Inactive
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-area">
+
+<div class="filter">
+
+<select class="select">
+
+<option>
+10
+</option>
+
+<option>
+25
+</option>
+
+<option>
+50
+</option>
+
+</select>
+
+<div class="search">
+
+<input type="text"
+placeholder="Search Here"
+id="searchInput">
+
+</div>
+
+</div>
+
+<div class="table-scroll">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Sr.No.
+</th>
+
+<th>
+Name
+</th>
+
+<th>
+User ID
+</th>
+
+<th>
+Contact
+</th>
+
+<th>
+Status
+</th>
+
+<th>
+KYC
+</th>
+
+<th>
+Date
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="teamTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- PREMIUM BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+/* =========================================
+GET ALL USERS
+========================================= */
+
+let allUsers =
+
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+/* =========================================
+CURRENT LOGIN USER
+========================================= */
+
+let currentUser =
+
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* =========================================
+DIRECT TEAM USERS
+========================================= */
+
+let users = [];
+
+/* ONLY MY REFERRAL USERS */
+
+if(currentUser){
+
+users = allUsers.filter(user =>
+
+user.referral &&
+
+user.referral.toUpperCase().trim()
+
+===
+
+currentUser.userId.toUpperCase().trim()
+
+);
+
+}
+
+/* =========================================
+TABLE
+========================================= */
+
+let table =
+
+document.getElementById(
+"teamTable"
+);
+
+table.innerHTML = "";
+
+/* =========================================
+NO TEAM
+========================================= */
+
+if(users.length == 0){
+
+table.innerHTML = `
+
+<tr>
+
+<td colspan="7"
+style="
+text-align:center;
+padding:20px;
+font-weight:700;
+color:#64748b;
+">
+
+No Direct Team Found
+
+</td>
+
+</tr>
+
+`;
+
+}
+
+/* =========================================
+SHOW USERS
+========================================= */
+
+users.forEach((user,index)=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>
+${index+1}
+</td>
+
+<td>
+${user.name}
+</td>
+
+<td>
+${user.userId}
+</td>
+
+<td>
+${user.mobile}
+</td>
+
+<td class="active-status">
+${user.status || "Active"}
+</td>
+
+<td class="pending">
+${user.kyc || "Pending"}
+</td>
+
+<td>
+${user.date || "-"}
+</td>
+
+</tr>
+
+`;
+
+});
+
+/* =========================================
+COUNT
+========================================= */
+
+document.getElementById(
+"totalTeam"
+).innerHTML =
+users.length;
+
+/* ACTIVE */
+
+let activeUsers =
+
+users.filter(user =>
+
+(user.status || "")
+.toLowerCase() == "active"
+
+);
+
+/* INACTIVE */
+
+let inactiveUsers =
+
+users.filter(user =>
+
+(user.status || "")
+.toLowerCase() != "active"
+
+);
+
+document.getElementById(
+"activeTeam"
+).innerHTML =
+activeUsers.length;
+
+document.getElementById(
+"inactiveTeam"
+).innerHTML =
+inactiveUsers.length;
+
+/* =========================================
+SEARCH
+========================================= */
+
+document
+.getElementById(
+"searchInput"
+)
+.addEventListener(
+"keyup",
+function(){
+
+let value =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll(
+"#teamTable tr"
+);
+
+rows.forEach(row=>{
+
+row.style.display =
+
+row.innerText
+.toLowerCase()
+.includes(value)
+
+? ""
+
+: "none";
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

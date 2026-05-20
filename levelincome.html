@@ -1,0 +1,768 @@
+<!-- =========================================
+FINAL FULL LEVEL INCOME CODE
+REAL REFERRAL CONNECTED
+ADMIN PANEL CONNECTED
+16 LEVEL AUTO SYSTEM
+FILE NAME = levelincome.html
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Level Income
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+padding-bottom:120px;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:9px 12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back,
+.notify{
+
+width:36px;
+height:36px;
+
+border-radius:11px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:14px;
+}
+
+.title{
+
+font-size:19px;
+font-weight:900;
+color:white;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 12px 7px;
+
+padding:10px 13px;
+
+border-radius:15px;
+
+background:
+linear-gradient(
+135deg,
+#f59e0b,
+#ffb300
+);
+
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.top i{
+
+font-size:20px;
+color:white;
+}
+
+.top h2{
+
+font-size:17px;
+font-weight:900;
+color:white;
+}
+
+/* TABLE */
+
+.table-box{
+
+margin:0 12px;
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+}
+
+.table-scroll{
+overflow-x:auto;
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+}
+
+thead{
+
+background:#c96a00;
+
+color:white;
+}
+
+th{
+
+padding:8px 3px;
+
+font-size:10px;
+
+font-weight:900;
+
+text-align:center;
+
+line-height:1;
+}
+
+td{
+
+padding:7px 3px;
+
+font-size:10px;
+
+font-weight:900;
+
+color:#111827;
+
+border-bottom:1px solid #ededed;
+
+text-align:center;
+
+line-height:1;
+}
+
+.team{
+color:#2563eb;
+font-weight:900;
+}
+
+.inactive-status{
+color:#ef4444;
+font-weight:900;
+}
+
+.active-status{
+color:#16a34a;
+font-weight:900;
+}
+
+.amount{
+color:#0284c7;
+font-weight:900;
+}
+
+.today{
+color:#9333ea;
+font-weight:900;
+}
+
+/* TOTAL ROW */
+
+.total-row{
+
+background:
+linear-gradient(
+135deg,
+#dbeafe,
+#bfdbfe
+);
+}
+
+.total-row td{
+
+padding:9px 3px;
+
+font-size:11px;
+
+font-weight:900;
+
+border-bottom:none;
+}
+
+.total-title{
+color:#0f172a;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<div class="title">
+Level Income
+</div>
+
+<a href="notification.html" class="notify">
+<i class="fa-solid fa-wallet"></i>
+</a>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+<h2>
+16 Level Income Details
+</h2>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<div class="table-scroll">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Total<br>Level</th>
+
+<th>Total<br>Team</th>
+
+<th>Inactive</th>
+
+<th>Active</th>
+
+<th>Total<br>Business</th>
+
+<th>Level<br>Amount</th>
+
+<th>Daily<br>Income</th>
+
+</tr>
+
+</thead>
+
+<tbody id="incomeTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+/* =========================================
+CURRENT USER
+========================================= */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* =========================================
+ALL USERS
+========================================= */
+
+let users =
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+/* =========================================
+ADMIN SETTINGS
+========================================= */
+
+let settings =
+JSON.parse(
+localStorage.getItem(
+"incomeSettings"
+)
+) || {
+levels:{}
+};
+
+/* =========================================
+TABLE
+========================================= */
+
+let table =
+document.getElementById(
+"incomeTable"
+);
+
+/* CLEAR */
+
+table.innerHTML = "";
+
+/* =========================================
+TOTAL VARIABLES
+========================================= */
+
+let totalTeam = 0;
+
+let totalInactive = 0;
+
+let totalActive = 0;
+
+let totalBusiness = 0;
+
+let totalIncome = 0;
+
+/* =========================================
+GET NEXT LEVEL USERS
+========================================= */
+
+function getNextLevelUsers(parentUsers){
+
+let nextUsers = [];
+
+parentUsers.forEach(parent=>{
+
+let childUsers =
+users.filter(user =>
+
+user.referral &&
+
+parent.userId &&
+
+user.referral
+.toUpperCase() ===
+
+parent.userId
+.toUpperCase()
+
+);
+
+nextUsers.push(...childUsers);
+
+});
+
+return nextUsers;
+
+}
+
+/* =========================================
+FIRST LEVEL USERS
+========================================= */
+
+let currentLevelUsers = [];
+
+if(currentUser){
+
+currentLevelUsers =
+users.filter(user =>
+
+user.referral &&
+
+currentUser.userId &&
+
+user.referral
+.toUpperCase() ===
+
+currentUser.userId
+.toUpperCase()
+
+);
+
+}
+
+/* =========================================
+CREATE 16 LEVEL
+========================================= */
+
+for(let level=1; level<=16; level++){
+
+let levelUsers =
+currentLevelUsers;
+
+/* TOTAL TEAM */
+
+let total =
+levelUsers.length;
+
+/* ACTIVE USERS */
+
+let activeUsers =
+levelUsers.filter(user =>
+
+(user.status || "Active")
+.toLowerCase() === "active"
+
+);
+
+/* ACTIVE COUNT */
+
+let active =
+activeUsers.length;
+
+/* INACTIVE COUNT */
+
+let inactive =
+total - active;
+
+/* BUSINESS */
+
+let business = 0;
+
+activeUsers.forEach(user=>{
+
+business += Number(
+
+user.rechargeAmount ||
+
+100
+
+);
+
+});
+
+/* LEVEL AMOUNT */
+
+let levelAmount =
+Number(
+
+settings.levels[
+"level"+level
+] || 0
+
+);
+
+/* DAILY INCOME */
+
+let dailyIncome =
+active * levelAmount;
+
+/* TOTAL ADD */
+
+totalTeam += total;
+
+totalInactive += inactive;
+
+totalActive += active;
+
+totalBusiness += business;
+
+totalIncome += dailyIncome;
+
+/* TABLE ROW */
+
+table.innerHTML += `
+
+<tr>
+
+<td>
+Level ${level}
+</td>
+
+<td class="team">
+${total}
+</td>
+
+<td class="inactive-status">
+${inactive}
+</td>
+
+<td class="active-status">
+${active}
+</td>
+
+<td class="amount">
+₹${business}
+</td>
+
+<td class="amount">
+₹${levelAmount}
+</td>
+
+<td class="today">
+₹${dailyIncome.toFixed(2)}
+</td>
+
+</tr>
+
+`;
+
+/* NEXT LEVEL */
+
+currentLevelUsers =
+getNextLevelUsers(
+levelUsers
+);
+
+}
+
+/* =========================================
+TOTAL ROW
+========================================= */
+
+table.innerHTML += `
+
+<tr class="total-row">
+
+<td class="total-title">
+TOTAL
+</td>
+
+<td class="team">
+${totalTeam}
+</td>
+
+<td class="inactive-status">
+${totalInactive}
+</td>
+
+<td class="active-status">
+${totalActive}
+</td>
+
+<td class="amount">
+₹${totalBusiness}
+</td>
+
+<td class="amount">
+--
+</td>
+
+<td class="today">
+₹${totalIncome.toFixed(2)}
+</td>
+
+</tr>
+
+`;
+
+</script>
+
+</body>
+
+</html>

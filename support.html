@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Support Center
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:14px 16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:44px;
+height:44px;
+
+border-radius:12px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.noty{
+
+width:36px;
+height:36px;
+
+border-radius:10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.06);
+
+font-size:14px;
+color:white;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+/* SUPPORT GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+}
+
+/* CARD */
+
+.card{
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+text-align:center;
+
+color:white;
+}
+
+.icon{
+
+width:46px;
+height:46px;
+
+margin:auto;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:18px;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0f766e
+);
+
+color:white;
+}
+
+.card h3{
+margin-top:10px;
+font-size:13px;
+}
+
+.card p{
+margin-top:4px;
+font-size:9px;
+color:#94a3b8;
+line-height:1.4;
+}
+
+/* BUTTON */
+
+.btn{
+
+margin-top:10px;
+
+height:34px;
+
+border-radius:10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:10px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+/* FAQ */
+
+.faq-title{
+
+margin-top:18px;
+
+font-size:15px;
+font-weight:700;
+}
+
+.faq{
+
+margin-top:10px;
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.faq h4{
+font-size:12px;
+}
+
+.faq p{
+margin-top:6px;
+font-size:9px;
+color:#94a3b8;
+line-height:1.5;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:10px;
+right:10px;
+bottom:10px;
+
+height:70px;
+
+border-radius:22px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:8px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-28px;
+
+font-size:22px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html"
+class="logo">
+
+<img src="image.png">
+
+</a>
+
+<div class="noty">
+<i class="fa-solid fa-headset"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Support Center
+</h2>
+
+<p>
+24x7 customer help support
+</p>
+
+</div>
+
+<!-- SUPPORT -->
+
+<div class="box">
+
+<div class="grid">
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="icon">
+<i class="fa-brands fa-whatsapp"></i>
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Quick customer support
+</p>
+
+<div class="btn">
+Chat Now
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="icon">
+<i class="fa-brands fa-telegram"></i>
+</div>
+
+<h3>
+Telegram
+</h3>
+
+<p>
+Join support channel
+</p>
+
+<div class="btn">
+Open Now
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="icon">
+<i class="fa-solid fa-envelope"></i>
+</div>
+
+<h3>
+Email
+</h3>
+
+<p>
+Official email support
+</p>
+
+<div class="btn">
+Send Mail
+</div>
+
+</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<div class="icon">
+<i class="fa-solid fa-comments"></i>
+</div>
+
+<h3>
+Live Chat
+</h3>
+
+<p>
+Talk with live agent
+</p>
+
+<div class="btn">
+Start Chat
+</div>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-title">
+Frequently Asked Questions
+</div>
+
+<div class="faq">
+
+<h4>
+How to add money?
+</h4>
+
+<p>
+Open wallet page and click add money option.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h4>
+How to complete KYC?
+</h4>
+
+<p>
+Upload Aadhaar, PAN and selfie for verification.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h4>
+How to withdraw balance?
+</h4>
+
+<p>
+Go to withdraw page and select bank account.
+</p>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

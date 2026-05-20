@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+United4adcard Profile
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#0b1120
+);
+}
+
+/* APP */
+
+.app{
+height:100vh;
+overflow-y:auto;
+padding-bottom:120px;
+}
+
+/* HEADER */
+
+.header{
+padding:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+width:52px;
+height:52px;
+border-radius:16px;
+overflow:hidden;
+border:2px solid rgba(255,255,255,.08);
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.bell{
+width:42px;
+height:42px;
+border-radius:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:18px;
+background:rgba(255,255,255,.05);
+color:white;
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+
+margin:0 16px;
+
+padding:10px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0891b2,
+#2563eb
+);
+
+position:relative;
+
+overflow:hidden;
+
+text-align:center;
+
+min-height:140px;
+}
+
+.profile-card::after{
+content:'';
+position:absolute;
+right:-35px;
+top:-35px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,255,255,.10);
+}
+
+/* PROFILE IMAGE */
+
+.profile-img{
+
+width:52px;
+height:52px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+margin:auto;
+
+border:2px solid rgba(255,255,255,.25);
+
+display:block;
+
+cursor:pointer;
+}
+
+.profile-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+#profileUpload{
+display:none;
+}
+
+/* NAME */
+
+.profile-name{
+margin-top:8px;
+font-size:15px;
+font-weight:800;
+color:white;
+}
+
+/* MOBILE */
+
+.profile-mobile{
+margin-top:2px;
+font-size:9px;
+color:white;
+opacity:.9;
+}
+
+/* BALANCE */
+
+.profile-balance{
+margin-top:6px;
+font-size:18px;
+font-weight:800;
+color:white;
+}
+
+/* SECTION */
+
+.section{
+padding:18px 16px 0;
+}
+
+.section-title{
+font-size:18px;
+font-weight:700;
+color:white;
+margin-bottom:12px;
+}
+
+/* MENU */
+
+.menu{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+border-radius:20px;
+
+overflow:hidden;
+}
+
+.menu-item{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px;
+
+border-bottom:
+1px solid rgba(255,255,255,.05);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.menu-item:hover{
+background:rgba(255,255,255,.04);
+}
+
+.menu-item:last-child{
+border-bottom:none;
+}
+
+.menu-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.menu-icon{
+
+width:42px;
+height:42px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+.menu-text h4{
+font-size:13px;
+color:white;
+}
+
+.menu-text p{
+font-size:9px;
+color:#94a3b8;
+margin-top:2px;
+}
+
+.arrow{
+font-size:14px;
+color:#94a3b8;
+}
+
+/* LOGOUT */
+
+.logout{
+
+margin-top:18px;
+
+height:48px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:13px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#dc2626,
+#ef4444
+);
+
+color:white;
+
+cursor:pointer;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:76px;
+
+border-radius:26px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+
+z-index:999;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:9px;
+font-weight:600;
+
+color:#94a3b8;
+}
+
+.nav i{
+
+display:block;
+
+font-size:20px;
+
+margin-bottom:4px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+/* QR */
+
+.qr{
+
+width:66px;
+height:66px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-34px;
+
+border:4px solid #0f172a;
+
+font-size:26px;
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+<img src="image.png">
+</div>
+
+<div class="bell">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+</div>
+
+<!-- PROFILE -->
+
+<div class="profile-card">
+
+<label for="profileUpload"
+class="profile-img">
+
+<img src="image.png"
+id="profilePreview">
+
+<input type="file"
+id="profileUpload"
+accept="image/*">
+
+</label>
+
+<div class="profile-name"
+id="profileName">
+User Name
+</div>
+
+<div class="profile-mobile"
+id="profileMobile">
++91 0000000000
+</div>
+
+<div class="profile-balance"
+id="profileBalance">
+₹0
+</div>
+
+</div>
+
+<!-- MENU -->
+
+<div class="section">
+
+<div class="section-title">
+Account
+</div>
+
+<div class="menu">
+
+<!-- EDIT PROFILE -->
+
+<div class="menu-item"
+onclick="window.location.href='edit-profile.html'">
+
+<div class="menu-left">
+
+<div class="menu-icon">
+<i class="fa-solid fa-user"></i>
+</div>
+
+<div class="menu-text">
+<h4>Edit Profile</h4>
+<p>Update personal details</p>
+</div>
+
+</div>
+
+<div class="arrow">
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+</div>
+
+<!-- BANK -->
+
+<div class="menu-item"
+onclick="window.location.href='bank.html'">
+
+<div class="menu-left">
+
+<div class="menu-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<div class="menu-text">
+<h4>Bank Account</h4>
+<p>Add or manage bank</p>
+</div>
+
+</div>
+
+<div class="arrow">
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+</div>
+
+<!-- KYC -->
+
+<div class="menu-item"
+onclick="window.location.href='kyc.html'">
+
+<div class="menu-left">
+
+<div class="menu-icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
+
+<div class="menu-text">
+<h4>KYC Verification</h4>
+<p>Verify your identity</p>
+</div>
+
+</div>
+
+<div class="arrow">
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+</div>
+
+<!-- REFER -->
+
+<div class="menu-item"
+onclick="window.location.href='refer.html'">
+
+<div class="menu-left">
+
+<div class="menu-icon">
+<i class="fa-solid fa-gift"></i>
+</div>
+
+<div class="menu-text">
+<h4>Refer & Earn</h4>
+<p>Invite friends & earn</p>
+</div>
+
+</div>
+
+<div class="arrow">
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+</div>
+
+<!-- SUPPORT -->
+
+<div class="menu-item"
+onclick="window.location.href='support.html'">
+
+<div class="menu-left">
+
+<div class="menu-icon">
+<i class="fa-solid fa-headset"></i>
+</div>
+
+<div class="menu-text">
+<h4>Support</h4>
+<p>Help & customer care</p>
+</div>
+
+</div>
+
+<div class="arrow">
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+</div>
+
+</div>
+
+<!-- LOGOUT -->
+
+<div class="logout"
+id="logoutBtn">
+Logout
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+Reward
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+Scratch
+
+</a>
+
+<a href="profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</div>
+
+<script>
+
+/* =========================
+AUTO PROFILE DATA CONNECT
+========================= */
+
+/* CURRENT USER */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* PROFILE ELEMENTS */
+
+let profileName =
+document.getElementById(
+"profileName"
+);
+
+let profileMobile =
+document.getElementById(
+"profileMobile"
+);
+
+let profileBalance =
+document.getElementById(
+"profileBalance"
+);
+
+/* LOAD USER DATA */
+
+if(currentUser){
+
+profileName.innerHTML =
+currentUser.name || "User";
+
+profileMobile.innerHTML =
+"+91 " +
+(
+currentUser.mobile || "0000000000"
+);
+
+/* WALLET */
+
+let wallet =
+localStorage.getItem(
+"userWallet"
+);
+
+if(!wallet){
+
+wallet = "0";
+
+}
+
+profileBalance.innerHTML =
+"₹" + wallet;
+
+}
+
+/* =========================
+PROFILE IMAGE
+========================= */
+
+const upload =
+document.getElementById(
+'profileUpload'
+);
+
+const preview =
+document.getElementById(
+'profilePreview'
+);
+
+upload.onchange = e=>{
+
+const file =
+e.target.files[0];
+
+if(file){
+
+const reader =
+new FileReader();
+
+reader.onload = function(){
+
+preview.src =
+reader.result;
+
+/* SAVE IMAGE */
+
+localStorage.setItem(
+'profileImage',
+reader.result
+);
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+};
+
+/* LOAD SAVED IMAGE */
+
+const savedImage =
+localStorage.getItem(
+'profileImage'
+);
+
+if(savedImage){
+
+preview.src =
+savedImage;
+
+}
+
+/* =========================
+LOGOUT
+========================= */
+
+document
+.getElementById(
+'logoutBtn'
+)
+.onclick = ()=>{
+
+localStorage.removeItem(
+"isLoggedIn"
+);
+
+localStorage.removeItem(
+"currentUser"
+);
+
+window.location.href =
+'login.html';
+
+};
+
+</script>
+
+</body>
+
+</html>

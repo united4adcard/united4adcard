@@ -1,0 +1,1407 @@
+<!-- =========================================
+FILE NAME = scratch.html
+FINAL FULL SCRATCH SYSTEM
+JOINING + KYC + ACTIVE + REFERRAL
+SPONSOR ₹100 ACTIVATION CONNECTED
+ADMIN BONUS CONNECTED
+MOBILE.HTML CONNECTED
+ALL TO ALL FINAL CODE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Scratch Card
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+color:white;
+
+padding-bottom:100px;
+
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.head-btn{
+
+width:38px;
+height:38px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:14px;
+}
+
+.title{
+
+font-size:18px;
+font-weight:800;
+}
+
+/* WALLET */
+
+.wallet-card{
+
+margin:0 12px;
+
+padding:14px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+#111827,
+#1e293b
+);
+
+border:
+1px solid rgba(255,255,255,.06);
+
+}
+
+.wallet-top{
+
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+}
+
+.wallet-top h2{
+
+font-size:14px;
+font-weight:800;
+
+}
+
+.coin{
+
+margin-top:8px;
+
+font-size:48px;
+font-weight:800;
+
+color:#facc15;
+}
+
+.coin-text{
+
+margin-top:5px;
+
+font-size:10px;
+
+color:#94a3b8;
+}
+
+.wallet-top i{
+
+font-size:36px;
+
+color:#facc15;
+}
+
+.wallet-mini{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:8px;
+
+margin-top:14px;
+}
+
+.mini-box{
+
+padding:12px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+text-align:center;
+}
+
+.mini-box p{
+
+font-size:9px;
+
+color:#94a3b8;
+}
+
+.mini-box h3{
+
+margin-top:4px;
+
+font-size:18px;
+font-weight:800;
+}
+
+.transfer-btn{
+
+width:100%;
+
+height:48px;
+
+border:none;
+
+margin-top:14px;
+
+border-radius:18px;
+
+font-size:14px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+color:white;
+
+cursor:pointer;
+}
+
+/* REWARD INFO */
+
+.reward-info{
+
+margin:14px 12px 0;
+
+padding:14px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+#111827,
+#1e293b
+);
+
+}
+
+.reward-title{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+font-size:16px;
+font-weight:800;
+
+margin-bottom:12px;
+}
+
+.reward-title i{
+
+color:#facc15;
+}
+
+.reward-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+}
+
+.reward-box{
+
+padding:12px 8px;
+
+border-radius:18px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,.05);
+
+}
+
+.reward-icon{
+
+width:50px;
+height:50px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:22px;
+
+color:white;
+}
+
+.join{
+background:linear-gradient(135deg,#14b8a6,#06b6d4);
+}
+
+.kyc{
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+.active{
+background:linear-gradient(135deg,#f59e0b,#fb923c);
+}
+
+.refer{
+background:linear-gradient(135deg,#9333ea,#d946ef);
+}
+
+.reward-box h3{
+
+margin-top:10px;
+
+font-size:12px;
+font-weight:800;
+}
+
+.reward-box p{
+
+margin-top:4px;
+
+font-size:8px;
+
+color:#94a3b8;
+}
+
+.reward-box h2{
+
+margin-top:7px;
+
+font-size:18px;
+font-weight:800;
+
+color:#22c55e;
+}
+
+/* SECTION */
+
+.section{
+
+padding:14px 12px 0;
+}
+
+.section-title{
+
+font-size:14px;
+font-weight:800;
+
+margin-bottom:8px;
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:8px;
+}
+
+/* CARD */
+
+.card{
+
+height:78px;
+
+border-radius:16px;
+
+background:
+linear-gradient(
+135deg,
+#fb923c,
+#fb7185
+);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+cursor:pointer;
+}
+
+.card i{
+
+font-size:18px;
+}
+
+.card h3{
+
+margin-top:4px;
+
+font-size:9px;
+font-weight:800;
+}
+
+.card p{
+
+font-size:7px;
+margin-top:2px;
+}
+
+/* HISTORY */
+
+.history{
+
+padding:0 12px;
+}
+
+.history-box{
+
+padding:10px;
+
+border-radius:12px;
+
+margin-bottom:8px;
+
+background:
+rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.amount{
+
+font-size:16px;
+font-weight:800;
+
+color:#22c55e;
+}
+
+/* POPUP */
+
+.popup{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.75);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+}
+
+.popup-box{
+
+width:90%;
+
+max-width:320px;
+
+padding:16px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+#111827,
+#1e293b
+);
+
+text-align:center;
+}
+
+.popup-title{
+
+font-size:18px;
+font-weight:800;
+}
+
+.reward-amount{
+
+margin-top:14px;
+
+font-size:40px;
+font-weight:800;
+
+color:#22c55e;
+}
+
+.claim-btn{
+
+width:100%;
+
+height:46px;
+
+border:none;
+
+margin-top:16px;
+
+border-radius:16px;
+
+font-size:14px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#22c55e,
+#16a34a
+);
+
+color:white;
+
+cursor:pointer;
+}
+
+.close-btn{
+
+width:100%;
+
+height:42px;
+
+border:none;
+
+margin-top:10px;
+
+border-radius:14px;
+
+font-size:12px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#ef4444,
+#dc2626
+);
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="home.html"
+class="head-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<div class="title">
+Scratch Card
+</div>
+
+<a href="wallet.html"
+class="head-btn">
+
+<i class="fa-solid fa-wallet"></i>
+
+</a>
+
+</div>
+
+<div class="wallet-card">
+
+<div class="wallet-top">
+
+<div>
+
+<h2>
+Coin Wallet
+</h2>
+
+<div class="coin"
+id="coinBalance">
+0
+</div>
+
+<div class="coin-text">
+100 Coin = ₹1
+</div>
+
+</div>
+
+<i class="fa-solid fa-coins"></i>
+
+</div>
+
+<div class="wallet-mini">
+
+<div class="mini-box">
+
+<p>
+Transfer Coin
+</p>
+
+<h3 id="transferCoin">
+0
+</h3>
+
+</div>
+
+<div class="mini-box">
+
+<p>
+Wallet Balance
+</p>
+
+<h3 id="walletBalance">
+₹0
+</h3>
+
+</div>
+
+</div>
+
+<button class="transfer-btn"
+onclick="transferCoin()">
+
+TRANSFER TO WALLET
+
+</button>
+
+</div>
+
+<div class="reward-info">
+
+<div class="reward-title">
+
+<i class="fa-solid fa-gift"></i>
+
+Scratch Reward Bonus
+
+</div>
+
+<div class="reward-grid">
+
+<div class="reward-box">
+
+<div class="reward-icon join">
+
+<i class="fa-solid fa-user-plus"></i>
+
+</div>
+
+<h3>
+Joining Bonus
+</h3>
+
+<p>
+Registration Success
+</p>
+
+<h2 id="joinBonusText">
+0 Coin
+</h2>
+
+</div>
+
+<div class="reward-box">
+
+<div class="reward-icon kyc">
+
+<i class="fa-solid fa-id-card"></i>
+
+</div>
+
+<h3>
+KYC Bonus
+</h3>
+
+<p>
+KYC Verify Success
+</p>
+
+<h2 id="kycBonusText">
+0 Coin
+</h2>
+
+</div>
+
+<div class="reward-box">
+
+<div class="reward-icon active">
+
+<i class="fa-solid fa-bolt"></i>
+
+</div>
+
+<h3>
+ID Active
+</h3>
+
+<p>
+Sponsor ₹100 Payment
+</p>
+
+<h2 id="activeBonusText">
+0 Coin
+</h2>
+
+</div>
+
+<div class="reward-box">
+
+<div class="reward-icon refer">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<h3>
+Referral Bonus
+</h3>
+
+<p>
+Direct Active Join
+</p>
+
+<h2 id="referBonusText">
+0 Coin
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+Pending Scratch
+</div>
+
+<div class="grid"
+id="pendingCards">
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+Scratch History
+</div>
+
+<div class="history"
+id="historyCards">
+
+</div>
+
+</div>
+
+<div class="popup"
+id="popup">
+
+<div class="popup-box">
+
+<div class="popup-title"
+id="popupTitle">
+Scratch Reward
+</div>
+
+<div class="reward-amount"
+id="rewardAmount">
++0
+</div>
+
+<button class="claim-btn"
+onclick="claimReward()">
+
+CLAIM REWARD
+
+</button>
+
+<button class="close-btn"
+onclick="closePopup()">
+
+CLOSE
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================================
+CURRENT USER
+========================================= */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+) || {};
+
+let userKey =
+currentUser.userId || "guest";
+
+/* =========================================
+ALL USERS
+========================================= */
+
+let allUsers =
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+/* =========================================
+ADMIN SETTINGS
+========================================= */
+
+let incomeSettings =
+JSON.parse(
+localStorage.getItem(
+"incomeSettings"
+)
+) || {};
+
+/* =========================================
+ADMIN BONUS
+========================================= */
+
+let joinBonus =
+Number(
+incomeSettings.joinIncome || 100
+);
+
+let kycBonus =
+Number(
+incomeSettings.kycIncome || 100
+);
+
+let activeBonus =
+Number(
+incomeSettings.activeIncome || 300
+);
+
+let referralBonus =
+Number(
+incomeSettings.referralIncome || 300
+);
+
+/* =========================================
+SHOW BONUS
+========================================= */
+
+joinBonusText.innerHTML =
+joinBonus + " Coin";
+
+kycBonusText.innerHTML =
+kycBonus + " Coin";
+
+activeBonusText.innerHTML =
+activeBonus + " Coin";
+
+referBonusText.innerHTML =
+referralBonus + " Coin";
+
+/* =========================================
+COIN
+========================================= */
+
+let totalCoin =
+parseInt(
+localStorage.getItem(
+"totalCoin_" + userKey
+)
+) || 0;
+
+/* =========================================
+MAIN WALLET
+========================================= */
+
+let currentIndex =
+allUsers.findIndex(user =>
+
+user.userId ==
+currentUser.userId
+
+);
+
+if(currentIndex >= 0){
+
+currentUser =
+allUsers[currentIndex];
+
+}
+
+if(!currentUser.wallet){
+
+currentUser.wallet = 0;
+
+}
+
+let claimed =
+JSON.parse(
+localStorage.getItem(
+"claimedScratch_" + userKey
+)
+) || [];
+
+/* =========================================
+AUTO JOINING
+========================================= */
+
+if(currentUser.userId){
+
+localStorage.setItem(
+"joiningScratch_" + userKey,
+"true"
+);
+
+}
+
+/* =========================================
+REWARDS
+========================================= */
+
+let rewards = [];
+
+/* =========================================
+JOIN BONUS
+========================================= */
+
+if(
+localStorage.getItem(
+"joiningScratch_" + userKey
+) == "true"
+){
+
+let id =
+"join_" +
+currentUser.userId;
+
+if(
+!claimed.includes(id)
+){
+
+rewards.push({
+
+id:id,
+
+title:"Joining Income",
+
+coin:joinBonus,
+
+icon:"fa-user-plus"
+
+});
+
+}
+
+}
+
+/* =========================================
+KYC BONUS
+========================================= */
+
+if(
+currentUser.kyc == "Verified"
+){
+
+let id =
+"kyc_" +
+currentUser.userId;
+
+if(
+!claimed.includes(id)
+){
+
+rewards.push({
+
+id:id,
+
+title:"KYC Income",
+
+coin:kycBonus,
+
+icon:"fa-id-card"
+
+});
+
+}
+
+}
+
+/* =========================================
+ACTIVE BONUS
+ONLY SPONSOR ₹100 PAYMENT
+========================================= */
+
+if(
+currentUser.idActivated == true
+){
+
+let id =
+"active_" +
+currentUser.userId;
+
+if(
+!claimed.includes(id)
+){
+
+rewards.push({
+
+id:id,
+
+title:"ID Active Income",
+
+coin:activeBonus,
+
+icon:"fa-bolt"
+
+});
+
+}
+
+}
+
+/* =========================================
+REFERRAL BONUS
+ONLY ACTIVE DIRECT USER
+========================================= */
+
+let myTeam =
+
+allUsers.filter(user =>
+
+user.referral &&
+currentUser.userId &&
+
+user.referral.toUpperCase() ==
+
+currentUser.userId.toUpperCase()
+
+&&
+
+user.idActivated == true
+
+);
+
+myTeam.forEach(user=>{
+
+let id =
+"ref_" +
+user.userId;
+
+if(
+!claimed.includes(id)
+){
+
+rewards.push({
+
+id:id,
+
+title:"Referral Income",
+
+coin:referralBonus,
+
+icon:"fa-users"
+
+});
+
+}
+
+});
+
+/* =========================================
+UPDATE TOP
+========================================= */
+
+function updateTop(){
+
+coinBalance.innerHTML =
+totalCoin;
+
+transferCoin.innerHTML =
+totalCoin;
+
+walletBalance.innerHTML =
+"₹" + currentUser.wallet;
+
+}
+
+/* =========================================
+LOAD CARDS
+========================================= */
+
+function loadCards(){
+
+let pending =
+pendingCards;
+
+let history =
+historyCards;
+
+pending.innerHTML = "";
+history.innerHTML = "";
+
+if(rewards.length == 0){
+
+pending.innerHTML = `
+
+<div style="
+grid-column:1/4;
+padding:20px;
+text-align:center;
+font-size:13px;
+font-weight:700;
+color:#94a3b8;
+">
+
+No Scratch Reward Available
+
+</div>
+
+`;
+
+}
+
+/* LOOP */
+
+rewards.forEach(item=>{
+
+/* CLAIMED */
+
+if(
+claimed.includes(item.id)
+){
+
+history.innerHTML += `
+
+<div class="history-box">
+
+<div>
+${item.title}
+</div>
+
+<div class="amount">
++${item.coin}
+</div>
+
+</div>
+
+`;
+
+}
+
+/* PENDING */
+
+else{
+
+pending.innerHTML += `
+
+<div class="card"
+
+onclick="
+openScratch(
+'${item.id}',
+'${item.title}',
+${item.coin}
+)
+">
+
+<i class="fa-solid ${item.icon}"></i>
+
+<h3>
+${item.title}
+</h3>
+
+<p>
+Tap Here
+</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+}
+
+/* =========================================
+POPUP
+========================================= */
+
+let currentId = "";
+let currentCoin = 0;
+
+function openScratch(id,title,coin){
+
+currentId = id;
+currentCoin = coin;
+
+popup.style.display =
+"flex";
+
+popupTitle.innerHTML =
+title;
+
+rewardAmount.innerHTML =
+"+" + coin;
+
+}
+
+/* =========================================
+CLAIM
+========================================= */
+
+function claimReward(){
+
+if(
+claimed.includes(currentId)
+){
+return;
+}
+
+/* SAVE CLAIM */
+
+claimed.push(currentId);
+
+localStorage.setItem(
+
+"claimedScratch_" + userKey,
+
+JSON.stringify(claimed)
+
+);
+
+/* ADD COIN */
+
+totalCoin += Number(currentCoin);
+
+localStorage.setItem(
+
+"totalCoin_" + userKey,
+
+totalCoin
+
+);
+
+/* UPDATE */
+
+updateTop();
+
+loadCards();
+
+alert(
+"Reward Claimed Successfully"
+);
+
+closePopup();
+
+}
+
+/* =========================================
+CLOSE
+========================================= */
+
+function closePopup(){
+
+popup.style.display =
+"none";
+
+}
+
+/* =========================================
+TRANSFER COIN TO MAIN WALLET
+========================================= */
+
+function transferCoin(){
+
+if(totalCoin < 100){
+
+alert(
+"Minimum 100 Coin Required"
+);
+
+return;
+
+}
+
+let rupee =
+
+Math.floor(
+totalCoin / 100
+);
+
+/* MAIN WALLET */
+
+currentUser.wallet += rupee;
+
+/* UPDATE USER */
+
+allUsers[currentIndex] =
+currentUser;
+
+/* SAVE */
+
+localStorage.setItem(
+
+"allUsers",
+
+JSON.stringify(allUsers)
+
+);
+
+localStorage.setItem(
+
+"currentUser",
+
+JSON.stringify(currentUser)
+
+);
+
+/* RESET COIN */
+
+totalCoin = 0;
+
+localStorage.setItem(
+
+"totalCoin_" + userKey,
+
+0
+
+);
+
+/* UPDATE */
+
+updateTop();
+
+alert(
+"₹" + rupee +
+" Transfer Successful"
+);
+
+}
+
+/* =========================================
+LIVE UPDATE
+========================================= */
+
+setInterval(()=>{
+
+let latestUsers =
+JSON.parse(
+localStorage.getItem(
+"allUsers"
+)
+) || [];
+
+let latestCurrent =
+latestUsers.find(user =>
+
+user.userId ==
+currentUser.userId
+
+);
+
+if(latestCurrent){
+
+currentUser =
+latestCurrent;
+
+walletBalance.innerHTML =
+"₹" + currentUser.wallet;
+
+}
+
+},1000);
+
+/* =========================================
+START
+========================================= */
+
+updateTop();
+
+loadCards();
+
+</script>
+
+</body>
+
+</html>

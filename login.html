@@ -1,0 +1,765 @@
+<!-- =========================================
+FILE NAME = login.html
+FINAL FULL WORKING LOGIN CODE
+CONNECTED WITH create-account.html
+INVALID LOGIN FIXED
+AUTO SESSION SAVE
+ALL OLD DESIGN SAFE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+United4adcard Login
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+background:#020617;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:18px;
+}
+
+/* BACKGROUND */
+
+.bg1{
+position:absolute;
+width:220px;
+height:220px;
+background:#9333ea;
+border-radius:50%;
+filter:blur(110px);
+top:-120px;
+left:-120px;
+opacity:.38;
+}
+
+.bg2{
+position:absolute;
+width:220px;
+height:220px;
+background:#06b6d4;
+border-radius:50%;
+filter:blur(110px);
+bottom:-120px;
+right:-120px;
+opacity:.28;
+}
+
+/* CARD */
+
+.login-card{
+
+position:relative;
+
+width:100%;
+max-width:315px;
+
+padding:20px 18px 24px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+180deg,
+rgba(17,24,39,.96),
+rgba(2,6,23,.95)
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+box-shadow:
+0 0 30px rgba(0,0,0,.5);
+
+overflow:hidden;
+z-index:2;
+}
+
+/* LOGO */
+
+.logo-box{
+text-align:center;
+margin-top:2px;
+}
+
+.logo-image{
+
+width:165px;
+
+display:block;
+
+margin:auto;
+
+object-fit:contain;
+}
+
+/* WELCOME */
+
+.welcome{
+
+margin-top:14px;
+
+text-align:center;
+}
+
+.welcome h1{
+
+font-size:26px;
+
+line-height:1.05;
+
+font-weight:800;
+
+color:white;
+}
+
+.welcome p{
+
+margin-top:6px;
+
+font-size:11px;
+
+color:#94a3b8;
+}
+
+/* INPUT */
+
+.input-box{
+
+margin-top:14px;
+
+position:relative;
+}
+
+.input-box input{
+
+width:100%;
+
+height:46px;
+
+border:none;
+outline:none;
+
+padding:0 15px;
+
+border-radius:15px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+font-size:13px;
+
+color:white;
+}
+
+.input-box input:focus{
+
+border-color:#38bdf8;
+}
+
+.input-box label{
+
+position:absolute;
+
+left:15px;
+top:13px;
+
+font-size:12px;
+
+color:#94a3b8;
+
+pointer-events:none;
+
+transition:.25s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+
+top:-6px;
+left:11px;
+
+font-size:8px;
+
+padding:2px 5px;
+
+background:#020617;
+
+border-radius:20px;
+
+color:#38bdf8;
+}
+
+/* OPTIONS */
+
+.options{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:11px;
+
+font-size:9px;
+
+color:white;
+}
+
+.options a{
+
+text-decoration:none;
+
+color:#8b5cf6;
+}
+
+/* LOGIN BUTTON */
+
+.login-btn{
+
+width:100%;
+
+height:46px;
+
+margin-top:15px;
+
+border:none;
+outline:none;
+
+border-radius:15px;
+
+font-size:16px;
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+#9333ea,
+#3b82f6,
+#22d3ee
+);
+
+cursor:pointer;
+}
+
+/* OR */
+
+.or{
+
+margin:15px 0;
+
+text-align:center;
+
+position:relative;
+
+font-size:10px;
+
+color:#cbd5e1;
+}
+
+.or::before{
+
+content:'';
+
+position:absolute;
+
+left:0;
+top:50%;
+
+width:34%;
+height:1px;
+
+background:
+rgba(255,255,255,.07);
+}
+
+.or::after{
+
+content:'';
+
+position:absolute;
+
+right:0;
+top:50%;
+
+width:34%;
+height:1px;
+
+background:
+rgba(255,255,255,.07);
+}
+
+/* OTP */
+
+.otp-btn{
+
+width:100%;
+
+height:44px;
+
+border:none;
+outline:none;
+
+border-radius:15px;
+
+font-size:13px;
+
+color:white;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+cursor:pointer;
+}
+
+/* SIGNUP */
+
+.signup{
+
+margin-top:14px;
+
+text-align:center;
+
+font-size:9px;
+
+color:#94a3b8;
+}
+
+.signup a{
+
+text-decoration:none;
+
+color:#22d3ee;
+
+font-weight:600;
+}
+
+/* SUCCESS */
+
+.success{
+
+margin-top:12px;
+
+text-align:center;
+
+font-size:11px;
+
+font-weight:700;
+
+color:#22c55e;
+
+display:none;
+}
+
+/* ERROR */
+
+.error{
+
+margin-top:12px;
+
+text-align:center;
+
+font-size:11px;
+
+font-weight:700;
+
+color:#ef4444;
+
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg1"></div>
+<div class="bg2"></div>
+
+<div class="login-card">
+
+<!-- LOGO -->
+
+<div class="logo-box">
+
+<img src="image.png"
+class="logo-image">
+
+</div>
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+<h1>
+Welcome Back
+</h1>
+
+<p>
+Login to continue your journey
+</p>
+
+</div>
+
+<!-- FORM -->
+
+<form id="loginForm">
+
+<!-- MOBILE -->
+
+<div class="input-box">
+
+<input type="tel"
+id="mobile"
+maxlength="10"
+required>
+
+<label>
+Mobile Number
+</label>
+
+</div>
+
+<!-- PASSWORD -->
+
+<div class="input-box">
+
+<input type="password"
+id="password"
+required>
+
+<label>
+Password
+</label>
+
+</div>
+
+<!-- OPTIONS -->
+
+<div class="options">
+
+<label>
+<input type="checkbox">
+Remember
+</label>
+
+<a href="forgot-password.html">
+Forgot Password?
+</a>
+
+</div>
+
+<!-- BUTTON -->
+
+<button class="login-btn"
+type="submit">
+
+Login
+
+</button>
+
+<!-- SUCCESS -->
+
+<div class="success"
+id="successMsg">
+
+Login Successful
+
+</div>
+
+<!-- ERROR -->
+
+<div class="error"
+id="errorMsg">
+
+Invalid Mobile Number or Password
+
+</div>
+
+<!-- OR -->
+
+<div class="or">
+OR
+</div>
+
+<!-- OTP -->
+
+<button class="otp-btn"
+type="button"
+onclick="otpLogin()">
+
+Login with OTP
+
+</button>
+
+<!-- SIGNUP -->
+
+<div class="signup">
+
+New User?
+
+<a href="create-account.html">
+Create Account
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+/* =========================================
+MOBILE ONLY NUMBER
+========================================= */
+
+document
+.getElementById("mobile")
+.addEventListener(
+"input",
+function(){
+
+this.value =
+this.value.replace(/\D/g,'');
+
+if(this.value.length > 10){
+
+this.value =
+this.value.slice(0,10);
+
+}
+
+}
+);
+
+/* =========================================
+LOGIN
+========================================= */
+
+document
+.getElementById("loginForm")
+.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+/* INPUT */
+
+let mobile =
+
+document
+.getElementById("mobile")
+.value
+.trim();
+
+let password =
+
+document
+.getElementById("password")
+.value
+.trim();
+
+/* VALIDATION */
+
+if(mobile.length != 10){
+
+alert(
+"Mobile Number Must Be 10 Digits"
+);
+
+return;
+
+}
+
+if(password.length < 6){
+
+alert(
+"Password Minimum 6 Characters"
+);
+
+return;
+
+}
+
+/* GET USERS */
+
+let users = [];
+
+try{
+
+users =
+
+JSON.parse(
+
+localStorage.getItem(
+"allUsers"
+)
+
+) || [];
+
+}catch(e){
+
+users = [];
+
+}
+
+/* FIND USER */
+
+let matchedUser =
+
+users.find(user =>
+
+String(user.mobile).trim() === mobile &&
+
+String(user.password).trim() === password
+
+);
+
+/* SUCCESS */
+
+if(matchedUser){
+
+/* SAVE LOGIN */
+
+localStorage.setItem(
+"isLoggedIn",
+"true"
+);
+
+localStorage.setItem(
+"currentUser",
+JSON.stringify(matchedUser)
+);
+
+localStorage.setItem(
+"userName",
+matchedUser.name
+);
+
+localStorage.setItem(
+"userMobile",
+matchedUser.mobile
+);
+
+localStorage.setItem(
+"userEmail",
+matchedUser.email
+);
+
+localStorage.setItem(
+"userId",
+matchedUser.userId
+);
+
+/* SHOW SUCCESS */
+
+document
+.getElementById("successMsg")
+.style.display = "block";
+
+document
+.getElementById("errorMsg")
+.style.display = "none";
+
+/* REDIRECT */
+
+setTimeout(()=>{
+
+window.location.href =
+"home.html";
+
+},1500);
+
+}else{
+
+/* ERROR */
+
+document
+.getElementById("errorMsg")
+.style.display = "block";
+
+document
+.getElementById("successMsg")
+.style.display = "none";
+
+}
+
+}
+);
+
+/* =========================================
+OTP LOGIN
+========================================= */
+
+function otpLogin(){
+
+let mobile =
+
+document
+.getElementById("mobile")
+.value
+.trim();
+
+if(mobile.length != 10){
+
+alert(
+"Enter Valid Mobile Number"
+);
+
+return;
+
+}
+
+alert(
+"OTP Sent Successfully"
+);
+
+}
+
+</script>
+
+</body>
+
+</html>

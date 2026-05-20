@@ -1,0 +1,627 @@
+<!-- =========================================
+FILE NAME = reward.html
+FINAL FULL AUTO REWARD SYSTEM
+ADMIN CONNECTED
+TEAM CONNECTED
+BUSINESS CONNECTED
+CLAIM SYSTEM FIXED
+ALL OLD DESIGN SAFE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+United4Adcard Reward
+</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef2ff;
+padding:12px;
+color:#111827;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+font-size:25px;
+font-weight:bold;
+margin-bottom:15px;
+color:#7c3aed;
+letter-spacing:1px;
+}
+
+/* WALLET */
+
+.wallet-box{
+background:linear-gradient(135deg,#7c3aed,#9333ea);
+padding:15px;
+border-radius:16px;
+text-align:center;
+margin-bottom:18px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+color:white;
+}
+
+.wallet-box h2{
+font-size:15px;
+margin-bottom:5px;
+}
+
+.wallet-box h1{
+font-size:28px;
+}
+
+/* TABLE */
+
+.table-box{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+
+.table-header{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+background:#7c3aed;
+padding:12px 6px;
+font-weight:bold;
+text-align:center;
+font-size:12px;
+color:white;
+}
+
+/* ROW */
+
+.table-row{
+display:grid;
+grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+align-items:center;
+text-align:center;
+padding:10px 6px;
+border-bottom:1px solid #e5e7eb;
+transition:0.3s;
+font-size:12px;
+}
+
+.table-row:hover{
+background:#f5f3ff;
+}
+
+/* BADGE */
+
+.badge{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+font-size:10px;
+font-weight:bold;
+min-width:80px;
+color:white;
+}
+
+/* COLORS */
+
+.bronze{
+background:#cd7f32;
+}
+
+.silver{
+background:#9ca3af;
+}
+
+.gold{
+background:#facc15;
+color:black;
+}
+
+.diamond{
+background:#38bdf8;
+}
+
+.crown{
+background:#a855f7;
+}
+
+.legend{
+background:#f43f5e;
+}
+
+.platinum{
+background:#14b8a6;
+}
+
+.master{
+background:#f97316;
+}
+
+.royal{
+background:#8b5cf6;
+}
+
+.infinity{
+background:#22c55e;
+}
+
+/* BUTTON */
+
+.claim-btn{
+border:none;
+padding:6px 10px;
+border-radius:8px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:11px;
+}
+
+.claim{
+background:#22c55e;
+}
+
+.claim:hover{
+background:#16a34a;
+}
+
+.pending{
+background:#9ca3af;
+cursor:not-allowed;
+}
+
+.claimed{
+background:#2563eb;
+}
+
+/* TEXT */
+
+.small{
+font-size:11px;
+font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.table-header,
+.table-row{
+font-size:9px;
+padding:8px 3px;
+}
+
+.badge{
+font-size:8px;
+padding:4px 6px;
+min-width:65px;
+}
+
+.claim-btn{
+font-size:8px;
+padding:5px 6px;
+}
+
+.title{
+font-size:21px;
+}
+
+.wallet-box h1{
+font-size:24px;
+}
+
+.small{
+font-size:8px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="title">
+UNITED4ADCARD REWARD
+</div>
+
+<!-- WALLET -->
+
+<div class="wallet-box">
+
+<h2>
+Total Wallet Balance
+</h2>
+
+<h1>
+₹<span id="wallet">0</span>
+</h1>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-box">
+
+<div class="table-header">
+
+<div>Reward</div>
+<div>Target Team</div>
+<div>Your Team</div>
+<div>Target Business</div>
+<div>Your Business</div>
+<div>Coin</div>
+<div>Status</div>
+
+</div>
+
+<div id="rewardTable"></div>
+
+</div>
+
+<script>
+
+/* CURRENT USER */
+
+let currentUserId =
+
+localStorage.getItem(
+"userId"
+);
+
+/* ALL TEAMS */
+
+let allTeams =
+
+JSON.parse(
+
+localStorage.getItem(
+"allTeams"
+)
+
+) || {};
+
+/* USER TEAM */
+
+let teamUsers =
+
+allTeams[currentUserId] || [];
+
+/* ACTIVE MEMBERS */
+
+let activeUsers =
+
+teamUsers.filter(user =>
+
+user.status === "Active"
+
+);
+
+/* TEAM COUNT */
+
+let userTeam =
+activeUsers.length;
+
+/* BUSINESS */
+
+let userBusiness = 0;
+
+activeUsers.forEach(user=>{
+
+userBusiness +=
+Number(user.wallet || 0);
+
+});
+
+/* WALLET */
+
+let wallet =
+Number(localStorage.getItem("wallet")) || 0;
+
+document.getElementById("wallet")
+.innerText = wallet;
+
+/* ADMIN REWARD SETTINGS */
+
+let savedReward = {};
+
+try{
+
+savedReward =
+
+JSON.parse(
+
+localStorage.getItem(
+"rewardSettings"
+)
+
+) || {};
+
+}catch(e){
+
+savedReward = {};
+
+}
+
+/* DEFAULT REWARDS */
+
+const defaultRewards = [
+
+{
+badge:"BRONZE",
+badgeClass:"bronze"
+},
+
+{
+badge:"SILVER",
+badgeClass:"silver"
+},
+
+{
+badge:"GOLD",
+badgeClass:"gold"
+},
+
+{
+badge:"DIAMOND",
+badgeClass:"diamond"
+},
+
+{
+badge:"CROWN",
+badgeClass:"crown"
+},
+
+{
+badge:"LEGEND",
+badgeClass:"legend"
+},
+
+{
+badge:"PLATINUM",
+badgeClass:"platinum"
+},
+
+{
+badge:"MASTER",
+badgeClass:"master"
+},
+
+{
+badge:"ROYAL",
+badgeClass:"royal"
+},
+
+{
+badge:"INFINITY",
+badgeClass:"infinity"
+}
+
+];
+
+/* FINAL REWARD DATA */
+
+const rewards = defaultRewards.map(item=>{
+
+let data = savedReward?.[item.badge] || {};
+
+return{
+
+badge:item.badge,
+
+badgeClass:item.badgeClass,
+
+team:Number(data.team || 0),
+
+business:Number(data.business || 0),
+
+income:Number(data.coin || 0)
+
+};
+
+});
+
+/* FORMAT */
+
+function formatMoney(x){
+
+return "₹" + Number(x)
+.toLocaleString();
+
+}
+
+/* TABLE */
+
+const rewardTable =
+document.getElementById(
+"rewardTable"
+);
+
+/* LOAD */
+
+function loadRewards(){
+
+rewardTable.innerHTML = "";
+
+rewards.forEach((reward,index)=>{
+
+let claimed =
+
+localStorage.getItem(
+"claimed_"+index
+);
+
+let completed =
+
+userTeam >= reward.team &&
+
+userBusiness >= reward.business;
+
+let statusButton = "";
+
+if(claimed){
+
+statusButton = `
+
+<button class="claim-btn claimed">
+
+Claimed
+
+</button>
+
+`;
+
+}
+
+else if(completed){
+
+statusButton = `
+
+<button class="claim-btn claim"
+
+onclick="claimReward(
+${index},
+${reward.income}
+)">
+
+Claim
+
+</button>
+
+`;
+
+}
+
+else{
+
+statusButton = `
+
+<button class="claim-btn pending">
+
+Pending
+
+</button>
+
+`;
+
+}
+
+rewardTable.innerHTML += `
+
+<div class="table-row">
+
+<div>
+
+<div class="badge
+${reward.badgeClass}">
+
+${reward.badge}
+
+</div>
+
+</div>
+
+<div class="small">
+
+${reward.team}
+
+</div>
+
+<div class="small">
+
+${userTeam}
+
+</div>
+
+<div class="small">
+
+${formatMoney(
+reward.business
+)}
+
+</div>
+
+<div class="small">
+
+${formatMoney(
+userBusiness
+)}
+
+</div>
+
+<div class="small">
+
+${reward.income}
+
+</div>
+
+<div>
+
+${statusButton}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* CLAIM */
+
+function claimReward(index,amount){
+
+wallet += Number(amount);
+
+localStorage.setItem(
+"wallet",
+wallet
+);
+
+localStorage.setItem(
+"claimed_"+index,
+true
+);
+
+document.getElementById(
+"wallet"
+).innerText = wallet;
+
+alert(
+"Reward Claimed Successfully"
+);
+
+loadRewards();
+
+}
+
+/* START */
+
+loadRewards();
+
+</script>
+
+</body>
+
+</html>

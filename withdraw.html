@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Withdraw Money
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#06131f,
+#0b1726
+);
+
+color:white;
+
+padding-bottom:100px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:14px 16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:44px;
+height:44px;
+
+border-radius:12px;
+
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.noty{
+
+width:36px;
+height:36px;
+
+border-radius:10px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.06);
+
+font-size:14px;
+}
+
+/* TOP */
+
+.top{
+
+margin:0 16px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0891b2
+);
+}
+
+.top h2{
+font-size:17px;
+}
+
+.top p{
+font-size:10px;
+margin-top:3px;
+opacity:.9;
+}
+
+/* BOX */
+
+.box{
+padding:16px;
+}
+
+.label{
+font-size:11px;
+margin-bottom:6px;
+display:block;
+color:#cbd5e1;
+}
+
+.input{
+
+width:100%;
+height:46px;
+
+border:none;
+outline:none;
+
+border-radius:13px;
+
+padding:0 12px;
+
+font-size:12px;
+
+background:
+rgba(255,255,255,.06);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+color:white;
+
+margin-bottom:12px;
+}
+
+select{
+appearance:none;
+}
+
+/* BALANCE CARD */
+
+.balance{
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+margin-bottom:14px;
+}
+
+.balance h3{
+font-size:12px;
+}
+
+.balance .money{
+
+margin-top:6px;
+
+font-size:24px;
+font-weight:800;
+
+color:#22d3ee;
+}
+
+.balance p{
+margin-top:3px;
+font-size:9px;
+color:#94a3b8;
+}
+
+/* BUTTON */
+
+.withdraw{
+
+margin-top:12px;
+
+width:100%;
+height:48px;
+
+border:none;
+
+border-radius:14px;
+
+font-size:13px;
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+/* SUCCESS */
+
+.success{
+
+margin-top:16px;
+
+padding:14px;
+
+border-radius:16px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.sicon{
+
+width:42px;
+height:42px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#14b8a6
+);
+
+color:white;
+}
+
+.stext h3{
+font-size:13px;
+}
+
+.stext p{
+font-size:9px;
+color:#94a3b8;
+margin-top:3px;
+}
+
+/* QUICK */
+
+.quick{
+
+margin-top:14px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+}
+
+.qbox{
+
+padding:12px;
+
+border-radius:14px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+text-align:center;
+
+color:white;
+}
+
+.qbox i{
+font-size:18px;
+color:#22d3ee;
+}
+
+.qbox p{
+margin-top:6px;
+font-size:10px;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:10px;
+right:10px;
+bottom:10px;
+
+height:70px;
+
+border-radius:22px;
+
+background:
+rgba(15,23,42,.95);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-around;
+align-items:center;
+}
+
+.nav{
+
+text-align:center;
+
+font-size:8px;
+
+color:#94a3b8;
+text-decoration:none;
+}
+
+.nav i{
+display:block;
+font-size:17px;
+margin-bottom:3px;
+}
+
+.active{
+color:#22d3ee;
+}
+
+.qr{
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#0284c7,
+#0f766e
+);
+
+margin-top:-28px;
+
+font-size:22px;
+
+border:4px solid #0f172a;
+
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html"
+class="logo">
+
+<img src="image.png">
+
+</a>
+
+<div class="noty">
+<i class="fa-solid fa-bell"></i>
+</div>
+
+</div>
+
+<!-- TOP -->
+
+<div class="top">
+
+<h2>
+Withdraw Money
+</h2>
+
+<p>
+Instant bank transfer system
+</p>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="box">
+
+<!-- BALANCE -->
+
+<div class="balance">
+
+<h3>
+Available Balance
+</h3>
+
+<div class="money">
+₹12,580
+</div>
+
+<p>
+Ready for withdrawal
+</p>
+
+</div>
+
+<label class="label">
+Withdraw Amount
+</label>
+
+<input type="number"
+class="input"
+placeholder="₹ Enter amount">
+
+<label class="label">
+Select Bank
+</label>
+
+<select class="input">
+
+<option>
+State Bank Of India
+</option>
+
+<option>
+HDFC Bank
+</option>
+
+<option>
+ICICI Bank
+</option>
+
+<option>
+Axis Bank
+</option>
+
+</select>
+
+<label class="label">
+UPI ID
+</label>
+
+<input type="text"
+class="input"
+placeholder="example@upi">
+
+<!-- BUTTON -->
+
+<button class="withdraw">
+Withdraw Now
+</button>
+
+<!-- SUCCESS -->
+
+<div class="success">
+
+<div class="sicon">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+
+<div class="stext">
+
+<h3>
+₹1000 Withdraw Successful
+</h3>
+
+<p>
+Money sent to bank account
+</p>
+
+</div>
+
+</div>
+
+<!-- QUICK -->
+
+<div class="quick">
+
+<a href="bank.html"
+class="qbox">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<p>
+Manage Bank
+</p>
+
+</a>
+
+<a href="history.html"
+class="qbox">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<p>
+Withdraw History
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html"
+class="nav">
+
+<i class="fa-solid fa-house"></i>
+Home
+
+</a>
+
+<a href="reward.html"
+class="nav">
+
+<i class="fa-solid fa-gift"></i>
+Reward
+
+</a>
+
+<a href="qrpay.html"
+class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html"
+class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+Scratch
+
+</a>
+
+<a href="profile.html"
+class="nav active">
+
+<i class="fa-solid fa-user"></i>
+Profile
+
+</a>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,662 @@
+<!-- FILE NAME = edit-profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+Edit Profile
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#020617
+);
+
+padding-bottom:120px;
+
+color:white;
+}
+
+a{
+text-decoration:none;
+}
+
+/* HEADER */
+
+.header{
+
+padding:15px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.back,
+.setting{
+
+width:42px;
+height:42px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+
+font-size:16px;
+}
+
+.title{
+
+font-size:18px;
+font-weight:800;
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+
+margin:0 15px;
+
+padding:16px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#0891b2
+);
+
+text-align:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+}
+
+.profile-img{
+
+width:82px;
+height:82px;
+
+border-radius:50%;
+
+margin:auto;
+
+overflow:hidden;
+
+border:3px solid rgba(255,255,255,.25);
+}
+
+.profile-img img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+}
+
+.upload-btn{
+
+margin-top:10px;
+
+display:inline-block;
+
+padding:7px 15px;
+
+border-radius:10px;
+
+background:
+rgba(255,255,255,.15);
+
+font-size:11px;
+font-weight:700;
+
+cursor:pointer;
+}
+
+.upload-btn input{
+display:none;
+}
+
+.name{
+
+margin-top:12px;
+
+font-size:20px;
+font-weight:800;
+}
+
+.userid{
+
+margin-top:4px;
+
+font-size:11px;
+
+color:#dbeafe;
+}
+
+/* FORM */
+
+.form{
+
+margin:16px 15px 0;
+}
+
+.input-box{
+
+margin-bottom:12px;
+}
+
+.input-box label{
+
+display:block;
+
+margin-bottom:5px;
+
+font-size:11px;
+font-weight:700;
+
+color:#cbd5e1;
+}
+
+.input-box input{
+
+width:100%;
+
+height:48px;
+
+padding:0 14px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+background:
+rgba(255,255,255,.06);
+
+color:white;
+
+font-size:13px;
+font-weight:600;
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.input-box input::placeholder{
+color:#94a3b8;
+}
+
+/* LOCKED INPUT */
+
+.locked{
+
+background:
+rgba(255,255,255,.03) !important;
+
+color:#cbd5e1 !important;
+
+cursor:not-allowed;
+}
+
+/* BUTTON */
+
+.save-btn{
+
+width:100%;
+
+height:50px;
+
+border:none;
+
+border-radius:16px;
+
+margin-top:6px;
+
+font-size:14px;
+font-weight:800;
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.35);
+}
+
+/* PREMIUM BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="home.html" class="back">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<div class="title">
+Edit Profile
+</div>
+
+<a href="#" class="setting">
+<i class="fa-solid fa-gear"></i>
+</a>
+
+</div>
+
+<!-- PROFILE CARD -->
+
+<div class="profile-card">
+
+<div class="profile-img">
+
+<img src="https://i.ibb.co/4pDNDk1/avatar.png"
+id="profilePreview">
+
+</div>
+
+<label class="upload-btn">
+
+Upload Photo
+
+<input type="file"
+accept="image/*"
+onchange="loadImage(event)">
+
+</label>
+
+<div class="name"
+id="showName">
+United User
+</div>
+
+<div class="userid"
+id="showUserId">
+ID : U4A000000
+</div>
+
+</div>
+
+<!-- FORM -->
+
+<div class="form">
+
+<div class="input-box">
+
+<label>
+Full Name
+</label>
+
+<input type="text"
+id="nameInput"
+class="locked"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>
+Mobile Number
+</label>
+
+<input type="text"
+id="mobileInput"
+class="locked"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>
+Email Address
+</label>
+
+<input type="email"
+id="emailInput"
+class="locked"
+readonly>
+
+</div>
+
+<div class="input-box">
+
+<label>
+Address
+</label>
+
+<input type="text"
+id="addressInput"
+placeholder="Enter Address">
+
+</div>
+
+<button class="save-btn"
+onclick="saveProfile()">
+
+SAVE PROFILE
+
+</button>
+
+</div>
+
+<!-- PREMIUM BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="edit-profile.html" class="nav active">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+/* CURRENT USER */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* LOAD USER DATA */
+
+if(currentUser){
+
+/* TOP NAME */
+
+document.getElementById(
+"showName"
+).innerHTML =
+currentUser.name || "United User";
+
+/* USER ID */
+
+document.getElementById(
+"showUserId"
+).innerHTML =
+
+"ID : " +
+(currentUser.userId || "U4A000000");
+
+/* NAME */
+
+document.getElementById(
+"nameInput"
+).value =
+currentUser.name || "";
+
+/* MOBILE */
+
+document.getElementById(
+"mobileInput"
+).value =
+currentUser.mobile || "";
+
+/* EMAIL */
+
+document.getElementById(
+"emailInput"
+).value =
+currentUser.email || "";
+
+}
+
+/* LOAD ADDRESS */
+
+let savedAddress =
+localStorage.getItem(
+"userAddress"
+);
+
+if(savedAddress){
+
+document.getElementById(
+"addressInput"
+).value =
+savedAddress;
+
+}
+
+/* SAVE PROFILE */
+
+function saveProfile(){
+
+let address =
+document.getElementById(
+"addressInput"
+).value;
+
+localStorage.setItem(
+"userAddress",
+address
+);
+
+alert(
+"Profile Saved Successfully"
+);
+
+}
+
+/* IMAGE */
+
+function loadImage(event){
+
+let image =
+document.getElementById(
+"profilePreview"
+);
+
+image.src =
+URL.createObjectURL(
+event.target.files[0]
+);
+
+}
+
+</script>
+
+</body>
+
+</html>
