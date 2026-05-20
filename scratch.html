@@ -1216,6 +1216,44 @@ totalCoin - usedCoin;
 wallet =
 wallet + rupee;
 
+/* HISTORY */
+
+let walletHistory =
+JSON.parse(
+localStorage.getItem(
+"walletHistory_" + userKey
+)
+) || [];
+
+walletHistory.unshift({
+
+date:new Date().toLocaleString(),
+
+msg:"Scratch Coin Transfer",
+
+amount:rupee,
+
+type:"Credit",
+
+balance:wallet
+
+});
+
+localStorage.setItem(
+
+"walletHistory_" + userKey,
+
+JSON.stringify(walletHistory)
+
+);
+
+/* SAVE WALLET */
+
+localStorage.setItem(
+"wallet_" + userKey,
+wallet
+);
+
 /* SAVE WALLET */
 
 localStorage.setItem(
@@ -1254,4 +1292,4 @@ loadCards();
 
 </body>
 
-  </html>
+</html>
