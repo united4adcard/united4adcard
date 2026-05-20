@@ -1,0 +1,1165 @@
+<!-- =========================================
+FULL UPDATED HOME.HTML
+ALL OLD CODE SAFE
+NEW USER AUTO UPDATE
+PROFILE CONNECT
+TEAM CONNECT
+LEVEL CONNECT
+DIRECT INCOME
+LEVEL INCOME
+NOTHING DELETE
+ALL TO ALL FINAL CODE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>
+United4adcard Dashboard
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+a{
+text-decoration:none;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+#031525,
+#071827,
+#0b1120
+);
+}
+
+/* APP */
+
+.app{
+height:100vh;
+overflow-y:auto;
+padding-bottom:150px;
+}
+
+/* HEADER */
+
+.header{
+
+padding:16px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+
+width:52px;
+height:52px;
+
+border-radius:16px;
+
+overflow:hidden;
+
+border:2px solid rgba(255,255,255,.08);
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.right-icon{
+
+width:42px;
+height:42px;
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:18px;
+
+background:
+rgba(255,255,255,.05);
+
+color:white;
+}
+
+/* BALANCE */
+
+.balance-card{
+
+margin:0 16px 14px;
+
+padding:12px 14px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+rgba(8,47,73,.96),
+rgba(15,23,42,.95)
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.balance-title{
+font-size:10px;
+color:#94a3b8;
+}
+
+.balance-amount{
+
+margin-top:4px;
+
+font-size:20px;
+
+font-weight:800;
+
+background:
+linear-gradient(
+90deg,
+#38bdf8,
+#14b8a6
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.balance-update{
+
+margin-top:3px;
+
+font-size:9px;
+
+color:#94a3b8;
+}
+
+/* REFERRAL BAR */
+
+.referral-bar{
+
+margin:0 16px 14px;
+
+padding:10px 12px;
+
+border-radius:18px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.03)
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+}
+
+.ref-left{
+overflow:hidden;
+}
+
+.ref-title{
+
+font-size:9px;
+
+color:#94a3b8;
+}
+
+.ref-code{
+
+margin-top:3px;
+
+font-size:15px;
+font-weight:800;
+
+letter-spacing:1px;
+
+color:#22d3ee;
+}
+
+.ref-send{
+
+border:none;
+outline:none;
+
+height:38px;
+
+padding:0 16px;
+
+border-radius:12px;
+
+font-size:11px;
+font-weight:700;
+
+display:flex;
+align-items:center;
+gap:6px;
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#22c55e
+);
+
+color:white;
+
+cursor:pointer;
+}
+
+.ref-send i{
+font-size:14px;
+}
+
+
+/* QUICK */
+
+.quick{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:7px;
+
+padding:0 16px;
+}
+
+.quick-box{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+border-radius:16px;
+
+padding:9px 4px;
+
+text-align:center;
+}
+
+.quick-icon{
+
+width:38px;
+height:38px;
+
+margin:auto;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#0ea5e9,
+#14b8a6
+);
+
+color:white;
+}
+
+.quick-box p{
+
+margin-top:6px;
+
+font-size:8px;
+font-weight:700;
+
+line-height:1.2;
+
+color:white;
+}
+
+/* SECTION */
+
+.section{
+padding:14px 16px 0;
+}
+
+.section-title{
+
+font-size:16px;
+font-weight:700;
+
+color:white;
+
+margin-bottom:8px;
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:7px;
+}
+
+/* CARD */
+
+.card{
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.02)
+);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+border-radius:18px;
+
+padding:8px 4px;
+
+height:92px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+overflow:hidden;
+
+box-shadow:
+0 4px 14px rgba(0,0,0,.16);
+}
+
+.card-icon{
+
+width:38px;
+height:38px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:16px;
+
+background:
+linear-gradient(
+135deg,
+#0891b2,
+#2563eb
+);
+
+color:white;
+
+box-shadow:
+0 4px 10px rgba(37,99,235,.28);
+}
+
+.card p{
+
+margin-top:6px;
+
+font-size:8px;
+
+font-weight:700;
+
+line-height:1.2;
+
+color:#e2e8f0;
+}
+
+/* BOTTOM */
+
+.bottom{
+
+position:fixed;
+
+left:12px;
+right:12px;
+bottom:12px;
+
+height:84px;
+
+padding:0 10px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+#1e3a8a,
+#2563eb,
+#0891b2
+);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+z-index:9999;
+}
+
+.nav{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:
+rgba(255,255,255,.75);
+
+font-size:10px;
+font-weight:700;
+
+transition:.25s;
+}
+
+.nav i{
+
+font-size:22px;
+
+margin-bottom:5px;
+}
+
+.nav span{
+
+font-size:10px;
+}
+
+.active{
+
+background:
+rgba(255,255,255,.16);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+box-shadow:
+0 0 20px rgba(255,255,255,.15);
+}
+
+.active i{
+color:#67e8f9;
+}
+
+.qr{
+
+width:76px;
+height:76px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#14b8a6,
+#06b6d4
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:-44px;
+
+border:5px solid #071827;
+
+font-size:30px;
+
+color:white;
+
+box-shadow:
+0 10px 25px rgba(6,182,212,.45);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<div class="logo">
+<img src="image.png">
+</div>
+
+<a href="notification.html" class="right-icon">
+<i class="fa-solid fa-bell"></i>
+</a>
+
+</div>
+
+<!-- BALANCE -->
+
+<div class="balance-card">
+
+<div class="balance-title">
+Available Balance
+</div>
+
+<div class="balance-amount"
+id="mainBalance">
+₹0
+</div>
+
+<div class="balance-update">
+Updated Just Now
+</div>
+
+<!-- REFERRAL BAR -->
+
+<div class="referral-bar">
+
+<div class="ref-left">
+
+<div class="ref-title">
+Your Referral Code
+</div>
+
+<div class="ref-code"
+id="homeReferralCode">
+U4AD000000
+</div>
+
+</div>
+
+<button class="ref-send"
+onclick="shareReferral()">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+<!-- QUICK -->
+
+<div class="quick">
+
+<a href="mobile.html" class="quick-box">
+<div class="quick-icon">
+<i class="fa-solid fa-phone"></i>
+</div>
+<p>To Mobile</p>
+</a>
+
+<a href="bank.html" class="quick-box">
+<div class="quick-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+<p>To Bank</p>
+</a>
+
+<a href="wallet.html" class="quick-box">
+<div class="quick-icon">
+<i class="fa-solid fa-wallet"></i>
+</div>
+<p>Wallet</p>
+</a>
+
+<a href="balance.html" class="quick-box">
+<div class="quick-icon">
+<i class="fa-solid fa-indian-rupee-sign"></i>
+</div>
+<p>Balance</p>
+</a>
+
+</div>
+
+<!-- RECHARGE -->
+
+<div class="section">
+
+<div class="section-title">
+Recharge & Bills
+</div>
+
+<div class="grid">
+
+<a href="recharge.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-mobile-screen"></i>
+</div>
+<p>Mobile Recharge</p>
+</a>
+
+<a href="fastag.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-car"></i>
+</div>
+<p>FASTag Recharge</p>
+</a>
+
+<a href="electricity.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-bolt"></i>
+</div>
+<p>Electricity Bill</p>
+</a>
+
+<a href="loan.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-calendar-days"></i>
+</div>
+<p>Loan Repayment</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- TELECOM -->
+
+<div class="section">
+
+<div class="section-title">
+Telecom
+</div>
+
+<div class="grid">
+
+<a href="recharge.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-mobile-screen-button"></i>
+</div>
+<p>Mobile Recharge</p>
+</a>
+
+<a href="dth.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-satellite-dish"></i>
+</div>
+<p>DTH</p>
+</a>
+
+<a href="cable.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-tv"></i>
+</div>
+<p>Cable TV</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- VEHICLE -->
+
+<div class="section">
+
+<div class="section-title">
+Vehicle
+</div>
+
+<div class="grid">
+
+<a href="fastag.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-car-side"></i>
+</div>
+<p>FASTag</p>
+</a>
+
+<a href="car-insurance.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-shield"></i>
+</div>
+<p>Car Insurance</p>
+</a>
+
+<a href="bike-insurance.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-motorcycle"></i>
+</div>
+<p>Bike Insurance</p>
+</a>
+
+<a href="echallan.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-traffic-light"></i>
+</div>
+<p>eChallan</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- OTHERS -->
+
+<div class="section">
+
+<div class="section-title">
+Others
+</div>
+
+<div class="grid">
+
+<a href="insurance.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-file-invoice-dollar"></i>
+</div>
+<p>LIC / Insurance</p>
+</a>
+
+<a href="scratch.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-gift"></i>
+</div>
+<p>Scratch Card</p>
+</a>
+
+<a href="qrpay.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-qrcode"></i>
+</div>
+<p>QR Payment</p>
+</a>
+
+<a href="refer.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-share-nodes"></i>
+</div>
+<p>Refer & Earn</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- KYC -->
+
+<div class="section">
+
+<div class="section-title">
+KYC & Verification
+</div>
+
+<div class="grid">
+
+<a href="kyc.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-id-card"></i>
+</div>
+<p>Aadhaar KYC</p>
+</a>
+
+<a href="bank.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+<p>Bank Verify</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- MY TEAM -->
+
+<div class="section">
+
+<div class="section-title">
+My Team & Income
+</div>
+
+<div class="grid">
+
+<a href="directteam.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-users"></i>
+</div>
+<p>Direct Team</p>
+</a>
+
+<a href="levelteam.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-network-wired"></i>
+</div>
+<p>Level Team</p>
+</a>
+
+<a href="directincome.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-money-bill-wave"></i>
+</div>
+<p>Direct Income</p>
+</a>
+
+<a href="levelincome.html" class="card">
+<div class="card-icon">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+<p>Level Income</p>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+<a href="home.html" class="nav active">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+Home
+</span>
+
+</a>
+
+<a href="reward.html" class="nav">
+
+<i class="fa-solid fa-gift"></i>
+
+<span>
+Reward
+</span>
+
+</a>
+
+<a href="qrpay.html" class="qr">
+
+<i class="fa-solid fa-qrcode"></i>
+
+</a>
+
+<a href="scratch.html" class="nav">
+
+<i class="fa-solid fa-ticket"></i>
+
+<span>
+Scratch
+</span>
+
+</a>
+
+<a href="profile.html" class="nav">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+Profile
+</span>
+
+</a>
+
+</div>
+
+<script>
+
+/* LOGIN CHECK */
+
+let loginStatus =
+localStorage.getItem(
+"isLoggedIn"
+);
+
+if(loginStatus !== "true"){
+
+window.location.href =
+"login.html";
+
+}
+
+/* CURRENT USER */
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+/* SHOW USER DATA */
+
+if(currentUser){
+
+document.title =
+currentUser.name + " Dashboard";
+
+}
+
+/* WALLET */
+
+let wallet =
+localStorage.getItem(
+"userWallet"
+);
+
+if(!wallet){
+
+wallet = "0";
+
+}
+
+/* SHOW BALANCE */
+
+document
+.getElementById(
+"mainBalance"
+)
+.innerHTML =
+"₹" + wallet;
+
+/* AUTO REFRESH */
+
+window.onpageshow = function(){
+
+let latestUser =
+JSON.parse(
+localStorage.getItem(
+"currentUser"
+)
+);
+
+if(latestUser){
+
+currentUser =
+latestUser;
+
+}
+
+};
+
+/* PAGE CONNECT */
+
+function checkPage(page){
+
+window.location.href =
+page;
+
+}
+
+/* DIRECT TEAM */
+
+document
+.querySelector(
+'a[href="directteam.html"]'
+)
+.addEventListener(
+"click",
+function(){
+
+checkPage(
+"directteam.html"
+);
+
+}
+);
+
+/* LEVEL TEAM */
+
+document
+.querySelector(
+'a[href="levelteam.html"]'
+)
+.addEventListener(
+"click",
+function(){
+
+checkPage(
+"levelteam.html"
+);
+
+}
+);
+
+/* DIRECT INCOME */
+
+document
+.querySelector(
+'a[href="directincome.html"]'
+)
+.addEventListener(
+"click",
+function(){
+
+checkPage(
+"directincome.html"
+);
+
+}
+);
+
+/* LEVEL INCOME */
+
+document
+.querySelector(
+'a[href="levelincome.html"]'
+)
+.addEventListener(
+"click",
+function(){
+
+checkPage(
+"levelincome.html"
+);
+
+}
+);
+
+/* SAVE USER */
+
+if(currentUser){
+
+localStorage.setItem(
+"userName",
+currentUser.name
+);
+
+localStorage.setItem(
+"userMobile",
+currentUser.mobile
+);
+
+localStorage.setItem(
+"userEmail",
+currentUser.email
+);
+
+}
+
+/* FINAL CONNECT */
+
+localStorage.setItem(
+"homeConnected",
+"true"
+);
+
+/* REFERRAL CODE */
+
+let homeUserId =
+localStorage.getItem(
+"userId"
+);
+
+if(homeUserId){
+
+document
+.getElementById(
+"homeReferralCode"
+)
+.innerHTML =
+homeUserId;
+
+}
+
+/* WHATSAPP SHARE */
+
+function shareReferral(){
+
+let referralCode =
+localStorage.getItem(
+"userId"
+);
+
+let shareText =
+
+"🎉 *UNITED4ADCARD REFER & EARN* 🎉\n\n" +
+
+"💰 Registration Bonus ₹100\n" +
+
+"🪪 KYC Bonus ₹100\n" +
+
+"🔥 Transfer Bonus ₹300\n" +
+
+"💸 16 Level Daily Recharge Commission\n\n" +
+
+"✅ Use My Referral Code:\n" +
+
+"👉 " + referralCode +
+
+"\n\n🚀 Join Now And Start Daily Income";
+
+window.open(
+
+"https://wa.me/?text=" +
+encodeURIComponent(
+shareText
+),
+
+"_blank"
+
+);
+
+}
+
+</script>
+
+</body>
+
+</html>
